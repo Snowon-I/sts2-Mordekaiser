@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://crkpsqoqdbmbu"]
+
+[ext_resource type="Script" uid="uid://iquygxpmcg0o" path="res://src/Core/Nodes/Screens/Shops/MordekaiserMerchantCharacter.cs" id="1_02mq3"]
+[ext_resource type="SpineAtlasResource" uid="uid://db80m8qxmkwx6" path="res://animations/characters/mordekaiser/mordekaiser.atlas" id="1_f8vaj"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://dyj34ujhknsod" path="res://animations/characters/mordekaiser/mordekaiser.skel" id="2_f8vaj"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_f8vaj"]
+atlas_res = ExtResource("1_f8vaj")
+skeleton_file_res = ExtResource("2_f8vaj")
+
+[node name="MordekaiserMerchant" type="Node2D"]
+script = ExtResource("1_02mq3")
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_f8vaj")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0

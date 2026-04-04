@@ -1,0 +1,8 @@
+﻿{
+  "MORDEKAISER_POTENTIALBLOCK.title": "不坏",
+  "MORDEKAISER_POTENTIALBLOCK.description": "获得相当于你造成50%的伤害和受到的未被格挡的伤害的层数。你的回合开始时和结束时，失去10层。",
+  "MORDEKAISER_DARKNESSRISE.title": "黑暗起兮",
+  "MORDEKAISER_DARKNESSRISE.description": "每使用1张攻击牌后，获得1点暗能量遮蔽。\n回合开始时、回合结束时、每使用一张非攻击牌时，失去1点暗能量遮蔽。",
+  "MORDEKAISER_DARKENERGY.title": "暗能量遮蔽",
+  "MORDEKAISER_DARKENERGY.description": "最大值为3。\n获得3点暗能量遮蔽后，直至暗能量遮蔽减少为0。\n每次使用牌时、回合开始时、回合结束时，对所有敌人造成1%的最大生命值的伤害（最小值为1）。"
+}

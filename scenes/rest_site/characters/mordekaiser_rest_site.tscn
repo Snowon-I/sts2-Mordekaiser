@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://7gi4b78jf1cl"]
+
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bqone2nicrkgt" path="res://animations/characters/mordekaiser/mordekaiser_skel_data.tres" id="1_ej6y0"]
+[ext_resource type="Script" uid="uid://bog8tg8ux03l4" path="res://src/Core/Nodes/RestSite/MordekaiserRestSiteCharacter.cs" id="1_onxwi"]
+[ext_resource type="Script" uid="uid://cdar0a7h5b37q" path="res://src/Core/Nodes/RestSite/MordekaiserSelectionReticle.cs" id="3_8hxku"]
+
+[node name="MordekaiserRestSite" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_onxwi")
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("1_ej6y0")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+scale = Vector2(0.25, 0.25)
+
+[node name="ControlRoot" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -153.0
+offset_top = -350.0
+offset_right = 267.0
+offset_bottom = 320.0
+pivot_offset = Vector2(126, 84)
+script = ExtResource("3_8hxku")
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -155.0
+offset_top = -351.0
+offset_right = 266.0
+offset_bottom = 332.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 209.209
+offset_top = -317.103
+offset_right = 249.209
+offset_bottom = -277.103
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -73.684
+offset_top = -324.997
+offset_right = -33.684
+offset_bottom = -284.997

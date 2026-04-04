@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://dyj34ujhknsod"
+path="res://.godot/imported/mordekaiser.skel-0601ce5d947318364bd927ad3ca92b65.spskel"
+
+[deps]
+
+source_file="res://animations/characters/mordekaiser/mordekaiser.skel"
+dest_files=["res://.godot/imported/mordekaiser.skel-0601ce5d947318364bd927ad3ca92b65.spskel"]
+
+[params]
+

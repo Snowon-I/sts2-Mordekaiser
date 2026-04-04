@@ -1,0 +1,76 @@
+
+mordekaiser.png
+size: 761,276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+右手手指
+  rotate: true
+  xy: 689, 136
+  size: 33, 27
+  orig: 34, 28
+  offset: 0, 1
+  index: -1
+右手臂
+  rotate: false
+  xy: 562, 121
+  size: 125, 153
+  orig: 126, 154
+  offset: 1, 0
+  index: -1
+右腿
+  rotate: true
+  xy: 463, 15
+  size: 77, 113
+  orig: 79, 113
+  offset: 1, 0
+  index: -1
+夜陨
+  rotate: false
+  xy: 2, 3
+  size: 418, 271
+  orig: 419, 273
+  offset: 1, 1
+  index: -1
+头部
+  rotate: false
+  xy: 422, 2
+  size: 39, 90
+  orig: 43, 91
+  offset: 0, 1
+  index: -1
+左手
+  rotate: false
+  xy: 689, 171
+  size: 34, 34
+  orig: 34, 35
+  offset: 0, 1
+  index: -1
+左手臂
+  rotate: false
+  xy: 657, 10
+  size: 102, 109
+  orig: 102, 109
+  offset: 0, 0
+  index: -1
+左腿
+  rotate: false
+  xy: 578, 6
+  size: 77, 113
+  orig: 78, 114
+  offset: 1, 0
+  index: -1
+躯干
+  rotate: false
+  xy: 422, 94
+  size: 138, 180
+  orig: 145, 181
+  offset: 1, 1
+  index: -1
+躯干下布
+  rotate: false
+  xy: 689, 207
+  size: 47, 67
+  orig: 47, 69
+  offset: 0, 2
+  index: -1

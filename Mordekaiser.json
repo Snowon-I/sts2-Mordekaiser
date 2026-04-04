@@ -1,0 +1,13 @@
+{
+
+  "id": "Mordekaiser",
+  "pck_name": "Mordekaiser",
+  "name": "莫德凯撒",
+  "author": "ice snow",
+  "description": "A mod",
+  "has_pck": true,
+  "has_dll": true,
+  "affects_gameplay": true,
+  "version": "0.0.1"
+
+}

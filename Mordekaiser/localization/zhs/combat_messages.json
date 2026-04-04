@@ -1,0 +1,25 @@
+{
+  "MORDEKAISER_NO_DRAW":"没有可以获取的牌",
+  "MORDEKAISER_NO_DRAW_TAGSTRIKE":"我的抽牌堆没有[red]打击牌[/red]。",
+  "MORDEKAISER_NO_DRAW_ATTACK":"我的抽牌堆没有[red]攻击牌[/red]。",
+  "MORDEKAISER_NO_DRAW_SKILL":"我的抽牌堆没有[red]技能牌[/red]。",
+  "MORDEKAISER_NO_DRAW_EXHAUST":"我的抽牌堆里没有足够多的[red]消耗牌[/red]",
+  "MORDEKAISER_NO_DRAW_MORDEKAISERQUIESCE": "我的抽牌堆没有[red]寂灭牌[/red]。",
+  "MORDEKAISER_NO_DISCARD_ATTACK":"我的弃牌堆没有[red]攻击牌[/red]。",
+  "MORDEKAISER_NO_DISCARD_SKILL":"我的弃牌堆没有[red]技能牌[/red]。",
+  "MORDEKAISER_NO_DISCARD_EXHAUST":"我的弃牌堆里没有足够多的[red]消耗牌[/red]",
+  "MORDEKAISER_NO_DISCARD_MORDEKAISERQUIESCE": "我的弃牌堆没有[red]寂灭牌[/red]。",
+  "MORDEKAISER_NO_EXHAUST_ATTACK":"我的消耗牌堆没有[red]攻击牌[/red]。",
+  "MORDEKAISER_NO_EXHAUST_SKILL":"我的消耗牌堆没有[red]技能牌[/red]。",
+  "MORDEKAISER_NO_EXHAUST_EXHAUST":"我的消耗牌堆里没有足够多的[red]消耗牌[/red]",
+  "MORDEKAISER_NO_EXHAUST_MORDEKAISERQUIESCE": "我的消耗牌堆没有[red]寂灭牌[/red]。",
+
+  "MORDEKAISER_NO_EXHAUST":"没有[red]满足条件[/red]的牌可消耗",
+  "MORDEKAISER_NO_EXHAUST_DRAW":"我的抽牌堆没有[red]满足条件[/red]的牌可消耗",
+  "MORDEKAISER_NO_EXHAUST_HAND":"我的手牌没有[red]满足条件[/red]的牌可消耗",
+  "MORDEKAISER_NO_EXHAUST_DISCARD":"我的弃牌堆没有[red]满足条件[/red]的牌可消耗",
+
+  "MORDEKAISER_NO_Quiesce":"没有[red]满足条件[/red]的寂灭牌",
+
+  "MORDEKAISER_NO_DRAW_BASEATTACK":"我的抽牌堆里没有[red]打击[/red]"
+}
