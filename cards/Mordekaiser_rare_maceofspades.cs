@@ -12,11 +12,11 @@ public class Mordekaiser_rare_maceofspades() : CardModel(1, CardType.Attack, Car
 {
     protected override bool ShouldGlowGoldInternal => WasCardShouldExhaust;
 
-    private bool WasCardShouldExhaust => DynamicVars["multtiome"].BaseValue == 2m;
+    private bool WasCardShouldExhaust => DynamicVars["multtime"].BaseValue == 2m;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(6m, ValueProp.Move),
-        new("multtiome",0m)
+        new("multtime",0m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -26,12 +26,13 @@ public class Mordekaiser_rare_maceofspades() : CardModel(1, CardType.Attack, Car
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-        if (cardPlay.Card.DynamicVars["multtiome"].BaseValue == 2m)
-        {
+        if (cardPlay.Card.DynamicVars["multtime"].BaseValue >= 2m)
             await CardCmd.Exhaust(choiceContext,cardPlay.Card);
-        }
+        else
+            await CardPileCmd.Add(cardPlay.Card, PileType.Draw, CardPilePosition.Top);
         cardPlay.Card.DynamicVars.Damage.UpgradeValueBy(DynamicVars.Damage.BaseValue);
-        cardPlay.Card.DynamicVars["multtiome"].UpgradeValueBy(1m);
+        cardPlay.Card.DynamicVars["multtime"].UpgradeValueBy(1m);
+        
     }
 
     public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";

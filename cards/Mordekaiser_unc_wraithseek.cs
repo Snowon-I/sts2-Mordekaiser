@@ -30,7 +30,13 @@ public class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack, CardRa
             {
                 var card2 = PileType.Draw.GetPile(Owner).Cards.FirstOrDefault(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && c.Type == CardType.Attack );
                 if (card2 != null)
+                {
                     await CardPileCmd.Add(card2,PileType.Draw);
+                    if (!card2.Keywords.Contains(CardKeyword.Exhaust))
+                    {
+                        card2.AddKeyword(CardKeyword.Exhaust);
+                    }
+                }
             }
         }
     }

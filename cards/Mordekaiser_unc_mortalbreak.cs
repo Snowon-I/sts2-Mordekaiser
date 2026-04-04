@@ -5,14 +5,12 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using Mordekaiser.scripts;
-using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
 public class Mordekaiser_unc_mortalbreak() : CardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(16m, ValueProp.Move),];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10m, ValueProp.Move),];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -21,19 +19,16 @@ public class Mordekaiser_unc_mortalbreak() : CardModel(2, CardType.Attack, CardR
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-        await MordekaiserCardUtils.ExhaustMordekaiserCard(
-            choiceContext,
-            Owner,
-            1,
-            PileType.Discard.GetPile(Owner),
-            card => card.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce))
-            );
+        if ( cardPlay.Target!= null && cardPlay.Target.HasPower<WeakPower>())
+        {
+            await CreatureCmd.Damage(choiceContext, cardPlay.Target, DynamicVars.Damage.BaseValue,
+                ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+        }
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(5m);
     }
-
     
 }

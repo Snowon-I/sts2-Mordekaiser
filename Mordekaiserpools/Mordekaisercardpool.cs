@@ -29,7 +29,8 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_base_defend>(),
         ModelDb.Card<Mordekaiser_base_darknessrise>(),
         ModelDb.Card<Mordekaiser_base_criticalattack>(),
-
+        
+        //attack
         ModelDb.Card<Mordekaiser_com_attack>(),
         ModelDb.Card<Mordekaiser_com_crushslam>(),
         ModelDb.Card<Mordekaiser_com_agonytorment>(),
@@ -42,12 +43,33 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_com_steelstrike>(),
         ModelDb.Card<Mordekaiser_com_underworldstrike>(),
         
+        //skill
+        
+        //attack
         ModelDb.Card<Mordekaiser_unc_wraithpursuit>(),
         ModelDb.Card<Mordekaiser_unc_wraithsummonstrike>(),
         ModelDb.Card<Mordekaiser_unc_sweepbreak>(),
         ModelDb.Card<Mordekaiser_unc_soulthrust>(),
+        ModelDb.Card<Mordekaiser_unc_wraithecho>(),
+        ModelDb.Card<Mordekaiser_unc_wraithdrain>(),
+        ModelDb.Card<Mordekaiser_unc_wraithseek>(),
+        ModelDb.Card<Mordekaiser_unc_defendwraith>(),
+        ModelDb.Card<Mordekaiser_unc_mortalbreak>(),
+        ModelDb.Card<Mordekaiser_unc_wraithcritical>(),
+        ModelDb.Card<Mordekaiser_unc_meteorwraithhammer>(),
+        ModelDb.Card<Mordekaiser_unc_breakpowerhammer>(),
         
+        //skill
         ModelDb.Card<Mordekaiser_unc_wraithpower>(),
+        
+        //attack
+        ModelDb.Card<Mordekaiser_rare_maceofspades>(),
+        ModelDb.Card<Mordekaiser_rare_creepingdeath>(),
+        ModelDb.Card<Mordekaiser_rare_siphondestruction>(),
+        ModelDb.Card<Mordekaiser_rare_fateend>(),
+        ModelDb.Card<Mordekaiser_rare_quiesceecho>(),
+        ModelDb.Card<Mordekaiser_rare_hellecho>(),
+        ModelDb.Card<Mordekaiser_rare_souldrain>(),
         
     ];
 
