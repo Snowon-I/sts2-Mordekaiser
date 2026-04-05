@@ -30,8 +30,7 @@ public class Mordekaiser_com_attack() : CardModel(1, CardType.Attack, CardRarity
             cards => cards.Where(c => c.Id.Entry == "MORDEKAISER_BASE_ATTACK"),
             true,
             "MORDEKAISER_NO_DRAW_BASEATTACK",
-            true,
-            true
+            noCost: true
             );
     }
 

@@ -44,6 +44,15 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_com_underworldstrike>(),
         
         //skill
+        ModelDb.Card<Mordekaiser_com_dashforward>(),
+        ModelDb.Card<Mordekaiser_com_darksoulbarrier>(),
+        ModelDb.Card<Mordekaiser_com_wraithfear>(),
+        ModelDb.Card<Mordekaiser_com_prepareblock>(),
+        ModelDb.Card<Mordekaiser_com_sacrifice>(),
+        ModelDb.Card<Mordekaiser_com_darkdrain>(),
+        ModelDb.Card<Mordekaiser_com_unmovingironbody>(),
+        ModelDb.Card<Mordekaiser_com_greatquiesce>(),
+
         
         //attack
         ModelDb.Card<Mordekaiser_unc_wraithpursuit>(),

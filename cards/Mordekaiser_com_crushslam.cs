@@ -30,4 +30,5 @@ public class Mordekaiser_com_crushslam() : CardModel(1, CardType.Attack, CardRar
     {
         DynamicVars.CalculationBase.UpgradeValueBy(3m);
     }
+    
 }

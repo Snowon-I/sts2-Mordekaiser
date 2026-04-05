@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Mordekaiser.power;
 
@@ -26,6 +27,7 @@ public class Mordekaiser_rare_creepingdeath() : CardModel(1, CardType.Attack, Ca
             .FromCard(this)
             .TargetingAllOpponents(CombatState)
             .Execute(choiceContext);
+        await PowerCmd.Apply<DexterityPower>(Owner.Creature, 2m, Owner.Creature, this);
         await PowerCmd.Apply<Mordekaiser_spreadpower>(Owner.Creature, 2m, Owner.Creature, this);
     }
 

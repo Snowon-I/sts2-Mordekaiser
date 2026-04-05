@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization;
@@ -14,9 +15,9 @@ public class MordekaiserCardUtils
 {
     
     //封装 将某牌库某类型几张牌放入哪（drawCard判定 triggerMordekaiserQuiesce判定）
-    public static async Task DrawMordekaiserTypeCard(
+    public static async Task<List<CardModel>> DrawMordekaiserTypeCard(
         PlayerChoiceContext choiceContext,
-        Player Owner,int carddraw,
+        Player Owner,int cardnum,
         CardPile cardPile,
         CardPile targetPile,
         Func<IEnumerable<CardModel>, IEnumerable<CardModel>> howGetCard, 
@@ -26,8 +27,8 @@ public class MordekaiserCardUtils
         bool noCost = false
         )
     {
-        var targetCard = howGetCard(cardPile.Cards).Take(carddraw).ToList();
-        if (targetCard.Count == 0 || targetCard.Count < carddraw )
+        var targetCard = howGetCard(cardPile.Cards).TakeRandom(cardnum,Owner.RunState.Rng.CombatCardSelection).ToList();
+        if (targetCard.Count == 0)
             ThinkCmd.Play(new LocString("combat_messages", noDrawMessage), Owner.Creature, 2.0);
         if (targetCard.Count != 0)
         {
@@ -44,6 +45,7 @@ public class MordekaiserCardUtils
                     await card.AfterCardExhausted(choiceContext, card, false);
             }
         }
+        return targetCard;
     }
 
     //封装 将某牌库某类型几张牌消耗
@@ -55,8 +57,8 @@ public class MordekaiserCardUtils
         string noDrawMessage = "MORDEKAISER_NO_EXHAUST"
     )
     {
-        var targetCard = howGetCard(cardPile.Cards).Take(cardnum).ToList();
-        if (targetCard.Count == 0 || targetCard.Count < cardnum )
+        var targetCard = howGetCard(cardPile.Cards).TakeRandom(cardnum,Owner.RunState.Rng.CombatCardSelection).ToList();
+        if (targetCard.Count == 0)
             ThinkCmd.Play(new LocString("combat_messages", noDrawMessage), Owner.Creature, 2.0);
         if (targetCard.Count != 0)
         {
@@ -74,8 +76,8 @@ public class MordekaiserCardUtils
         string noDrawMessage = "MORDEKAISER_NO_Quiesce"
     )
     {
-        var targetCard = howGetCard(cardPile.Cards).Take(cardnum).ToList();
-        if (targetCard.Count == 0 || targetCard.Count < cardnum )
+        var targetCard = howGetCard(cardPile.Cards).TakeRandom(cardnum,Owner.RunState.Rng.CombatCardSelection).ToList();
+        if (targetCard.Count == 0)
             ThinkCmd.Play(new LocString("combat_messages", noDrawMessage), Owner.Creature, 2.0);
         if (targetCard.Count != 0)
         {

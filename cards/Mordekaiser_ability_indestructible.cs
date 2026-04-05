@@ -48,6 +48,7 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature,"Cast",1f);
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.CalculatedBlock.Calculate(Owner.Creature),DynamicVars.CalculatedBlock.Props, cardPlay);
         CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_live>(Owner)!;
         await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Hand, addedByPlayer: true);
