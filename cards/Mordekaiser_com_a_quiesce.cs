@@ -35,10 +35,11 @@ public class Mordekaiser_com_quiesceattack() : CardModel(1, CardType.Attack, Car
         DynamicVars.Damage.UpgradeValueBy(5m);
     }
     
-    public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
+    public override Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
         if (card == this && CombatState != null)
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
+        return Task.CompletedTask;
     }
     
 }
@@ -123,20 +124,15 @@ public class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack
         new ExtraDamageVar(12m),
         new CalculationExtraVar(14m),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((model, _) => model.EnergyCost.GetWithModifiers(CostModifiers.All)),
-        new CalculatedVar("quiescedamagevar").WithMultiplier((model, _) => model.EnergyCost.GetWithModifiers(CostModifiers.All)),
+        new CalculatedVar("quiescedamagevar").WithMultiplier((model, _) => model.EnergyCost.GetWithModifiers(CostModifiers.All))
     ];
     // * (model.IsUpgraded? 14m/12m : 16m/14m)
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
-        if (card != this)
+        if (card != this || Pile is not { Type: PileType.Hand } || NCard.FindOnTable(card) == null )
             return Task.CompletedTask;
-        if (Pile is not { Type: PileType.Hand })
-            return Task.CompletedTask;
-        if (NCard.FindOnTable(card) != null)
-        {
-            EnergyCost.SetThisCombat(Owner.RunState.Rng.CombatEnergyCosts.NextInt(4));
-            NCard.FindOnTable(card)?.PlayRandomizeCostAnim();
-        }
+        EnergyCost.SetThisCombat(Owner.RunState.Rng.CombatEnergyCosts.NextInt(4));
+        NCard.FindOnTable(card)?.PlayRandomizeCostAnim();
         return Task.CompletedTask;
     }
     

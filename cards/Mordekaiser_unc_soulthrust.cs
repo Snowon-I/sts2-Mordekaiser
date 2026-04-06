@@ -19,9 +19,7 @@ public class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack, CardRa
         get
         {
             var _lastcard = CombatManager.Instance.History.CardPlaysStarted.LastOrDefault(c => c.CardPlay.Card.Owner == Owner);
-            if(_lastcard == null)
-                return false;
-            return _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce);
+            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce);
         }
     }
 

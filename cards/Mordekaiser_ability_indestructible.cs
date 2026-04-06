@@ -24,7 +24,7 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => MordekaiserCardShowBlock(card))
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((card, _) => MordekaiserCardShowBlock(card))
     ];
     
     private static decimal MordekaiserCardShowBlock(CardModel card)
@@ -37,11 +37,7 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
         }
         double MordekaiserDB = card.IsUpgraded? card.Owner.Creature.GetPowerAmount<Mordekaiser_potentialblock>() * 0.25 : card.Owner.Creature.GetPowerAmount<Mordekaiser_potentialblock>() * 0.2;
         if (MordekaiserDB / MordekaiserMxHP >= 0.05)
-        {
-            return MordekaiserDB / MordekaiserMxHP >= 0.3
-                ? Math.Floor((decimal)MordekaiserMxHP * 0.3m) 
-                : Math.Floor((decimal)MordekaiserDB);
-        }
+            return MordekaiserDB / MordekaiserMxHP >= 0.3 ? Math.Floor((decimal)MordekaiserMxHP * 0.3m) : Math.Floor((decimal)MordekaiserDB);
         return Math.Floor((decimal)MordekaiserMxHP * 0.05m);
     }
 
@@ -70,16 +66,14 @@ public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.S
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedVar("HealVar").WithMultiplier((CardModel card, Creature? _) => Math.Max(1m,MordekaiserCardHeal(card))),
+        new CalculatedVar("HealVar").WithMultiplier((card,_) => Math.Max(1m,MordekaiserCardHeal(card))),
     ];
     
     private static decimal MordekaiserCardHeal(CardModel card)
     {
 
         if (card.Owner.Creature.Block == 0)
-        {
             return 0m;
-        }
         var MordekaiserHeal = card.IsUpgraded? card.Owner.Creature.Block * 0.4 : card.Owner.Creature.Block * 0.3;
         return Math.Floor((decimal)MordekaiserHeal);
     }

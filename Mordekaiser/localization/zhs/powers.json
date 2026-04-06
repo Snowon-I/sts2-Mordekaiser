@@ -1,8 +1,30 @@
 ﻿{
   "MORDEKAISER_POTENTIALBLOCK.title": "不坏",
-  "MORDEKAISER_POTENTIALBLOCK.description": "获得相当于你造成50%的伤害和受到的未被格挡的伤害的层数。你的回合开始时和结束时，失去10层。",
+  "MORDEKAISER_POTENTIALBLOCK.description": "获得相当于你造成50%的伤害和受到的未被格挡的伤害的层数。你的回合开始时和结束时，若大于10层，失去10层。",
+  "MORDEKAISER_POTENTIALBLOCK.smartDescription": "获得相当于你造成50%的伤害和受到的未被格挡的伤害的层数。你的回合开始时和结束时，若大于10层，失去10层。",
   "MORDEKAISER_DARKNESSRISE.title": "黑暗起兮",
   "MORDEKAISER_DARKNESSRISE.description": "每使用1张攻击牌后，获得1点暗能量遮蔽。\n回合开始时、回合结束时、每使用一张非攻击牌时，失去1点暗能量遮蔽。",
+  "MORDEKAISER_DARKNESSRISE.smartDescription": "每使用1张攻击牌后，获得[blue]{Amount}[/blue]点暗能量遮蔽。\n回合开始时、回合结束时、每使用一张非攻击牌时，失去[blue]{Amount}[/blue]点暗能量遮蔽。",
   "MORDEKAISER_DARKENERGY.title": "暗能量遮蔽",
-  "MORDEKAISER_DARKENERGY.description": "最大值为3。\n获得3点暗能量遮蔽后，直至暗能量遮蔽减少为0。\n每次使用牌时、回合开始时、回合结束时，对所有敌人造成1%的最大生命值的伤害（最小值为1）。"
+  "MORDEKAISER_DARKENERGY.description": "最大值为3。\n获得3点暗能量遮蔽后，直至暗能量遮蔽减少为0。\n每次使用牌时、回合开始时、回合结束时，对所有敌人造成1%的最大生命值的伤害（最小值为1）。",
+  "MORDEKAISER_DARKENERGY.smartDescription": "最大值为3。\n获得3点暗能量遮蔽后，直至暗能量遮蔽减少为0。\n每次使用牌时、回合开始时、回合结束时，对所有敌人造成1%的最大生命值的伤害（最小值为1）。",
+  "MORDEKAISER_FINALJUDGMENTPOWER.title":"终焉审判",
+  "MORDEKAISER_FINALJUDGMENTPOWER.description":"回合结束时，层数减少1。\n层数为1且回合结束后，所有敌人死亡。",
+  "MORDEKAISER_FINALJUDGMENTPOWER.smartDescription":"回合结束时，层数减少1。\n[blue]{Amount}[/blue]回合后，所有敌人死亡。",
+  "MORDEKAISER_SHADOWDRAINPOWER.title":"暗影消取",
+  "MORDEKAISER_SHADOWDRAINPOWER.description":"本回合，你的下一张攻击牌将[gold]消耗[/gold]。",
+  "MORDEKAISER_SHADOWDRAINPOWER.smartDescription":"本回合，你的下[blue]{Amount}[/blue]张攻击牌将[gold]消耗[/gold]。",
+  "MORDEKAISER_SPREADPOWER.title":"死亡蔓延",
+  "MORDEKAISER_SPREADPOWER.description":"在接下来的2个回合开始时，对所有敌人造成伤害",
+  "MORDEKAISER_SPREADPOWER.smartDescription":"在接下来的[blue]{Amount}[/blue]个回合开始时，对所有敌人{Damage:diff()}造成伤害",
+  "MORDEKAISER_UNBREAKABLEPOWER.title":"坚不可摧",
+  "MORDEKAISER_UNBREAKABLEPOWER.description":"回合开始时，获得格挡",
+  "MORDEKAISER_UNBREAKABLEPOWER.smartDescription":"回合开始时，获得[blue]{Amount}[/blue]点格挡",
+  "MORDEKAISER_UNDERWORLDPOWER.title":"冥界契约",
+  "MORDEKAISER_UNDERWORLDPOWER.description":"本回合你每打出1张牌，恢复1点生命",
+  "MORDEKAISER_UNDERWORLDPOWER.smartDescription":"本回合，你每打出1张牌，恢复[green]{Amount}[/green]点生命",
+  "MORDEKAISER_WRAITHGIVEPOWER.title":"暗魂之力",
+  "MORDEKAISER_WRAITHGIVEPOWER.description":"下个回合，获得临时力量",
+  "MORDEKAISER_WRAITHGIVEPOWER.smartDescription":"下个回合获得[blue]{Amount}[/blue]点临时力量"
+
 }

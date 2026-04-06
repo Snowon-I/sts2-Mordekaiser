@@ -12,7 +12,7 @@ public class Mordekaiser_rare_doomimminent() : CardModel(1, CardType.Skill, Card
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<VulnerablePower>(44m),
+        new PowerVar<VulnerablePower>(44m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

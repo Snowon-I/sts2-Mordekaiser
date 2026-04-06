@@ -17,7 +17,7 @@ public class Mordekaiser_unc_purifywraith() : CardModel(1, CardType.Skill, CardR
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
         new CalculationExtraVar(5m),
-        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((_, c) => c != null && c.HasPower<FrailPower>() ? c.GetPower<FrailPower>()!.Amount : 0 ) ,
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((_, c) => c != null && c.HasPower<FrailPower>() ? c.GetPower<FrailPower>()!.Amount : 0 )
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

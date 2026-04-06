@@ -14,7 +14,7 @@ public class Mordekaiser_com_fleshreap() : CardModel(2, CardType.Attack, CardRar
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(9m, ValueProp.Move), 
-        new PowerVar<VulnerablePower>(2m),
+        new PowerVar<VulnerablePower>(2m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<VulnerablePower>()];

@@ -11,12 +11,12 @@ namespace Mordekaiser.cards;
 public class Mordekaiser_unc_breakpowerhammer() : CardModel(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(25m, ValueProp.Move),];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(25m, ValueProp.Move)];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
-        bool targethasVulnerable = cardPlay.Target.HasPower<VulnerablePower>();
+        var targethasVulnerable = cardPlay.Target.HasPower<VulnerablePower>();
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .Targeting(cardPlay.Target)

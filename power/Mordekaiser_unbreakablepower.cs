@@ -16,8 +16,6 @@ public class Mordekaiser_unbreakablepower : PowerModel
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override bool ShouldScaleInMultiplayer => true;
-
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [new ("Decrement", 1m)];

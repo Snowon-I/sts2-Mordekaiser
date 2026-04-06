@@ -12,7 +12,7 @@ namespace Mordekaiser.cards;
 public class Mordekaiser_unc_wraithecho() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(7m, ValueProp.Move),
+        new DamageVar(7m, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

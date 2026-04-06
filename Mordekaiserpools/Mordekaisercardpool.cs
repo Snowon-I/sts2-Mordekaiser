@@ -93,7 +93,15 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_rare_souldrain>(),
         
         //rare skill
+        ModelDb.Card<Mordekaiser_rare_underworldblessing>(),
+        ModelDb.Card<Mordekaiser_rare_wraithstorm>(),
         ModelDb.Card<Mordekaiser_rare_wraithpower>(),
+        ModelDb.Card<Mordekaiser_rare_underworldpact>(),
+        ModelDb.Card<Mordekaiser_rare_doomimminent>(),
+        ModelDb.Card<Mordekaiser_rare_unbreakable>(),
+        ModelDb.Card<Mordekaiser_rare_collapse>(),
+        ModelDb.Card<Mordekaiser_rare_finaljudgment>(),
+        ModelDb.Card<Mordekaiser_rare_tearsoul>(),
         
     ];
 

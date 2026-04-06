@@ -14,7 +14,7 @@ public class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, C
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(8m, ValueProp.Move), 
-        new ("Power",1m),
+        new ("Power",1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

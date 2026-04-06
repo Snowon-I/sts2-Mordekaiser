@@ -16,6 +16,8 @@ public class Mordekaiser_spreadpower : PowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
+    
+    public override bool IsInstanced => true;
 
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
     {

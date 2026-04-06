@@ -124,9 +124,24 @@
   "MORDEKAISER_RARE_HELLECHO.description":"将消耗牌堆中的所有牌置入你的弃牌堆中，每张置入的牌造成{ExtraDamage:diff()}点伤害。",
   "MORDEKAISER_RARE_SOULDRAIN.title":"灵魂抽取",
   "MORDEKAISER_RARE_SOULDRAIN.description":"造成12点伤害，收割1点[gold]灵魂[/gold]。",
-  
+
+  "MORDEKAISER_RARE_UNDERWORLDBLESSING.title":"冥界赐福",
+  "MORDEKAISER_RARE_UNDERWORLDBLESSING.description":"[gold]寂灭[/gold]：将1张随机牌加入你的手牌，其获得此寂灭{IfUpgraded:show:，该牌耗能为0{energyPrefix:energyIcons(1)}。|。}",
+  "MORDEKAISER_RARE_WRAITHSTORM.title":"冥灵风暴",
+  "MORDEKAISER_RARE_WRAITHSTORM.description":"将消耗牌堆里的随机{stromValue:diff()}张牌放到弃牌堆中，消耗弃牌堆里的{stromValue:diff()}张牌，获得{stromValue:diff()}点能量。",
   "MORDEKAISER_RARE_WRAITHPOWER.title":"暗魂之力",
-  "MORDEKAISER_RARE_WRAITHPOWER.description":"在下个回合，获得{Power:diff()}点力量。"
-
-
+  "MORDEKAISER_RARE_WRAITHPOWER.description":"在下个回合，获得{Power:diff()}点力量。",
+  "MORDEKAISER_RARE_UNDERWORLDPACT.title":"冥界契约",
+  "MORDEKAISER_RARE_UNDERWORLDPACT.description":"失去{HpLoss:inverseDiff()}点生命，本回合你每打出1张牌，回复[green]1[/green]点生命。",
+  "MORDEKAISER_RARE_DOOMIMMINENT.title":"大难临头",
+  "MORDEKAISER_RARE_DOOMIMMINENT.description":"眩晕所有敌人，并获得{VulnerablePower:diff()}层易伤。",
+  "MORDEKAISER_RARE_UNBREAKABLE.title":"坚不可摧",
+  "MORDEKAISER_RARE_UNBREAKABLE.description":"获得{Block:diff()}点格挡，下个回合开始时，再获得{Block:diff()}点格挡。",
+  "MORDEKAISER_RARE_COLLAPSE.title":"崩塌",
+  "MORDEKAISER_RARE_COLLAPSE.description":"所有敌人失去一半最大生命值",
+  "MORDEKAISER_RARE_FINALJUDGMENT.title":"终焉裁决",
+  "MORDEKAISER_RARE_FINALJUDGMENT.description":"{Power:diff()}个回合后，所有敌人死亡",
+  "MORDEKAISER_RARE_TEARSOUL.title":"灵魂撕裂",
+  "MORDEKAISER_RARE_TEARSOUL.description":"给予3层易伤和虚弱，收割1点[gold]灵魂[/gold]"
+  
 }

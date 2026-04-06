@@ -12,7 +12,7 @@ public class Mordekaiser_com_sacrifice() : CardModel(1, CardType.Skill, CardRari
 {
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Power",1m),
+        new ("Power",1m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
