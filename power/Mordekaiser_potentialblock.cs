@@ -21,23 +21,25 @@ public class Mordekaiser_potentialblock : PowerModel
 
     public override async Task AfterAttack(AttackCommand command)
     {
-        if (command.Attacker != base.Owner || command.TargetSide == base.Owner.Side ) return;
+        if (command.Attacker != Owner || command.TargetSide == Owner.Side ) return;
         var MordekaiserAttackGainPB = new Dictionary<Creature, List<DamageResult>>();
         foreach (var result in command.Results)
         {
             if (result.Receiver.IsEnemy)
             {
-                if (!MordekaiserAttackGainPB.ContainsKey(result.Receiver))
+                if (!MordekaiserAttackGainPB.TryGetValue(result.Receiver, out var value))
                 {
-                    MordekaiserAttackGainPB.Add(result.Receiver, []);
+                    value = [];
+                    MordekaiserAttackGainPB.Add(result.Receiver, value);
                 }
-                MordekaiserAttackGainPB[result.Receiver].Add(result);
+
+                value.Add(result);
             }
         }
         foreach (var Creature in MordekaiserAttackGainPB.Keys)
         {
-            int num = (int)Math.Floor(MordekaiserAttackGainPB[Creature].Sum(r => r.TotalDamage * 0.1));
-            await PowerCmd.ModifyAmount(this, num, this.Owner, null);
+            var num = (int)Math.Floor(MordekaiserAttackGainPB[Creature].Sum(r => r.TotalDamage * 0.1));
+            await PowerCmd.ModifyAmount(this, num, Owner, null);
         }
         Flash();
     }
@@ -47,7 +49,7 @@ public class Mordekaiser_potentialblock : PowerModel
     {
         if (result.WasFullyBlocked ) return;
         var MordekaiserReceivedGainPb = result.UnblockedDamage;
-        await PowerCmd.ModifyAmount(this, MordekaiserReceivedGainPb, this.Owner, null);
+        await PowerCmd.ModifyAmount(this, MordekaiserReceivedGainPb, Owner, null);
         Flash();
     }
     
@@ -56,7 +58,7 @@ public class Mordekaiser_potentialblock : PowerModel
         if (player != Owner.Player) return;
         if (Amount <= 10) return;
         Flash();
-        await PowerCmd.ModifyAmount(this, -10, this.Owner, null);
+        await PowerCmd.ModifyAmount(this, -10, Owner, null);
     }
     
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -64,7 +66,7 @@ public class Mordekaiser_potentialblock : PowerModel
         if (side != Owner.Side) return;
         if (Amount <= 10) return;
         Flash();
-        await PowerCmd.ModifyAmount(this, -10, this.Owner, null);
+        await PowerCmd.ModifyAmount(this, -10, Owner, null);
     }
     
 }

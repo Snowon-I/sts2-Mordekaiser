@@ -30,7 +30,7 @@ public class Mordekaiser_spreadpower : PowerModel
     {
         if (player != Owner.Player) return;
         if (Owner.CombatState == null) return;
-        await CreatureCmd.Damage(choiceContext, Owner.CombatState.Enemies, DynamicVars.Damage, Owner);
+        await CreatureCmd.Damage(choiceContext, Owner.CombatState.HittableEnemies, DynamicVars.Damage, Owner);
         Flash();
         await PowerCmd.ModifyAmount(this, -1, Owner, null);
     }

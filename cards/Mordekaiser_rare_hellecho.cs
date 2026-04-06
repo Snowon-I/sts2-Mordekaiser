@@ -20,9 +20,10 @@ public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRar
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         await MordekaiserCardUtils.DrawMordekaiserTypeCard(
             choiceContext,

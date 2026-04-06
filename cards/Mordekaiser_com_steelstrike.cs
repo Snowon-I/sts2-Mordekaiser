@@ -16,9 +16,10 @@ public class Mordekaiser_com_steelstrike() : CardModel(1, CardType.Attack, CardR
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         
         await MordekaiserCardUtils.DrawMordekaiserTypeCard(

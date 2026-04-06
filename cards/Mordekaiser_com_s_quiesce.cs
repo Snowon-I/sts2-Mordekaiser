@@ -12,6 +12,8 @@ namespace Mordekaiser.cards;
 public class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
 {
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Power",1m),
         new ("quiescePower",2m)
@@ -37,8 +39,8 @@ public class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, CardRar
         if (card == this && CombatState != null)
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
-            await PowerCmd.Apply<VulnerablePower>(CombatState.Enemies, DynamicVars["quiescePower"].BaseValue, Owner.Creature, this);
-            await PowerCmd.Apply<WeakPower>(CombatState.Enemies, DynamicVars["quiescePower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<VulnerablePower>(CombatState.HittableEnemies, DynamicVars["quiescePower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(CombatState.HittableEnemies, DynamicVars["quiescePower"].BaseValue, Owner.Creature, this);
         }
             
     }

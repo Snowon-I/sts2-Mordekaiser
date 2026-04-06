@@ -12,9 +12,9 @@ public class Mordekaisercardpool : CardPoolModel
 
     public override string CardFrameMaterialPath => "card_frame_red";
 
-    public override Color DeckEntryCardColor => new Color("D62000");
+    public override Color DeckEntryCardColor => new ("D62000");
 
-    public override Color EnergyOutlineColor => new Color("802020");
+    public override Color EnergyOutlineColor => new ("802020");
 
     public override bool IsColorless => false;
 
@@ -30,7 +30,7 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_base_darknessrise>(),
         ModelDb.Card<Mordekaiser_base_criticalattack>(),
         
-        //attack
+        //com attack
         ModelDb.Card<Mordekaiser_com_attack>(),
         ModelDb.Card<Mordekaiser_com_crushslam>(),
         ModelDb.Card<Mordekaiser_com_agonytorment>(),
@@ -43,7 +43,7 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_com_steelstrike>(),
         ModelDb.Card<Mordekaiser_com_underworldstrike>(),
         
-        //skill
+        //com skill
         ModelDb.Card<Mordekaiser_com_dashforward>(),
         ModelDb.Card<Mordekaiser_com_darksoulbarrier>(),
         ModelDb.Card<Mordekaiser_com_wraithfear>(),
@@ -54,7 +54,7 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_com_greatquiesce>(),
 
         
-        //attack
+        //unc attack
         ModelDb.Card<Mordekaiser_unc_wraithpursuit>(),
         ModelDb.Card<Mordekaiser_unc_wraithsummonstrike>(),
         ModelDb.Card<Mordekaiser_unc_sweepbreak>(),
@@ -68,10 +68,22 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_unc_meteorwraithhammer>(),
         ModelDb.Card<Mordekaiser_unc_breakpowerhammer>(),
         
-        //skill
-        ModelDb.Card<Mordekaiser_unc_wraithpower>(),
+        //unc skill
+        ModelDb.Card<Mordekaiser_unc_soulfollow>(),
+        ModelDb.Card<Mordekaiser_unc_underworldempower>(),
+        ModelDb.Card<Mordekaiser_unc_soulbodybarrier>(),
+        ModelDb.Card<Mordekaiser_unc_shadowdrain>(),
+        ModelDb.Card<Mordekaiser_unc_desperatestand>(),
+        ModelDb.Card<Mordekaiser_unc_purifywraith>(),
+        ModelDb.Card<Mordekaiser_unc_wraithpressure>(),
+        ModelDb.Card<Mordekaiser_unc_wraithwarcry>(),
+        ModelDb.Card<Mordekaiser_unc_wraithrecall>(),
+        ModelDb.Card<Mordekaiser_unc_dashstance>(),
+        ModelDb.Card<Mordekaiser_unc_shadowconvert>(),
+        ModelDb.Card<Mordekaiser_unc_soulbarrier>(),
+        ModelDb.Card<Mordekaiser_unc_wraithcycle>(),
         
-        //attack
+        //rare attack
         ModelDb.Card<Mordekaiser_rare_maceofspades>(),
         ModelDb.Card<Mordekaiser_rare_creepingdeath>(),
         ModelDb.Card<Mordekaiser_rare_siphondestruction>(),
@@ -79,6 +91,9 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_rare_quiesceecho>(),
         ModelDb.Card<Mordekaiser_rare_hellecho>(),
         ModelDb.Card<Mordekaiser_rare_souldrain>(),
+        
+        //rare skill
+        ModelDb.Card<Mordekaiser_rare_wraithpower>(),
         
     ];
 

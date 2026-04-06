@@ -19,9 +19,10 @@ public class Mordekaiser_unc_wraithpursuit() : CardModel(0, CardType.Attack, Car
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
         if (cardPlay.Target != null && WasCardQuiesceThisTurn )
         {

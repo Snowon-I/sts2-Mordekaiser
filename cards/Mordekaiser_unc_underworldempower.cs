@@ -2,11 +2,12 @@
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using Mordekaiser.scripts;
 using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithpower() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public class Mordekaiser_unc_underworldempower() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
 
@@ -15,16 +16,16 @@ public class Mordekaiser_unc_wraithpower() : CardModel(1, CardType.Skill, CardRa
         await MordekaiserCardUtils.DrawMordekaiserTypeCard(
             choiceContext,
             Owner,
-            (int)DynamicVars.Cards.BaseValue,
-            PileType.Draw.GetPile(Owner), PileType.Hand.GetPile(Owner),
-            cards => cards.Where(c => c.Keywords.Contains(CardKeyword.Exhaust)), 
-            true, 
-            "MORDEKAISER_NO_DRAW_EXHAUST",
-            true);
+            DynamicVars.Cards.IntValue,
+            PileType.Draw.GetPile(Owner),PileType.Hand.GetPile(Owner),
+            card => card.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)),
+            false,
+            triggerMordekaiserQuiesce:true
+        );
     }
-
+    
     public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
-
+        
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

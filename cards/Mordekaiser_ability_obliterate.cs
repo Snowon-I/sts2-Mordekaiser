@@ -1,5 +1,4 @@
-﻿using Godot;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -22,7 +21,7 @@ public class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Attack, Ca
     private static decimal MordekaiserObliterateAttack(CardModel card)
     {
         decimal MordekaiserObliterateAttackNum = card.IsUpgraded? 6m : 4m;
-        if (card.CombatState!.Enemies.Count(c => c.IsAlive) == 1)
+        if (card.CombatState!.HittableEnemies.Count(c => c.IsAlive) == 1)
         {
             return MordekaiserObliterateAttackNum;
         }
@@ -33,7 +32,7 @@ public class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Attack, Ca
     {
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
             .FromCard(this)
-            .WithAttackerAnim("Obliterate",0.1f,base.Owner.Creature)
+            .WithAttackerAnim("Obliterate",0.1f,Owner.Creature)
             .TargetingAllOpponents(CombatState!)
             .Execute(choiceContext);
     }

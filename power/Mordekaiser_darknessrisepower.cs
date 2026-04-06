@@ -1,5 +1,4 @@
-﻿using Godot;
-using MegaCrit.Sts2.Core.Combat;
+﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -31,7 +30,7 @@ public class Mordekaiser_darknessrise : PowerModel
             }
             else
             {
-                await PowerCmd.ModifyAmount(darkenergy,1m, base.Owner,null);
+                await PowerCmd.ModifyAmount(darkenergy,1m, Owner,null);
             }
             if (darkenergy!.Amount == 3 && !darkenergy.Mordekaiser_DEGetAll )
             {
@@ -63,7 +62,7 @@ public class Mordekaiser_darkenergy : PowerModel
     private async Task Mordekaiser_EnemyHpCount(PlayerChoiceContext context)
     {
         if (Owner.CombatState == null) return;
-        foreach (var enemy in Owner.CombatState.Enemies)
+        foreach (var enemy in Owner.CombatState.HittableEnemies)
         {
             DynamicVars.Damage.BaseValue = (decimal)Math.Floor(enemy.MaxHp * 0.01);
             if (DynamicVars.Damage.BaseValue < 1)
@@ -97,7 +96,7 @@ public class Mordekaiser_darkenergy : PowerModel
             await Mordekaiser_EnemyHpCount(choiceContext);
         }
         Flash();
-        await PowerCmd.ModifyAmount(this, -1, this.Owner, null);
+        await PowerCmd.ModifyAmount(this, -1, Owner, null);
     }
     
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -108,6 +107,6 @@ public class Mordekaiser_darkenergy : PowerModel
             await Mordekaiser_EnemyHpCount(choiceContext);
         }
         Flash();
-        await PowerCmd.ModifyAmount(this, -1, this.Owner, null);
+        await PowerCmd.ModifyAmount(this, -1, Owner, null);
     }
 }

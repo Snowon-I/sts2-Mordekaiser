@@ -20,7 +20,7 @@ public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, Card
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
-        await PowerCmd.Apply<Mordekaiser_darknessrise>(Owner.Creature, 1m, base.Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_darknessrise>(Owner.Creature, 1m, Owner.Creature, this);
     }
     
     protected override void OnUpgrade()

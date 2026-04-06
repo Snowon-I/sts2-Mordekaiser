@@ -19,7 +19,7 @@ public class Mordekaiser_unc_mortalbreak() : CardModel(2, CardType.Attack, CardR
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-        if ( cardPlay.Target!= null && cardPlay.Target.HasPower<WeakPower>())
+        if ( cardPlay.Target != null && cardPlay.Target.HasPower<WeakPower>())
         {
             await CreatureCmd.Damage(choiceContext, cardPlay.Target, DynamicVars.Damage.BaseValue,
                 ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);

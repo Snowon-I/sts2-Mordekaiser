@@ -16,12 +16,12 @@ public class Mordekaiser_com_dashforward() : CardModel(0, CardType.Skill, CardRa
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<Mordekaiser_dashforwardpower>(Owner.Creature, DynamicVars.Strength.BaseValue, Owner.Creature, this);
-        await PowerCmd.Apply<VulnerablePower>(Owner.Creature, 1m,Owner.Creature, this)
+        await PowerCmd.Apply<VulnerablePower>(Owner.Creature, 1m, Owner.Creature, this);
     }
     
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Strength.UpgradeValueBy(1m);
+        DynamicVars.Strength.UpgradeValueBy(1m);
     }
     
     public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";

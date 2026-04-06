@@ -1,5 +1,4 @@
-﻿using Godot;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Extensions;
@@ -62,7 +61,7 @@ public class MordekaiserCardUtils
             ThinkCmd.Play(new LocString("combat_messages", noDrawMessage), Owner.Creature, 2.0);
         if (targetCard.Count != 0)
         {
-            foreach (CardModel card in targetCard)
+            foreach (var card in targetCard)
                 await CardCmd.Exhaust(choiceContext, card);
         }
     }

@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using Mordekaiser.cards;
@@ -41,7 +40,11 @@ public class Mordekaiser_relic : RelicModel
 
 	public override int DisplayAmount => MonsterSouls;
 	
-	protected override IEnumerable<DynamicVar> CanonicalVars => new List<DynamicVar>() { new ("mordekaisergetsoul", 6), new ("mordekaisernowleavel", 1) };
+	protected override IEnumerable<DynamicVar> CanonicalVars =>
+	[ 
+		new("mordekaisergetsoul", 6), 
+		new("mordekaisernowleavel", 1) 
+	];
 
 	[SavedProperty]
 	public int MonsterSouls

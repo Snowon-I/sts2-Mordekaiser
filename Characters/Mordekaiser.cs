@@ -63,25 +63,25 @@ public sealed class Mordekaiser : CharacterModel
 
 	public override float CastAnimDelay => 0.25f;
 
-	public override Color EnergyLabelOutlineColor => new Color("801212FF");
+	public override Color EnergyLabelOutlineColor => new ("801212FF");
 
-	public override Color DialogueColor => new Color("590700");
+	public override Color DialogueColor => new ("590700");
 
-	public override Color MapDrawingColor => new Color("CB282B");
+	public override Color MapDrawingColor => new ("CB282B");
 
-	public override Color RemoteTargetingLineColor => new Color("E15847FF");
+	public override Color RemoteTargetingLineColor => new ("E15847FF");
 
-	public override Color RemoteTargetingLineOutline => new Color("801212FF");
+	public override Color RemoteTargetingLineOutline => new ("801212FF");
 
 	public override string CharacterSelectSfx => $"event:/sfx/characters/ironclad/ironclad_select";
 
 	public override List<string> GetArchitectAttackVfx()
 	{
-		int num = 5;
-		List<string> list = new List<string>(num);
+		var num = 5;
+		var list = new List<string>(num);
 		CollectionsMarshal.SetCount(list, num);
-		Span<string> span = CollectionsMarshal.AsSpan(list);
-		int num2 = 0;
+		var span = CollectionsMarshal.AsSpan(list);
+		var num2 = 0;
 		span[num2] = "vfx/vfx_attack_blunt";
 		num2++;
 		span[num2] = "vfx/vfx_heavy_blunt";
@@ -96,19 +96,19 @@ public sealed class Mordekaiser : CharacterModel
 	
 	public override CreatureAnimator GenerateAnimator(MegaSprite controller)
 	{
-		AnimState animState = new AnimState("idle_loop", true);
-		AnimState state1 = new AnimState("cast");
-		AnimState state2 = new AnimState("attack");
-		AnimState state3 = new AnimState("hurt");
-		AnimState state4 = new AnimState("die");
-		AnimState state5 = new AnimState("relaxed_loop", true);
-		AnimState state6 = new AnimState("Obliterate", true);
+		var animState = new AnimState("idle_loop", true);
+		var state1 = new AnimState("cast");
+		var state2 = new AnimState("attack");
+		var state3 = new AnimState("hurt");
+		var state4 = new AnimState("die");
+		var state5 = new AnimState("relaxed_loop", true);
+		var state6 = new AnimState("Obliterate", true);
 		state1.NextState = animState;
 		state2.NextState = animState;
 		state3.NextState = animState;
 		state6.NextState = animState;
 		state5.AddBranch("Idle", animState);
-		CreatureAnimator animator = new CreatureAnimator(animState, controller);
+		var animator = new CreatureAnimator(animState, controller);
 		animator.AddAnyState("Idle", animState);
 		animator.AddAnyState("Dead", state4);
 		animator.AddAnyState("Hit", state3);
@@ -147,7 +147,7 @@ public static class SelectMordekaiserCharacter
 
 		if (string.IsNullOrEmpty(characterModel.Id.Entry))return;
 
-		bool isMordekaiserByType = characterModel is Mordekaiser;
+		var isMordekaiserByType = characterModel is Mordekaiser;
 		
 		if (isMordekaiserByType && !Ismodekaisermusic)
 		{
@@ -199,7 +199,7 @@ public static class MordekaiserEnergyAdd
 	{
 		if (!__instance.IsNodeReady() || __instance.Model?.Pool == null ) return;
 		
-		CardPoolModel targetPool = __instance.Model.Pool;
+		var targetPool = __instance.Model.Pool;
 		
 		if (targetPool is not Mordekaisercardpool ) return;
 

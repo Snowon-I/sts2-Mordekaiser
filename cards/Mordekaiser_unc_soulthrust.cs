@@ -46,7 +46,7 @@ public class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack, CardRa
                 while ( num < (int)DynamicVars.Cards.BaseValue )
                 {
                     num++;
-                    await _lastcard.CardPlay.Card.AfterCardExhausted(choiceContext, _lastcard!.CardPlay.Card, false);
+                    await _lastcard.CardPlay.Card.AfterCardExhausted(choiceContext, _lastcard.CardPlay.Card, false);
                 }
             }
         }

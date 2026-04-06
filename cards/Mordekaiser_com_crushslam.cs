@@ -17,10 +17,11 @@ public class Mordekaiser_com_crushslam() : CardModel(1, CardType.Attack, CardRar
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
             .WithHitCount(2)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
 

@@ -1,5 +1,4 @@
-﻿using Godot;
-using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -81,7 +80,7 @@ public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.S
         {
             return 0m;
         }
-        double MordekaiserHeal = card.IsUpgraded? card.Owner.Creature.Block * 0.4 : card.Owner.Creature.Block * 0.3;
+        var MordekaiserHeal = card.IsUpgraded? card.Owner.Creature.Block * 0.4 : card.Owner.Creature.Block * 0.3;
         return Math.Floor((decimal)MordekaiserHeal);
     }
 
@@ -96,7 +95,7 @@ public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.S
         if (card == this)
         { 
             await PowerCmd.Apply<Mordekaiser_potentialblock>(Owner.Creature,5m, Owner.Creature,null);
-            CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_block>(base.Owner)!;
+            CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_block>(Owner)!;
             await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Discard, addedByPlayer: true);
         }
     }

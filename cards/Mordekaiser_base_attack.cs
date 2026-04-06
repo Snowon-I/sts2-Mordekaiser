@@ -15,9 +15,10 @@ public sealed class Mordekaiser_base_attack() : CardModel(1, CardType.Attack, Ca
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
 

@@ -24,7 +24,7 @@ public class Mordekaiser_com_quiesceattack() : CardModel(1, CardType.Attack, Car
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
 
@@ -57,7 +57,7 @@ public class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, Car
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
 
@@ -94,7 +94,7 @@ public class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardR
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .Targeting(cardPlay.Target!)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
 
@@ -164,7 +164,7 @@ public class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack
         if (card == this && CombatState != null)
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
-            var target = CombatState!.Enemies[0];
+            var target = CombatState!.HittableEnemies[0];
             ArgumentNullException.ThrowIfNull(target);
             await DamageCmd.Attack(DynamicVars.CalculatedDamage)
                 .FromCard(this)

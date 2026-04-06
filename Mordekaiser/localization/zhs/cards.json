@@ -82,8 +82,33 @@
   "MORDEKAISER_UNC_BREAKPOWERHAMMER.title":"破势重锤",
   "MORDEKAISER_UNC_BREAKPOWERHAMMER.description":"造成{Damage:diff()}点伤害，若目标拥有[gold]易伤[/gold]，你获得2点力量，给予其2层虚弱。",
   
-  "MORDEKAISER_UNC_WRAITHPOWER.title":"冥界赋能",
-  "MORDEKAISER_UNC_WRAITHPOWER.description":"抽{Cards:diff()}张[gold]消耗牌[/gold]，若拥有[gold]寂灭[/gold]，触发这些牌的[gold]寂灭[/gold]效果。",
+  "MORDEKAISER_UNC_SOULFOLLOW.title":"如魂随形",
+  "MORDEKAISER_UNC_SOULFOLLOW.description":"获得{Block:diff()}点格挡。\n[gold]寂灭[/gold]：将此牌放入你的手牌。",
+  "MORDEKAISER_UNC_UNDERWORLDEMPOWER.title":"冥界赋能",
+  "MORDEKAISER_UNC_UNDERWORLDEMPOWER.description":"抽{Cards:diff()}张[gold]消耗牌[/gold]，若拥有[gold]寂灭[/gold]，触发这些牌的[gold]寂灭[/gold]效果。",
+  "MORDEKAISER_UNC_SOULBODYBARRIER.title":"灵躯屏障",
+  "MORDEKAISER_UNC_SOULBODYBARRIER.description":"获得{Block:diff()}点格挡，消耗弃牌堆里的随机1张技能牌。",
+  "MORDEKAISER_UNC_SHADOWDRAIN.title":"暗影消取",
+  "MORDEKAISER_UNC_SHADOWDRAIN.description":"本回合，你接下来打出的{Cards:diff()}张攻击牌将消耗。",
+  "MORDEKAISER_UNC_DESPERATESTAND.title":"破釜沉舟",
+  "MORDEKAISER_UNC_DESPERATESTAND.description":"失去{DexterityPower:diff()}点敏捷，获得{StrengthPower:diff()}点力量",
+  "MORDEKAISER_UNC_PURIFYWRAITH.title":"净化冥铁",
+  "MORDEKAISER_UNC_PURIFYWRAITH.description":"去除你所有的脆弱，获得{CalculatedBlock:diff()}点的格挡（每去除1层获得{CalculationExtra:diff()}点格挡）。",
+  "MORDEKAISER_UNC_WRAITHPRESSURE.title":"亡魂威压",
+  "MORDEKAISER_UNC_WRAITHPRESSURE.description":"这个回合，所有敌人失去{Power:diff()}点力量（你的消耗牌堆每有1涨牌，敌人失去{CalculationExtra:diff()}点力量）。",
+  "MORDEKAISER_UNC_WRAITHWARCRY.title":"冥魂战吼",
+  "MORDEKAISER_UNC_WRAITHWARCRY.description":"抽{Cards:diff()}张攻击牌。\n[gold]寂灭[/gold]：随机将弃牌堆里的{Cards:diff()}张攻击牌加入你的手牌，它们获得消耗并在本回合的耗能为0{energyPrefix:energyIcons(1)}。",
+  "MORDEKAISER_UNC_WRAITHRECALL.title":"冥能回收",
+  "MORDEKAISER_UNC_WRAITHRECALL.description":"选择消耗牌堆里的{Cards:diff()}张技能牌加入你的手牌",
+  "MORDEKAISER_UNC_DASHSTANCE.title":"突进架势",
+  "MORDEKAISER_UNC_DASHSTANCE.description":"获得{Block:diff()}点格挡，本回合，你下{Cards:diff()}张攻击牌免费打出。\n[gold]寂灭[/gold]：你下{quiesceVar:diff()}张攻击牌免费打出",
+  "MORDEKAISER_UNC_SHADOWCONVERT.title":"暗影转化",
+  "MORDEKAISER_UNC_SHADOWCONVERT.description":"去除{IfUpgraded:show:所有敌人|目标}身上所有的易伤和虚弱，并失去等量的力量和敏捷",
+  "MORDEKAISER_UNC_SOULBARRIER.title":"魂壁",
+  "MORDEKAISER_UNC_SOULBARRIER.description":"寂灭：获得{Block:diff()}点格挡",
+  "MORDEKAISER_UNC_WRAITHCYCLE.title":"冥能循环",
+  "MORDEKAISER_UNC_WRAITHCYCLE.description":"将弃牌堆里的所有技能牌洗回抽牌堆，消耗牌堆顶的{Cards:diff(+1)}张牌",
+
 
   "MORDEKAISER_RARE_MACEOFSPADES.title":"铲击之锤",
   "MORDEKAISER_RARE_MACEOFSPADES.description":"造成{Damage:diff()}点伤害，将这张牌在本场战斗中的伤害翻倍，放到抽堆顶。翻倍超过2次打出后，消耗（当前翻倍次数：{multtiome:diff()}）。",
@@ -98,6 +123,10 @@
   "MORDEKAISER_RARE_HELLECHO.title":"地狱回响",
   "MORDEKAISER_RARE_HELLECHO.description":"将消耗牌堆中的所有牌置入你的弃牌堆中，每张置入的牌造成{ExtraDamage:diff()}点伤害。",
   "MORDEKAISER_RARE_SOULDRAIN.title":"灵魂抽取",
-  "MORDEKAISER_RARE_SOULDRAIN.description":"造成12点伤害，收割1点[gold]灵魂[/gold]。"
+  "MORDEKAISER_RARE_SOULDRAIN.description":"造成12点伤害，收割1点[gold]灵魂[/gold]。",
   
+  "MORDEKAISER_RARE_WRAITHPOWER.title":"暗魂之力",
+  "MORDEKAISER_RARE_WRAITHPOWER.description":"在下个回合，获得{Power:diff()}点力量。"
+
+
 }
