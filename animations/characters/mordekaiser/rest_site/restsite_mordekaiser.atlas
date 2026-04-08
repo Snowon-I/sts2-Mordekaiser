@@ -1,0 +1,27 @@
+
+restsite_mordekaiser.png
+size: 1734,674
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dark
+  rotate: false
+  xy: 1417, 167
+  size: 315, 505
+  orig: 719, 670
+  offset: 72, 74
+  index: -1
+light
+  rotate: false
+  xy: 723, 24
+  size: 692, 648
+  orig: 719, 670
+  offset: 24, 20
+  index: -1
+mordekaiser
+  rotate: false
+  xy: 2, 2
+  size: 719, 670
+  orig: 719, 670
+  offset: 0, 0
+  index: -1

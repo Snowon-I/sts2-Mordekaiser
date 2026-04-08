@@ -43,6 +43,7 @@ public class Mordekaiser_dashstancepower : PowerModel
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
+        if (side != Owner.Side) return;
         await PowerCmd.Remove<Mordekaiser_dashstancepower>(Owner);
     }
     

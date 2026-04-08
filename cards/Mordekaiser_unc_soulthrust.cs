@@ -50,6 +50,9 @@ public class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack, CardRa
         }
     }
     
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_soulthrust.png";
+
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

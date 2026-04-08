@@ -40,6 +40,8 @@ public class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack, CardRa
         }
     }
     
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_wraithseek.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);

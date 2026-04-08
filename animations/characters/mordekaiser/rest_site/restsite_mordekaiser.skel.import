@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://cpaars2tnluk7"
+path="res://.godot/imported/restsite_mordekaiser.skel-b77ea71c2a817169ac658f7e03801c98.spskel"
+
+[deps]
+
+source_file="res://animations/characters/mordekaiser/rest_site/restsite_mordekaiser.skel"
+dest_files=["res://.godot/imported/restsite_mordekaiser.skel-b77ea71c2a817169ac658f7e03801c98.spskel"]
+
+[params]
+

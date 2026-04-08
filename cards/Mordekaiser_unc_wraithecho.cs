@@ -31,6 +31,9 @@ public class Mordekaiser_unc_wraithecho() : CardModel(1, CardType.Attack, CardRa
             );
     }
     
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_wraithecho.png";
+
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(5m);

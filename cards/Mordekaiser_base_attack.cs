@@ -22,7 +22,7 @@ public sealed class Mordekaiser_base_strike() : CardModel(1, CardType.Attack, Ca
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_base_attack.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_base_strike.png";
 
     protected override void OnUpgrade()
     {

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://8i5gg2m7nu3r"
+path="res://.godot/imported/restsite_mordekaiser.atlas-029c4e0de7c42a0222005cfd1118a1db.spatlas"
+
+[deps]
+
+source_file="res://animations/characters/mordekaiser/rest_site/restsite_mordekaiser.atlas"
+dest_files=["res://.godot/imported/restsite_mordekaiser.atlas-029c4e0de7c42a0222005cfd1118a1db.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

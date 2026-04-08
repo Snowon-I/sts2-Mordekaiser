@@ -83,6 +83,18 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_unc_soulbarrier>(),
         ModelDb.Card<Mordekaiser_unc_wraithcycle>(),
         
+        //unc power
+        ModelDb.Card<Mordekaiser_unc_emberbladeinitiate>(),
+        ModelDb.Card<Mordekaiser_unc_doomhour>(),
+        ModelDb.Card<Mordekaiser_unc_soulcall>(),
+        ModelDb.Card<Mordekaiser_unc_soulguarddarkdoom>(),
+        ModelDb.Card<Mordekaiser_unc_solidguardsoulform>(),
+        ModelDb.Card<Mordekaiser_unc_doomsoulendrelease>(),
+        ModelDb.Card<Mordekaiser_unc_soulreleasedoom>(),
+        ModelDb.Card<Mordekaiser_unc_soulpowerreave>(),
+        ModelDb.Card<Mordekaiser_unc_ruindoom>(),
+        ModelDb.Card<Mordekaiser_unc_soulforgebody>(),
+        
         //rare attack
         ModelDb.Card<Mordekaiser_rare_maceofspades>(),
         ModelDb.Card<Mordekaiser_rare_creepingdeath>(),

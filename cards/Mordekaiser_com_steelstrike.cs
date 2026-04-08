@@ -33,7 +33,7 @@ public class Mordekaiser_com_steelstrike() : CardModel(1, CardType.Attack, CardR
         );
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_steelstrike.png";
 
     protected override void OnUpgrade()
     {

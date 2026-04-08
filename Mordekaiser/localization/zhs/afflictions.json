@@ -1,0 +1,8 @@
+﻿{
+  "MORDEKAISER_BLESSING_COM.title": "冥赐",
+  "MORDEKAISER_BLESSING_COM.description": "寂灭：将1张随机牌加入你的手牌，其获得此寂灭。",
+  "MORDEKAISER_BLESSING_COM.extraCardText": "冥赐",
+  "MORDEKAISER_BLESSING_UPGRADE.title": "冥赐",
+  "MORDEKAISER_BLESSING_UPGRADE.description": "寂灭：将1张随机攻击牌或技能牌加入你的手牌，其获得此寂灭，该牌免费打出。",
+  "MORDEKAISER_BLESSING_UPGRADE.extraCardText": "冥赐"
+}

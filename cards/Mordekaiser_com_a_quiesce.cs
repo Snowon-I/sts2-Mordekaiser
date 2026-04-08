@@ -28,7 +28,7 @@ public class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, Car
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_quiescestrike.png";
 
     protected override void OnUpgrade()
     {
@@ -62,7 +62,7 @@ public class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, Car
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_unleashshadow.png";
 
     protected override void OnUpgrade()
     {
@@ -147,7 +147,7 @@ public class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_chargedhammerswing.png";
 
     protected override void OnUpgrade()
     {
