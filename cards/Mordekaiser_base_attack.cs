@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
     
-public sealed class Mordekaiser_base_attack() : CardModel(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+public sealed class Mordekaiser_base_strike() : CardModel(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
 
@@ -22,7 +22,7 @@ public sealed class Mordekaiser_base_attack() : CardModel(1, CardType.Attack, Ca
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_base_attack.png";
 
     protected override void OnUpgrade()
     {

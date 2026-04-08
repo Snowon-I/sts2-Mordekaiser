@@ -12,8 +12,6 @@ public class Mordekaiser_com_dualhammerslam() : CardModel(1, CardType.Attack, Ca
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
     
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust, MordekaiserKeyWord.MordekaiserQuiesce];
-    
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
@@ -24,7 +22,7 @@ public class Mordekaiser_com_dualhammerslam() : CardModel(1, CardType.Attack, Ca
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_dualhammerslam.png";
 
     protected override void OnUpgrade()
     {

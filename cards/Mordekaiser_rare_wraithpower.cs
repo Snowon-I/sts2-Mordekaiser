@@ -7,7 +7,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_wraithpower() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public class Mordekaiser_rare_wraithpower() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new ("Power",15m)];
 

@@ -15,7 +15,7 @@ public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRar
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
         new ExtraDamageVar(8m),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((_, _) => PileType.Exhaust.GetPile(Owner).Cards.Count)
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((c, _) => PileType.Exhaust.GetPile(c.Owner).Cards.Count)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -10,7 +10,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
+public class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,MordekaiserKeyWord.MordekaiserQuiesce];
     

@@ -25,23 +25,23 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_ability_indestructible_block>(),
         ModelDb.Card<Mordekaiser_ability_indestructible_live>(),
         
-        ModelDb.Card<Mordekaiser_base_attack>(),
+        ModelDb.Card<Mordekaiser_base_strike>(),
         ModelDb.Card<Mordekaiser_base_defend>(),
         ModelDb.Card<Mordekaiser_base_darknessrise>(),
         ModelDb.Card<Mordekaiser_base_criticalattack>(),
         
         //com attack
-        ModelDb.Card<Mordekaiser_com_attack>(),
-        ModelDb.Card<Mordekaiser_com_crushslam>(),
-        ModelDb.Card<Mordekaiser_com_agonytorment>(),
+        ModelDb.Card<Mordekaiser_com_strike>(),
+        ModelDb.Card<Mordekaiser_com_quiescestrike>(),
         ModelDb.Card<Mordekaiser_com_dualhammerslam>(),
+        ModelDb.Card<Mordekaiser_com_crushslam>(),
+        ModelDb.Card<Mordekaiser_com_steelstrike>(),
+        ModelDb.Card<Mordekaiser_com_underworldstrike>(),
+        ModelDb.Card<Mordekaiser_com_agonytorment>(),
         ModelDb.Card<Mordekaiser_com_fleshreap>(),
-        ModelDb.Card<Mordekaiser_com_quiesceattack>(),
         ModelDb.Card<Mordekaiser_com_unleashshadow>(),
         ModelDb.Card<Mordekaiser_com_steelcharge>(),
         ModelDb.Card<Mordekaiser_com_chargedhammerswing>(),
-        ModelDb.Card<Mordekaiser_com_steelstrike>(),
-        ModelDb.Card<Mordekaiser_com_underworldstrike>(),
         
         //com skill
         ModelDb.Card<Mordekaiser_com_dashforward>(),

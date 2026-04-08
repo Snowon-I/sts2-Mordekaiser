@@ -44,11 +44,11 @@ public sealed class Mordekaiser : CharacterModel
 	//宝箱手指动画没做，指向，石头剪刀布，即Texture2D ArmPointingTexturePath
 	
 	public override IEnumerable<CardModel> StartingDeck => [
-		ModelDb.Card<Mordekaiser_base_attack>(),
-		ModelDb.Card<Mordekaiser_base_attack>(),
-		ModelDb.Card<Mordekaiser_base_attack>(),
-		ModelDb.Card<Mordekaiser_base_attack>(),
-		ModelDb.Card<Mordekaiser_base_attack>(),
+		ModelDb.Card<Mordekaiser_base_strike>(),
+		ModelDb.Card<Mordekaiser_base_strike>(),
+		ModelDb.Card<Mordekaiser_base_strike>(),
+		ModelDb.Card<Mordekaiser_base_strike>(),
+		ModelDb.Card<Mordekaiser_base_strike>(),
 		ModelDb.Card<Mordekaiser_base_defend>(),
 		ModelDb.Card<Mordekaiser_base_defend>(),
 		ModelDb.Card<Mordekaiser_base_defend>(),

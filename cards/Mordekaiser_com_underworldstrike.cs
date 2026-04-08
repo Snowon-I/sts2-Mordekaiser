@@ -27,7 +27,7 @@ public class Mordekaiser_com_underworldstrike() : CardModel(1, CardType.Attack, 
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_unleashshadow.png";
 
     protected override void OnUpgrade()
     {

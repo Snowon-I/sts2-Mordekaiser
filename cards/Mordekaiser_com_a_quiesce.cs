@@ -11,7 +11,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_quiesceattack() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(15m, ValueProp.Move)];
     
@@ -99,7 +99,7 @@ public class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardR
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_steelcharge.png";
 
     protected override void OnUpgrade()
     {
