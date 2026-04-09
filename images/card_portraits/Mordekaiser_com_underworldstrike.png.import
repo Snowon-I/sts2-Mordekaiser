@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2prg6ta5kvbo"
-path="res://.godot/imported/Mordekaiser_com_underworldstrike.png-c7945351f2f5c7f77d36e50ceec66be1.ctex"
+uid="uid://4hw10n63k4pc"
+path="res://.godot/imported/mordekaiser_com_underworldstrike.png-736d0d1f7e74d3c2fe045f82dc592979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_underworldstrike.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_underworldstrike.png-c7945351f2f5c7f77d36e50ceec66be1.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_underworldstrike.png"
+dest_files=["res://.godot/imported/mordekaiser_com_underworldstrike.png-736d0d1f7e74d3c2fe045f82dc592979.ctex"]
 
 [params]
 

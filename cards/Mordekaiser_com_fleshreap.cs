@@ -29,7 +29,7 @@ public class Mordekaiser_com_fleshreap() : CardModel(2, CardType.Attack, CardRar
 
     }
     
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_fleshreap.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

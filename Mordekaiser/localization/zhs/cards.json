@@ -105,7 +105,7 @@
   "MORDEKAISER_UNC_SHADOWCONVERT.title":"暗影转化",
   "MORDEKAISER_UNC_SHADOWCONVERT.description":"去除{IfUpgraded:show:所有敌人|目标}身上所有的易伤和虚弱，并失去等量的[gold]力量[/gold]和[gold]敏捷[/gold]",
   "MORDEKAISER_UNC_SOULBARRIER.title":"魂壁",
-  "MORDEKAISER_UNC_SOULBARRIER.description":"寂灭：获得{Block:diff()}点[gold]格挡[/gold]",
+  "MORDEKAISER_UNC_SOULBARRIER.description":"[gold]寂灭[/gold]：获得{Block:diff()}点[gold]格挡[/gold]",
   "MORDEKAISER_UNC_WRAITHCYCLE.title":"冥能循环",
   "MORDEKAISER_UNC_WRAITHCYCLE.description":"将[gold]弃牌堆[/gold]里的所有技能牌洗回[gold]抽牌堆[/gold]，[gold]消耗牌堆[/gold]顶的{Cards:diff(+1)}张牌",
 
@@ -163,6 +163,18 @@
   "MORDEKAISER_RARE_FINALJUDGMENT.title":"终焉裁决",
   "MORDEKAISER_RARE_FINALJUDGMENT.description":"{Power:diff()}个回合后，所有敌人死亡",
   "MORDEKAISER_RARE_TEARSOUL.title":"灵魂撕裂",
-  "MORDEKAISER_RARE_TEARSOUL.description":"给予3层易伤和虚弱，收割1点[gold]灵魂[/gold]"
-  
+  "MORDEKAISER_RARE_TEARSOUL.description":"给予3层易伤和虚弱，收割1点[gold]灵魂[/gold]",
+
+  "MORDEKAISER_DEATHDOMINION.title":"掌控死亡",
+  "MORDEKAISER_DEATHDOMINION.description":"回合开始和回合结束时，消耗[gold]弃牌堆[/gold]里的{Power:diff()}张寂灭牌。",
+  "MORDEKAISER_ETERNALIMMORTALITY.title":"永恒不朽",
+  "MORDEKAISER_ETERNALIMMORTALITY.description":"在你的回合开始时，回复{Power:diff()}点生命",
+  "MORDEKAISER_UNYIELDINGPRESENCE.title":"拒绝退散",
+  "MORDEKAISER_UNYIELDINGPRESENCE.description":"当你要被杀死时，锁定你的血量，而后在你的回合结束时，直接死亡。",
+  "MORDEKAISER_ABSOLUTEWILL.title":"为所欲为",
+  "MORDEKAISER_ABSOLUTEWILL.description":"获得{Power:diff()}点力量和敏捷\n在你的回合开始时，获得1点力量和敏捷。",
+  "MORDEKAISER_SOULTOME.title":"灵魂归我",
+  "MORDEKAISER_SOULTOME.description":"每当你杀死一名敌人时，获得1点灵魂",
+  "MORDEKAISER_SOULSTEELFORM.title":"灵铁形态",
+  "MORDEKAISER_SOULSTEELFORM.description":"你的回合开始时，你的消耗牌堆每有一张牌，获得1点格挡{IfUpgraded:show:。\n[gold]寂灭[/gold]：获得1层[/gold]灵铁形态[/gold]。|。}"
 }

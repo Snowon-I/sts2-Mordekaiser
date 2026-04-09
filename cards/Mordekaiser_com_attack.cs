@@ -34,7 +34,7 @@ public class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, CardRarity
             );
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_strike.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

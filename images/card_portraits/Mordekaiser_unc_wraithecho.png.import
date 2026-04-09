@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0htmvfvgp320"
-path="res://.godot/imported/Mordekaiser_unc_wraithecho.png-00ce7c502e9fdca8c9ca6ff48eadba86.ctex"
+uid="uid://b6pag5oqpye7k"
+path="res://.godot/imported/mordekaiser_unc_wraithecho.png-3f6988a3ca89530a48a3a76cee82802a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_unc_wraithecho.png"
-dest_files=["res://.godot/imported/Mordekaiser_unc_wraithecho.png-00ce7c502e9fdca8c9ca6ff48eadba86.ctex"]
+source_file="res://images/card_portraits/mordekaiser_unc_wraithecho.png"
+dest_files=["res://.godot/imported/mordekaiser_unc_wraithecho.png-3f6988a3ca89530a48a3a76cee82802a.ctex"]
 
 [params]
 

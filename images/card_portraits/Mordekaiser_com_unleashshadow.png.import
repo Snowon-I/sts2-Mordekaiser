@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmttrmwc2h8ww"
-path="res://.godot/imported/Mordekaiser_com_unleashshadow.png-576f138eb63922baac0dfd828e37ac4e.ctex"
+uid="uid://csn51r3asjh4r"
+path="res://.godot/imported/mordekaiser_com_unleashshadow.png-0f97af8e04baa911852c9f7822982928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_unleashshadow.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_unleashshadow.png-576f138eb63922baac0dfd828e37ac4e.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_unleashshadow.png"
+dest_files=["res://.godot/imported/mordekaiser_com_unleashshadow.png-0f97af8e04baa911852c9f7822982928.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwc846lqd7s1"
-path="res://.godot/imported/Mordekaiser_com_dualhammerslam.png-1714ff6ea37b92bc427ec97069df963d.ctex"
+uid="uid://dv71x8mp2hbcb"
+path="res://.godot/imported/mordekaiser_com_dualhammerslam.png-744d28dfa0e41b3da27275e901dc50af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_dualhammerslam.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_dualhammerslam.png-1714ff6ea37b92bc427ec97069df963d.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_dualhammerslam.png"
+dest_files=["res://.godot/imported/mordekaiser_com_dualhammerslam.png-744d28dfa0e41b3da27275e901dc50af.ctex"]
 
 [params]
 

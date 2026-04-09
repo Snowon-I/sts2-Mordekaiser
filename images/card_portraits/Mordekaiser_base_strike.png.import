@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d15xm46yho0q3"
-path="res://.godot/imported/Mordekaiser_base_strike.png-ff656c1f80910d81465d5a2fb4290056.ctex"
+uid="uid://dqe14u48jk7nh"
+path="res://.godot/imported/mordekaiser_base_strike.png-463f6355ba90b9ca3099a12c4e44e214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_base_strike.png"
-dest_files=["res://.godot/imported/Mordekaiser_base_strike.png-ff656c1f80910d81465d5a2fb4290056.ctex"]
+source_file="res://images/card_portraits/mordekaiser_base_strike.png"
+dest_files=["res://.godot/imported/mordekaiser_base_strike.png-463f6355ba90b9ca3099a12c4e44e214.ctex"]
 
 [params]
 

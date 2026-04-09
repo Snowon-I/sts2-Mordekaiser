@@ -93,20 +93,35 @@ public class Mordekaiser_relic : RelicModel
 	
 	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, CombatState combatState)
 	{
-		if (player == Owner && Owner.Creature.CombatState?.RoundNumber <= 1 && (decimal)Mordekaiserleavel >= 1)
+		if (player == Owner && Owner.Creature.CombatState?.RoundNumber <= 1)
 		{
-			CardModel Mordekaiserobliterate = Owner.Creature.CombatState.CreateCard<Mordekaiser_ability_obliterate>(Owner);
-			await CardPileCmd.AddGeneratedCardToCombat(Mordekaiserobliterate, PileType.Hand, addedByPlayer: true);
-		}
-		if (player == Owner && Owner.Creature.CombatState?.RoundNumber <= 1 && (decimal)Mordekaiserleavel >= 1)
-		{
-			CardModel Mordekaiser_indestructible = Owner.Creature.CombatState.CreateCard<Mordekaiser_ability_indestructible_block>(Owner);
-			await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Hand, addedByPlayer: true);
-		}
-		if (player == Owner && Owner.Creature.CombatState?.RoundNumber <= 1 && (decimal)Mordekaiserleavel >= 1)
-		{
-			CardModel Mordekaiserdeathsgrasp = Owner.Creature.CombatState!.CreateCard<Mordekaiser_ability_deathsgrasp>(Owner);
-			await CardPileCmd.AddGeneratedCardToCombat(Mordekaiserdeathsgrasp, PileType.Hand, addedByPlayer: true);
+			if ((decimal)Mordekaiserleavel >= 1)
+			{
+				CardModel Mordekaiserobliterate = Owner.Creature.CombatState.CreateCard<Mordekaiser_ability_obliterate>(Owner);
+				if (Mordekaiserleavel >= 5)
+				{
+					CardCmd.Upgrade(Mordekaiserobliterate);
+				}
+				await CardPileCmd.AddGeneratedCardToCombat(Mordekaiserobliterate, PileType.Hand, addedByPlayer: true);
+			}
+			if ((decimal)Mordekaiserleavel >= 2)
+			{
+				CardModel Mordekaiser_indestructible = Owner.Creature.CombatState.CreateCard<Mordekaiser_ability_indestructible_block>(Owner);
+				if (Mordekaiserleavel >= 6)
+				{
+					CardCmd.Upgrade(Mordekaiser_indestructible);
+				}
+				await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Hand, addedByPlayer: true);
+			}
+			if ((decimal)Mordekaiserleavel >= 3)
+			{
+				CardModel Mordekaiserdeathsgrasp = Owner.Creature.CombatState!.CreateCard<Mordekaiser_ability_deathsgrasp>(Owner);
+				if (Mordekaiserleavel >= 7)
+				{
+					CardCmd.Upgrade(Mordekaiserdeathsgrasp);
+				}
+				await CardPileCmd.AddGeneratedCardToCombat(Mordekaiserdeathsgrasp, PileType.Hand, addedByPlayer: true);
+			}
 		}
 	}
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi18ca4x0ne6l"
-path="res://.godot/imported/Mordekaiser_unc_wraithdrain.png-51a817c620aada377ac53e2ad92bcff6.ctex"
+uid="uid://dqsij6nijn6g5"
+path="res://.godot/imported/mordekaiser_unc_wraithdrain.png-6478b8d48b66627553a855e013e24210.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_unc_wraithdrain.png"
-dest_files=["res://.godot/imported/Mordekaiser_unc_wraithdrain.png-51a817c620aada377ac53e2ad92bcff6.ctex"]
+source_file="res://images/card_portraits/mordekaiser_unc_wraithdrain.png"
+dest_files=["res://.godot/imported/mordekaiser_unc_wraithdrain.png-6478b8d48b66627553a855e013e24210.ctex"]
 
 [params]
 

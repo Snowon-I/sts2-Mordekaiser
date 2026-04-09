@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtcq7etw08ksc"
-path="res://.godot/imported/Mordekaiser_unc_defendwraith.png-e1549f324eb97d1ce9d7e105a3ecaf40.ctex"
+uid="uid://denjbt1sdkooe"
+path="res://.godot/imported/mordekaiser_unc_defendwraith.png-13c9b4708ccc5b101ba32be508451c95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_unc_defendwraith.png"
-dest_files=["res://.godot/imported/Mordekaiser_unc_defendwraith.png-e1549f324eb97d1ce9d7e105a3ecaf40.ctex"]
+source_file="res://images/card_portraits/mordekaiser_unc_defendwraith.png"
+dest_files=["res://.godot/imported/mordekaiser_unc_defendwraith.png-13c9b4708ccc5b101ba32be508451c95.ctex"]
 
 [params]
 

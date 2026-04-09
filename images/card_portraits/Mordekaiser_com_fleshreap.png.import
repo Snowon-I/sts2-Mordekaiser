@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50kghsifiixg"
-path="res://.godot/imported/Mordekaiser_com_fleshreap.png-e76bcee81dbc6c0a61bbdf12d401e5e0.ctex"
+uid="uid://dcr0fp1dnfyfr"
+path="res://.godot/imported/mordekaiser_com_fleshreap.png-2dff67c894d4a319862b828a3627e974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_fleshreap.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_fleshreap.png-e76bcee81dbc6c0a61bbdf12d401e5e0.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_fleshreap.png"
+dest_files=["res://.godot/imported/mordekaiser_com_fleshreap.png-2dff67c894d4a319862b828a3627e974.ctex"]
 
 [params]
 

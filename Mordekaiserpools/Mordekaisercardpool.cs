@@ -115,6 +115,14 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_rare_finaljudgment>(),
         ModelDb.Card<Mordekaiser_rare_tearsoul>(),
         
+        //rare power
+        ModelDb.Card<Mordekaiser_rare_deathdominion>(),
+        ModelDb.Card<Mordekaiser_rare_eternalimmortality>(),
+        ModelDb.Card<Mordekaiser_rare_unyieldingpresence>(),
+        ModelDb.Card<Mordekaiser_rare_absolutewill>(),
+        ModelDb.Card<Mordekaiser_rare_soultome>(),
+        ModelDb.Card<Mordekaiser_rare_soulsteelform>(),
+        
     ];
 
 }

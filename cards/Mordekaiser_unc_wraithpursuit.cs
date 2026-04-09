@@ -33,7 +33,7 @@ public class Mordekaiser_unc_wraithpursuit() : CardModel(0, CardType.Attack, Car
         }
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_wraithpursuit.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

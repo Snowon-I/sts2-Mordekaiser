@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cen5opbri20gh"
-path="res://.godot/imported/Mordekaiser_com_steelstrike.png-ab809716748bfe0d1b61ce1d9e58b46a.ctex"
+uid="uid://chx5hs1osn73i"
+path="res://.godot/imported/mordekaiser_com_steelstrike.png-ea8c244583ed89b266dec91fcdaa7e4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_steelstrike.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_steelstrike.png-ab809716748bfe0d1b61ce1d9e58b46a.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_steelstrike.png"
+dest_files=["res://.godot/imported/mordekaiser_com_steelstrike.png-ea8c244583ed89b266dec91fcdaa7e4d.ctex"]
 
 [params]
 

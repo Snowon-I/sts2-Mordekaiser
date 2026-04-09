@@ -27,7 +27,7 @@ public class Mordekaiser_com_agonytorment() : CardModel(1, CardType.Attack, Card
         await PowerCmd.Apply<WeakPower>(cardPlay.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_agonytorment.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

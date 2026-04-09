@@ -21,7 +21,7 @@ public class Mordekaiser_base_criticalattack() : CardModel(1, CardType.Attack, C
             .Execute(choiceContext);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

@@ -28,7 +28,7 @@ public class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, Car
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_quiescestrike.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -62,7 +62,7 @@ public class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, Car
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_unleashshadow.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -99,7 +99,7 @@ public class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardR
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_steelcharge.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -147,7 +147,7 @@ public class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_chargedhammerswing.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

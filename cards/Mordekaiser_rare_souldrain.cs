@@ -26,7 +26,7 @@ public class Mordekaiser_rare_souldrain() : CardModel(3, CardType.Attack, CardRa
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

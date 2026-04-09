@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnpxqycfmcd1t"
-path="res://.godot/imported/Mordekaiser_com_chargedhammerswing.png-2464295fed4e697625d3ef612e22adee.ctex"
+uid="uid://bkagetuvlkyn2"
+path="res://.godot/imported/mordekaiser_com_chargedhammerswing.png-ad0ab61492b7f7123a7850411dad07e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_chargedhammerswing.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_chargedhammerswing.png-2464295fed4e697625d3ef612e22adee.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_chargedhammerswing.png"
+dest_files=["res://.godot/imported/mordekaiser_com_chargedhammerswing.png-ad0ab61492b7f7123a7850411dad07e7.ctex"]
 
 [params]
 

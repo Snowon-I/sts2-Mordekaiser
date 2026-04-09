@@ -22,6 +22,8 @@ public class Mordekaiser_unc_meteorwraithhammer() : CardModel(2, CardType.Attack
             .Execute(choiceContext);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(11m);

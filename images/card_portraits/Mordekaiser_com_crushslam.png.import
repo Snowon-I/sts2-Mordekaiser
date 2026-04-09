@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbwcqwnuqijul"
-path="res://.godot/imported/Mordekaiser_com_crushslam.png-6dce19667874ca88d4a573bd59845c32.ctex"
+uid="uid://br2iv71lrkb6s"
+path="res://.godot/imported/mordekaiser_com_crushslam.png-c117f49ce56a37db5c24a71a806867ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_crushslam.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_crushslam.png-6dce19667874ca88d4a573bd59845c32.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_crushslam.png"
+dest_files=["res://.godot/imported/mordekaiser_com_crushslam.png-c117f49ce56a37db5c24a71a806867ca.ctex"]
 
 [params]
 

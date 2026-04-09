@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx0366fdrejpa"
-path="res://.godot/imported/Mordekaiser_com_agonytorment.png-d45131465c20647c4147810ea72da606.ctex"
+uid="uid://blsdrgobyfogb"
+path="res://.godot/imported/mordekaiser_com_agonytorment.png-efc3a0acdd05aaee98f0a33bc0bb910f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_agonytorment.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_agonytorment.png-d45131465c20647c4147810ea72da606.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_agonytorment.png"
+dest_files=["res://.godot/imported/mordekaiser_com_agonytorment.png-efc3a0acdd05aaee98f0a33bc0bb910f.ctex"]
 
 [params]
 

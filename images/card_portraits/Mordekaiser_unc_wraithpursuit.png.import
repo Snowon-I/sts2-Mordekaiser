@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://efbcrojeikbo"
-path="res://.godot/imported/Mordekaiser_unc_wraithpursuit.png-c9c5efb57ad6e71e3b91aeb769e77fed.ctex"
+uid="uid://1p3svh3ryxf1"
+path="res://.godot/imported/mordekaiser_unc_wraithpursuit.png-8f6c3dfc3f0921415e53d320c0323ee9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_unc_wraithpursuit.png"
-dest_files=["res://.godot/imported/Mordekaiser_unc_wraithpursuit.png-c9c5efb57ad6e71e3b91aeb769e77fed.ctex"]
+source_file="res://images/card_portraits/mordekaiser_unc_wraithpursuit.png"
+dest_files=["res://.godot/imported/mordekaiser_unc_wraithpursuit.png-8f6c3dfc3f0921415e53d320c0323ee9.ctex"]
 
 [params]
 

@@ -29,6 +29,8 @@ public class Mordekaiser_unc_breakpowerhammer() : CardModel(3, CardType.Attack, 
         }
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);

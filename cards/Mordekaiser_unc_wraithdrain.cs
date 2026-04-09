@@ -31,7 +31,7 @@ public class Mordekaiser_unc_wraithdrain() : CardModel(1, CardType.Attack, CardR
         );
     }
     
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_wraithdrain.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     protected override void OnUpgrade()
     {

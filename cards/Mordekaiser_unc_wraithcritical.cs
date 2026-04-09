@@ -29,6 +29,8 @@ public class Mordekaiser_unc_wraithcritical() : CardModel(2, CardType.Attack, Ca
         );
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);

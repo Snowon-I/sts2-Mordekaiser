@@ -25,7 +25,7 @@ public class Mordekaiser_com_crushslam() : CardModel(1, CardType.Attack, CardRar
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_com_steelcharge.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

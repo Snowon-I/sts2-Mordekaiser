@@ -29,6 +29,8 @@ public class Mordekaiser_unc_wraithsummonstrike() : CardModel(1, CardType.Attack
         await MordekaiserCardUtils.ExhaustMordekaiserCard(choiceContext, Owner, 1, PileType.Draw.GetPile(Owner),
             cards => cards.Where(c => c.Type == CardType.Attack));
     }
+    
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -66,7 +68,7 @@ public class Mordekaiser_unc_sweepbreak() : CardModel(1, CardType.Attack, CardRa
             .Execute(choiceContext);
     }
     
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_sweepbreak.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     protected override void OnUpgrade()
     {
@@ -120,7 +122,7 @@ public class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attack, Card
         }
     }
     
-    public override string PortraitPath => "res://images/card_portraits/Mordekaiser_unc_defendwraith.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     protected override void OnUpgrade()
     {

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rkpack67ghqq"
-path="res://.godot/imported/Mordekaiser_com_quiescestrike.png-de3717fa4d76e0566757bf7747e67992.ctex"
+uid="uid://b87bcjmbojcps"
+path="res://.godot/imported/mordekaiser_com_quiescestrike.png-2db31dd6057390eacecf7273825d4001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_com_quiescestrike.png"
-dest_files=["res://.godot/imported/Mordekaiser_com_quiescestrike.png-de3717fa4d76e0566757bf7747e67992.ctex"]
+source_file="res://images/card_portraits/mordekaiser_com_quiescestrike.png"
+dest_files=["res://.godot/imported/mordekaiser_com_quiescestrike.png-2db31dd6057390eacecf7273825d4001.ctex"]
 
 [params]
 

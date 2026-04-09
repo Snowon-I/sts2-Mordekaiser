@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dom5rvanuihb5"
-path="res://.godot/imported/Mordekaiser_unc_soulthrust.png-e23276ee4688441ec7cea66186a80945.ctex"
+uid="uid://buebhjqjrpncu"
+path="res://.godot/imported/mordekaiser_unc_soulthrust.png-ca9d82ed6a71ffc97fd9bab87e440056.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/card_portraits/Mordekaiser_unc_soulthrust.png"
-dest_files=["res://.godot/imported/Mordekaiser_unc_soulthrust.png-e23276ee4688441ec7cea66186a80945.ctex"]
+source_file="res://images/card_portraits/mordekaiser_unc_soulthrust.png"
+dest_files=["res://.godot/imported/mordekaiser_unc_soulthrust.png-ca9d82ed6a71ffc97fd9bab87e440056.ctex"]
 
 [params]
 

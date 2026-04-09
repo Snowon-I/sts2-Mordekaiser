@@ -18,23 +18,24 @@ public class Mordekaiser_deathdominionpower : PowerModel
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (player != Owner.Player) return;
-        await MordekaiserCardUtils.TriggerMordekaiserCardQuiesce(
+        await MordekaiserCardUtils.ExhaustMordekaiserCard(
             choiceContext,
             player,
             Amount,
-            PileType.Draw.GetPile(player), 
+            PileType.Discard.GetPile(player), 
             cards => cards.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)).Take(Amount)
         );
     }
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (player != Owner.Player) return;
-        await MordekaiserCardUtils.TriggerMordekaiserCardQuiesce(
+        if (side != Owner.Side ) return;
+        if (Owner.Player == null) return;
+        await MordekaiserCardUtils.ExhaustMordekaiserCard(
             choiceContext,
-            player,
+            Owner.Player,
             Amount,
-            PileType.Draw.GetPile(player), 
+            PileType.Discard.GetPile(Owner.Player), 
             cards => cards.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)).Take(Amount)
         );
     }

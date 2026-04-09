@@ -11,8 +11,8 @@ script = ExtResource("1_onxwi")
 
 [node name="SpineSprite" type="SpineSprite" parent="."]
 skeleton_data_res = ExtResource("2_onxwi")
-preview_skin = "Default"
-preview_animation = "overgrowth_loop"
+preview_skin = "default"
+preview_animation = "_tracks/light_on"
 preview_frame = false
 preview_time = 0.0
 position = Vector2(67.105, -9.21)

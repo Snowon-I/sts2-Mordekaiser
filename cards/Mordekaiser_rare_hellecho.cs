@@ -8,7 +8,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
@@ -35,7 +35,7 @@ public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRar
         );
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
