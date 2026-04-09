@@ -132,7 +132,7 @@
 
 
   "MORDEKAISER_RARE_MACEOFSPADES.title":"铲击之锤",
-  "MORDEKAISER_RARE_MACEOFSPADES.description":"造成{Damage:diff()}点伤害，将这张牌在本场战斗中的伤害翻倍，放到抽堆顶。翻倍超过2次打出后，消耗（当前翻倍次数：{multtiome:diff()}）。",
+  "MORDEKAISER_RARE_MACEOFSPADES.description":"造成{Damage:diff()}点伤害，将这张牌在本场战斗中的伤害翻倍，放到抽堆顶。翻倍超过2次打出后，消耗（当前翻倍次数：{multtime:diff()}）。",
   "MORDEKAISER_RARE_CREEPINGDEATH.title":"死亡蔓延",
   "MORDEKAISER_RARE_CREEPINGDEATH.description":"失去{HpLoss:diff()}点生命。对所有敌人造成{Damage:diff()}点伤害，获得3点[gold]敏捷[/gold]。在接下来的2个回合开始时，对所有敌人造成{IfUpgraded:show:10|5}点伤害。",
   "MORDEKAISER_RARE_SIPHONDESTRUCTION.title":"毁灭虹吸",
@@ -140,7 +140,7 @@
   "MORDEKAISER_RARE_FATEEND.title":"命运终结",
   "MORDEKAISER_RARE_FATEEND.description":"造成{Damage:diff()}点伤害，消耗[gold]手牌[/gold]中的1张攻击牌，将你[gold]抽牌堆[/gold]里的{Cards:diff()}张攻击牌置入你的[gold]手牌[/gold]，其本回合的费用为0{energyPrefix:energyIcons(1)}。",
   "MORDEKAISER_RARE_QUIESCEECHO.title":"寂灭回响",
-  "MORDEKAISER_RARE_QUIESCEECHO.description":"造成{Damage:diff()}点伤害，在本场战斗中，你每打出过一张寂灭牌，这张牌的伤害就提升{ExtraDamage:diff()}点。",
+  "MORDEKAISER_RARE_QUIESCEECHO.description":"造成{CalculatedDamage:diff()}点伤害，在本场战斗中，你每打出过一张寂灭牌，这张牌的伤害就提升{ExtraDamage:diff()}点。",
   "MORDEKAISER_RARE_HELLECHO.title":"地狱回响",
   "MORDEKAISER_RARE_HELLECHO.description":"将[gold]消耗牌堆[/gold]中的所有牌置入你的[gold]弃牌堆[/gold]中，每张置入的牌造成{ExtraDamage:diff()}点伤害。",
   "MORDEKAISER_RARE_SOULDRAIN.title":"灵魂抽取",
@@ -165,16 +165,16 @@
   "MORDEKAISER_RARE_TEARSOUL.title":"灵魂撕裂",
   "MORDEKAISER_RARE_TEARSOUL.description":"给予3层易伤和虚弱，收割1点[gold]灵魂[/gold]",
 
-  "MORDEKAISER_DEATHDOMINION.title":"掌控死亡",
-  "MORDEKAISER_DEATHDOMINION.description":"回合开始和回合结束时，消耗[gold]弃牌堆[/gold]里的{Power:diff()}张寂灭牌。",
-  "MORDEKAISER_ETERNALIMMORTALITY.title":"永恒不朽",
-  "MORDEKAISER_ETERNALIMMORTALITY.description":"在你的回合开始时，回复{Power:diff()}点生命",
-  "MORDEKAISER_UNYIELDINGPRESENCE.title":"拒绝退散",
-  "MORDEKAISER_UNYIELDINGPRESENCE.description":"当你要被杀死时，锁定你的血量，而后在你的回合结束时，直接死亡。",
-  "MORDEKAISER_ABSOLUTEWILL.title":"为所欲为",
-  "MORDEKAISER_ABSOLUTEWILL.description":"获得{Power:diff()}点力量和敏捷\n在你的回合开始时，获得1点力量和敏捷。",
-  "MORDEKAISER_SOULTOME.title":"灵魂归我",
-  "MORDEKAISER_SOULTOME.description":"每当你杀死一名敌人时，获得1点灵魂",
-  "MORDEKAISER_SOULSTEELFORM.title":"灵铁形态",
-  "MORDEKAISER_SOULSTEELFORM.description":"你的回合开始时，你的消耗牌堆每有一张牌，获得1点格挡{IfUpgraded:show:。\n[gold]寂灭[/gold]：获得1层[/gold]灵铁形态[/gold]。|。}"
+  "MORDEKAISER_RARE_DEATHDOMINION.title":"掌控死亡",
+  "MORDEKAISER_RARE_DEATHDOMINION.description":"回合开始和回合结束时，消耗[gold]弃牌堆[/gold]里的{Power:diff()}张寂灭牌。",
+  "MORDEKAISER_RARE_ETERNALIMMORTALITY.title":"永恒不朽",
+  "MORDEKAISER_RARE_ETERNALIMMORTALITY.description":"在你的回合开始时，回复{Power:diff()}点生命",
+  "MORDEKAISER_RARE_UNYIELDINGPRESENCE.title":"拒绝退散",
+  "MORDEKAISER_RARE_UNYIELDINGPRESENCE.description":"当你要被杀死时，锁定你的血量，而后在你的回合结束时，直接死亡。",
+  "MORDEKAISER_RARE_ABSOLUTEWILL.title":"为所欲为",
+  "MORDEKAISER_RARE_ABSOLUTEWILL.description":"获得{Power:diff()}点力量和敏捷\n在你的回合开始时，获得1点力量和敏捷。",
+  "MORDEKAISER_RARE_SOULTOME.title":"灵魂归我",
+  "MORDEKAISER_RARE_SOULTOME.description":"每当你杀死一名敌人时，获得1点灵魂",
+  "MORDEKAISER_RARE_SOULSTEELFORM.title":"灵铁形态",
+  "MORDEKAISER_RARE_SOULSTEELFORM.description":"你的回合开始时，你的消耗牌堆每有一张牌，获得1点格挡{IfUpgraded:show:。\n[gold]寂灭[/gold]：获得1层[/gold]灵铁形态[/gold]。|。}"
 }
