@@ -28,11 +28,11 @@ public class Mordekaiser_com_sacrifice() : CardModel(1, CardType.Skill, CardRari
         );
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars["Power"].UpgradeValueBy(1m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

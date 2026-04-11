@@ -11,7 +11,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_soulsteelform() : CardModel(3, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public class Mordekaiser_rare_soulsteelform() : CardModel(3, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 

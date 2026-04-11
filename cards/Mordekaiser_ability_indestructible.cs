@@ -10,7 +10,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.Skill, CardRarity.Token, TargetType.Self)
+public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -39,6 +39,8 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
             return MordekaiserDB / MordekaiserMxHP >= 0.3 ? Math.Floor((decimal)MordekaiserMxHP * 0.3m) : Math.Floor((decimal)MordekaiserDB);
         return Math.Floor((decimal)MordekaiserMxHP * 0.05m);
     }
+    
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -48,11 +50,9 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
         await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Hand, addedByPlayer: true);
         await PowerCmd.Remove(Owner.Creature.GetPower<Mordekaiser_potentialblock>());
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
 }
 
-public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.Skill, CardRarity.Token, TargetType.Self)
+public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -82,6 +82,8 @@ public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.S
         await CreatureCmd.Heal(Owner.Creature,((CalculatedVar)DynamicVars["HealVar"]).Calculate(Owner.Creature));
         await CreatureCmd.LoseBlock(Owner.Creature, Owner.Creature.Block);
     }
+    
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
@@ -92,6 +94,5 @@ public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.S
             await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Discard, addedByPlayer: true);
         }
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+
 }

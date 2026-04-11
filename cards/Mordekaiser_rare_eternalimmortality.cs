@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_eternalimmortality() : CardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public class Mordekaiser_rare_eternalimmortality() : CardModel(1, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 

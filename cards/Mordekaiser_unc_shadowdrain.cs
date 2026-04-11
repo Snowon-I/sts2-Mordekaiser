@@ -19,11 +19,12 @@ public class Mordekaiser_unc_shadowdrain() : CardModel(1, CardType.Skill, CardRa
             ((CalculatedVar)DynamicVars["Power"]).Calculate(Owner.Creature), Owner.Creature, this);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

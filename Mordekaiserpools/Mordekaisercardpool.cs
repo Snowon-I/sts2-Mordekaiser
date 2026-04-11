@@ -10,11 +10,11 @@ public class Mordekaisercardpool : CardPoolModel
 
     public override string EnergyColorName => "mordekaiser";
 
-    public override string CardFrameMaterialPath => "card_frame_red";
+    public override string CardFrameMaterialPath => "card_frame_mordekaiser";
 
-    public override Color DeckEntryCardColor => new ("D62000");
+    public override Color DeckEntryCardColor => new ("00a1d6");
 
-    public override Color EnergyOutlineColor => new ("802020");
+    public override Color EnergyOutlineColor => new ("045284FF");
 
     public override bool IsColorless => false;
 

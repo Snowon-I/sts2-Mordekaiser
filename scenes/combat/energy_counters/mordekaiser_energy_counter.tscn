@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cybg5mejnug2q" path="res://images/ui/combat/energy_counters/mordekaiser/mordekaiser_orb_layer_5.png" id="5_vi772"]
 [ext_resource type="Texture2D" uid="uid://0ntc8i7oilgp" path="res://images/ui/combat/energy_counters/mordekaiser/mordekaiser_orb_layer_3.png" id="7_f8k13"]
 [ext_resource type="Texture2D" uid="uid://vpx8oshhebij" path="res://images/ui/combat/energy_counters/mordekaiser/mordekaiser_orb_burst.png" id="8_vi772"]
-[ext_resource type="Script" uid="uid://cagrpcwvhfi4a" path="res://addons/mega_text/MegaLabel.cs" id="9_f8k13"]
 [ext_resource type="FontVariation" uid="uid://dgx5gyhu7tccu" path="res://themes/Mordekaiser_shared.tres" id="9_whwpv"]
+[ext_resource type="Script" uid="uid://cagrpcwvhfi4a" path="res://addons/mega_text/MegaLabel.cs" id="11_j0ijg"]
 
 [sub_resource type="Curve" id="Curve_cwdla"]
 _data = [Vector2(0, 0), 0.0, 4.4879675, 0, 0, Vector2(0.3028391, 0.7449367), 0.8346327, 0.8346327, 0, 0, Vector2(0.98107255, 0.92594934), -0.24686924, 0.0, 0, 0]
@@ -189,11 +189,5 @@ theme_override_font_sizes/font_size = 36
 text = "3/3"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("9_f8k13")
-MinFontSize = 32
-MaxFontSize = 36
-_autoSizeEnabled = true
-_minFontSize = 32
-_maxFontSize = 36
-_lastSetSize = 36
-_lastAdjustedSize = Vector2(96, 186)
+script = ExtResource("11_j0ijg")
+theme_override_colors/font_outline_color = Color(0.015686275, 0.32156864, 0.5176471, 1)

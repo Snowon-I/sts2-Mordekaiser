@@ -27,11 +27,12 @@ public class Mordekaiser_unc_purifywraith() : CardModel(1, CardType.Skill, CardR
         await CreatureCmd.GainBlock(Owner.Creature,gainblock,DynamicVars.CalculatedBlock.Props,cardPlay);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+
+    
     protected override void OnUpgrade()
     {
         DynamicVars.CalculationExtra.UpgradeValueBy(2m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

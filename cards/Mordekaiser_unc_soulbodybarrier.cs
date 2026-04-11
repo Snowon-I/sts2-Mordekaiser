@@ -28,11 +28,11 @@ public class Mordekaiser_unc_soulbodybarrier() : CardModel(1, CardType.Skill, Ca
         );
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(4m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

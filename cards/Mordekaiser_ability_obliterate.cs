@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Attack, CardRarity.Token, TargetType.AllEnemies)
+public class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
     
@@ -32,7 +32,7 @@ public class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Attack, Ca
             .Execute(choiceContext);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

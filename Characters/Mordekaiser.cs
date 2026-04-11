@@ -37,10 +37,7 @@ public sealed class Mordekaiser : CharacterModel
 	public override PotionPoolModel PotionPool => ModelDb.PotionPool<Mordekaiserpotionpool>();
 
 	public override RelicPoolModel RelicPool => ModelDb.RelicPool<Mordekaiserrelicpool>();
-	
-	//商人动画没做，即string MerchantAnimPath
-	//休息动画没做，即string RestSiteAnimPath
-	//商人动画没做，即string MerchantAnimPath
+
 	//宝箱手指动画没做，指向，石头剪刀布，即Texture2D ArmPointingTexturePath
 	
 	public override IEnumerable<CardModel> StartingDeck => [
@@ -63,15 +60,15 @@ public sealed class Mordekaiser : CharacterModel
 
 	public override float CastAnimDelay => 0.25f;
 
-	public override Color EnergyLabelOutlineColor => new ("801212FF");
+	public override Color EnergyLabelOutlineColor => new ("045284FF");
+		
+	public override Color DialogueColor => new ("005259");
 
-	public override Color DialogueColor => new ("590700");
+	public override Color MapDrawingColor => new ("28bacb");
 
-	public override Color MapDrawingColor => new ("CB282B");
+	public override Color RemoteTargetingLineColor => new ("478fe1FF");
 
-	public override Color RemoteTargetingLineColor => new ("E15847FF");
-
-	public override Color RemoteTargetingLineOutline => new ("801212FF");
+	public override Color RemoteTargetingLineOutline => new ("127c80FF");
 
 	public override string CharacterSelectSfx => $"event:/sfx/characters/ironclad/ironclad_select";
 

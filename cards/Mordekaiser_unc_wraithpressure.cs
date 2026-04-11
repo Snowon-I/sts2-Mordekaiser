@@ -21,11 +21,12 @@ public class Mordekaiser_unc_wraithpressure() : CardModel(1, CardType.Skill, Car
         await PowerCmd.Apply<Mordekaiser_wraithpressurepower>(CombatState.HittableEnemies,((CalculatedVar)DynamicVars["Power"]).Calculate(Owner.Creature),Owner.Creature,this);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.CalculationExtra.UpgradeValueBy(1);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

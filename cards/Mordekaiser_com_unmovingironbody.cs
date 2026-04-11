@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_unmovingironbody() : CardModel(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
+public class Mordekaiser_com_unmovingironbody() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -22,11 +22,11 @@ public class Mordekaiser_com_unmovingironbody() : CardModel(1, CardType.Skill, C
         await PowerCmd.Apply<DexterityPower>(Owner.Creature, -2, Owner.Creature, this);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(5m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

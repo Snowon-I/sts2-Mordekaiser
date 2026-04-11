@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, CardRarity.Basic, TargetType.Self)
+public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, CardRarity.Ancient, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
     
@@ -22,6 +22,8 @@ public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, Card
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<Mordekaiser_darknessrise>(Owner.Creature, 1m, Owner.Creature, this);
     }
+    
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     protected override void OnUpgrade()
     {

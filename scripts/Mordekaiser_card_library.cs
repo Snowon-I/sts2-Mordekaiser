@@ -100,13 +100,16 @@ public class Mordekaiser_library
         
         Dictionary<CharacterModel, NCardPoolFilter> _cardPoolFilters = (Dictionary<CharacterModel, NCardPoolFilter>)_cardPoolDictField!.GetValue(__instance)!;
         _cardPoolFilters.Add(ModelDb.Character<Characters.Mordekaiser>(), _moredekaiserFilter);
-        
-        _moredekaiserFilter.Connect(Control.SignalName.FocusEntered, Callable.From(delegate { _lastHoveredField?.SetValue(__instance,_moredekaiserFilter); }));
+
+        Callable callable2 = Callable.From(delegate { _lastHoveredField?.SetValue(__instance, _moredekaiserFilter); });
+        _moredekaiserFilter.Connect(Control.SignalName.FocusEntered,callable2);
         
         _moredekaiserFilter.TreeExiting += () =>
         {
-            _moredekaiserFilter.Disconnect(NCardPoolFilter.SignalName.Toggled, callable1);
-            _moredekaiserFilter.Disconnect(Control.SignalName.FocusEntered, default);
+            if (_moredekaiserFilter.IsConnected(NCardPoolFilter.SignalName.Toggled, callable1))
+                _moredekaiserFilter.Disconnect(NCardPoolFilter.SignalName.Toggled, callable1);
+            if (_moredekaiserFilter.IsConnected(Control.SignalName.FocusEntered, callable2))
+                _moredekaiserFilter.Disconnect(Control.SignalName.FocusEntered, callable2);
         };
         
     }

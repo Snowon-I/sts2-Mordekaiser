@@ -19,11 +19,11 @@ public class Mordekaiser_com_dashforward() : CardModel(0, CardType.Skill, CardRa
         await PowerCmd.Apply<VulnerablePower>(Owner.Creature, 1m, Owner.Creature, this);
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Strength.UpgradeValueBy(1m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

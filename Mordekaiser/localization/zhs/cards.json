@@ -107,7 +107,7 @@
   "MORDEKAISER_UNC_SOULBARRIER.title":"魂壁",
   "MORDEKAISER_UNC_SOULBARRIER.description":"[gold]寂灭[/gold]：获得{Block:diff()}点[gold]格挡[/gold]",
   "MORDEKAISER_UNC_WRAITHCYCLE.title":"冥能循环",
-  "MORDEKAISER_UNC_WRAITHCYCLE.description":"将[gold]弃牌堆[/gold]里的所有技能牌洗回[gold]抽牌堆[/gold]，[gold]消耗牌堆[/gold]顶的{Cards:diff(+1)}张牌",
+  "MORDEKAISER_UNC_WRAITHCYCLE.description":"将[gold]弃牌堆[/gold]里的所有技能牌洗回[gold]抽牌堆[/gold]，[gold]消耗抽牌堆[/gold]顶的{Cards:diff()}张牌",
 
   "MORDEKAISER_UNC_EMBERBLADEINITIATE.title":"烬刃启召",
   "MORDEKAISER_UNC_EMBERBLADEINITIATE.description":"回合开始时，抽{Power:diff()}张牌，以此法抽取的牌获得消耗。",

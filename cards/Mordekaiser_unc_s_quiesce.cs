@@ -32,7 +32,7 @@ public class Mordekaiser_unc_soulfollow() : CardModel(0, CardType.Skill, CardRar
         DynamicVars.Block.UpgradeValueBy(3m);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
@@ -68,7 +68,7 @@ public class Mordekaiser_unc_wraithwarcry() : CardModel(1, CardType.Skill, CardR
         DynamicVars.Cards.UpgradeValueBy(1);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {

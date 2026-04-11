@@ -26,11 +26,11 @@ public class Mordekaiser_com_darkdrain() : CardModel(1, CardType.Skill, CardRari
         }
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }

@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, CardRarity.Token, TargetType.AllEnemies)
+public class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
@@ -36,7 +36,7 @@ public class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, C
         await PowerCmd.Apply<WeakPower>(CombatState.HittableEnemies, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

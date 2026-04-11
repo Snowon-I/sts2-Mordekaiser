@@ -32,7 +32,7 @@ public class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, CardRar
         DynamicVars["quiescePower"].UpgradeValueBy(1m);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {

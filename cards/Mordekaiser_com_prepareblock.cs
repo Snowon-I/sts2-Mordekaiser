@@ -29,11 +29,11 @@ public class Mordekaiser_com_prepareblock() : CardModel(1, CardType.Skill, CardR
         );
     }
     
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(2m);
     }
-    
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
     
 }
