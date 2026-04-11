@@ -18,7 +18,7 @@ public class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill
     
     protected override void OnUpgrade(){}
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
     
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {

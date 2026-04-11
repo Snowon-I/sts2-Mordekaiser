@@ -20,7 +20,7 @@ public class Mordekaiser_unc_wraithcycle() : CardModel(1, CardType.Skill, CardRa
             await CardCmd.Exhaust(choiceContext,card);
     }
     
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
         
     protected override void OnUpgrade()
     {

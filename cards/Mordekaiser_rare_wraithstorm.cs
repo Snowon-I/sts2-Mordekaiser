@@ -31,7 +31,7 @@ public class Mordekaiser_rare_wraithstorm() : CardModel(1, CardType.Skill, CardR
         await PlayerCmd.GainEnergy(DynamicVars["stromValue"].IntValue, Owner);
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

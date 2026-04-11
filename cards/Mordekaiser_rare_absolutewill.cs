@@ -14,7 +14,11 @@ public class Mordekaiser_rare_absolutewill() : CardModel(1, CardType.Power, Card
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_absolutewillpower>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        HoverTipFactory.FromPower<StrengthPower>(),
+        HoverTipFactory.FromPower<DexterityPower>(),
+        HoverTipFactory.FromPower<Mordekaiser_absolutewillpower>()
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

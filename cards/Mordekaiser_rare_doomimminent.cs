@@ -21,11 +21,11 @@ public class Mordekaiser_rare_doomimminent() : CardModel(1, CardType.Skill, Card
         foreach (var enemy in CombatState.HittableEnemies)
         {
             await CreatureCmd.Stun(enemy);
-            await PowerCmd.Apply<DexterityPower>(enemy, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<VulnerablePower>(enemy, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
         }
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

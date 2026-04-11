@@ -13,7 +13,10 @@ public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, Card
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_darkenergy>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        HoverTipFactory.FromPower<StrengthPower>(),
+        HoverTipFactory.FromPower<Mordekaiser_darkenergy>()
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(1m)];
     

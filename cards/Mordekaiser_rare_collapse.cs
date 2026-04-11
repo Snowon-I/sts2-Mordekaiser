@@ -19,7 +19,7 @@ public class Mordekaiser_rare_collapse() : CardModel(2, CardType.Skill, CardRari
         }
     }
 
-    public override string PortraitPath => $"res://images/packed/card_portraits/ironclad/anger.png";
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

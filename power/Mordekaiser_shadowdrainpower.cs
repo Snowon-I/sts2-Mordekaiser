@@ -26,4 +26,5 @@ public class Mordekaiser_shadowdrainpower : PowerModel
 	{
 		await PowerCmd.Remove<Mordekaiser_shadowdrainpower>(Owner);
 	}
+	
 }
