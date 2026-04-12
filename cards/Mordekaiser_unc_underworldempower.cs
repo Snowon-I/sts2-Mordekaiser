@@ -7,7 +7,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_underworldempower() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_underworldempower() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
 

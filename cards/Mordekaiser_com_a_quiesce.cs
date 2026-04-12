@@ -12,7 +12,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(15m, ValueProp.Move)];
     
@@ -45,7 +45,7 @@ public class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Attack, Car
     
 }
 
-public class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(16m, ValueProp.Move),
@@ -82,7 +82,7 @@ public class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Attack, Car
     
 }
 
-public class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(12m, ValueProp.Move),
@@ -120,7 +120,7 @@ public class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardR
     
 }
 
-public class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),

@@ -7,7 +7,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_wraithstorm() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+public sealed class Mordekaiser_rare_wraithstorm() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     

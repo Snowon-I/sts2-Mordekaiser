@@ -9,7 +9,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithpursuit() : CardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_wraithpursuit() : CardModel(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override bool ShouldGlowGoldInternal => WasCardQuiesceThisTurn;
 

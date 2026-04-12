@@ -6,7 +6,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_greatquiesce() : CardModel(2, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Mordekaiser_com_greatquiesce() : CardModel(2, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

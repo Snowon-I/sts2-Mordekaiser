@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_purifywraith() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_purifywraith() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override bool GainsBlock => true;
 

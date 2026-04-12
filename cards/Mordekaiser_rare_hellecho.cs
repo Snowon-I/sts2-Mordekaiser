@@ -8,7 +8,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 

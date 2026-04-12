@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_agonytorment() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_agonytorment() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(8m, ValueProp.Move),

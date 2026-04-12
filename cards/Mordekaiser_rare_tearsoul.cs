@@ -9,7 +9,7 @@ using Mordekaiser.relics;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_tearsoul() : CardModel(3, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Mordekaiser_rare_tearsoul() : CardModel(3, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,CardKeyword.Ethereal];
 

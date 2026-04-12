@@ -12,7 +12,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_soulfollow() : CardModel(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_soulfollow() : CardModel(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];
@@ -46,7 +46,7 @@ public class Mordekaiser_unc_soulfollow() : CardModel(0, CardType.Skill, CardRar
     
 }
 
-public class Mordekaiser_unc_wraithwarcry() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_wraithwarcry() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];
     
@@ -93,7 +93,7 @@ public class Mordekaiser_unc_wraithwarcry() : CardModel(1, CardType.Skill, CardR
     
 }
 
-public class Mordekaiser_unc_dashstance() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_dashstance() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -133,7 +133,7 @@ public class Mordekaiser_unc_dashstance() : CardModel(1, CardType.Skill, CardRar
     
 }
 
-public class Mordekaiser_unc_soulbarrier() : CardModel(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_soulbarrier() : CardModel(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,MordekaiserKeyWord.MordekaiserQuiesce];
     

@@ -10,7 +10,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
+public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
 
@@ -52,7 +52,7 @@ public class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.
     }
 }
 
-public class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
+public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
 

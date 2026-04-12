@@ -7,7 +7,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_finaljudgment() : CardModel(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_finaljudgment() : CardModel(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     

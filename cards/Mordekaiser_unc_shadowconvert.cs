@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_shadowconvert() : CardModel(1, CardType.Skill, CardRarity.Uncommon,TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_shadowconvert() : CardModel(1, CardType.Skill, CardRarity.Uncommon,TargetType.AnyEnemy)
 {
     private TargetType _cardTargetType = TargetType.AnyEnemy;
             

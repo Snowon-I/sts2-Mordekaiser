@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_doomimminent() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_doomimminent() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 

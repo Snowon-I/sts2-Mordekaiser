@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithrecall() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_wraithrecall() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
 

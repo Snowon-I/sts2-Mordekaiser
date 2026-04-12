@@ -25,17 +25,12 @@ public class Mordekaiser_darknessrise : PowerModel
         if (cardPlay.Card.Type == CardType.Attack)
         {
             if (darkenergy == null)
-            {
                 darkenergy = await PowerCmd.Apply<Mordekaiser_darkenergy>(Owner, 1m, Owner, null);
-            }
             else
-            {
+            if (darkenergy.Amount < 3)
                 await PowerCmd.ModifyAmount(darkenergy,1m, Owner,null);
-            }
             if (darkenergy!.Amount == 3 && !darkenergy.Mordekaiser_DEGetAll )
-            {
                 darkenergy.Mordekaiser_DEGetAll = true;
-            }
         }
         else
         {

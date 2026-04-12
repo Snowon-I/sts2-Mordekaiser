@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies)
+public sealed class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.Attack, CardRarity.Ancient, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

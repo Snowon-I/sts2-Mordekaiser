@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_fleshreap() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
+public sealed class Mordekaiser_com_fleshreap() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

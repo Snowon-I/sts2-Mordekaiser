@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -10,7 +11,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,MordekaiserKeyWord.MordekaiserQuiesce];
     
@@ -26,11 +27,13 @@ public class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
             var addCard = Owner.Character.CardPool.GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint).Where(c => c.Type is CardType.Attack or CardType.Skill && c.Rarity is CardRarity.Common or CardRarity.Uncommon or CardRarity.Rare).TakeRandom(5,Owner.RunState.Rng.CombatCardSelection).First();
+            var giveCard = Owner.Creature.CombatState?.CreateCard(addCard,Owner);
+            if (giveCard == null) return;
             if (card.IsUpgraded)
-                await CardCmd.Afflict<Mordekaiser_blessing_upgrade>(addCard,1);
+                await CardCmd.Afflict<Mordekaiser_blessing_upgrade>(giveCard,1);
             else
-                await CardCmd.Afflict<Mordekaiser_blessing_com>(addCard,1);
-            await CardPileCmd.AddGeneratedCardToCombat(addCard, PileType.Hand, addedByPlayer: true);
+                await CardCmd.Afflict<Mordekaiser_blessing_com>(giveCard,1);
+            await CardPileCmd.AddGeneratedCardToCombat(giveCard, PileType.Hand, addedByPlayer: true);
         }
             
     }

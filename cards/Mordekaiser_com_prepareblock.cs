@@ -8,7 +8,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_prepareblock() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Mordekaiser_com_prepareblock() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
 

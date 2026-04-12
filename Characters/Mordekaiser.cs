@@ -217,14 +217,28 @@ public static class MordekaiserEnergyAdd
 }
 
 [HarmonyPatch(typeof(ProgressSaveManager))]
-public static class FixMyCustomCharacterEpochCrash
+public static class FixMordekaiserCharacterEpochCrash
 {
 	// 目标：两个会抛异常的方法
 	[HarmonyPatch("CheckFifteenElitesDefeatedEpoch")]
-	[HarmonyPatch("CheckFifteenBossesDefeatedEpoch")]
 	[HarmonyPrefix]
-	public static bool Prefix(Player localPlayer)
+	public static bool Prefix_elites(Player localPlayer)
 	{
 		return localPlayer.Character is not Mordekaiser;
 	}
+	
+	[HarmonyPatch("CheckFifteenBossesDefeatedEpoch")]
+	[HarmonyPrefix]
+	public static bool Prefix_boss(Player localPlayer)
+	{
+		return localPlayer.Character is not Mordekaiser;
+	}
+	
+	[HarmonyPatch("ObtainCharUnlockEpoch")] //打败boss，可做
+	[HarmonyPrefix]
+	public static bool Prefix_Obtain(Player localPlayer)
+	{
+		return localPlayer.Character is not Mordekaiser;
+	}
+	
 }

@@ -8,7 +8,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
     
@@ -27,7 +27,7 @@ public class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, CardRarity
             Owner,
             1,
             PileType.Draw.GetPile(Owner), PileType.Hand.GetPile(Owner),
-            cards => cards.Where(c => c.Id.Entry == "MORDEKAISER_BASE_ATTACK"),
+            cards => cards.Where(c => c.Id.Entry == "MORDEKAISER_BASE_STRIKE"),
             true,
             "MORDEKAISER_NO_DRAW_BASEATTACK",
             noCost: true

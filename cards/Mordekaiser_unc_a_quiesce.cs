@@ -10,7 +10,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithsummonstrike() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_wraithsummonstrike() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10m, ValueProp.Move)];
 
@@ -53,7 +53,7 @@ public class Mordekaiser_unc_wraithsummonstrike() : CardModel(1, CardType.Attack
     
 }
 
-public class Mordekaiser_unc_sweepbreak() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_sweepbreak() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9m, ValueProp.Move)];
     
@@ -89,7 +89,7 @@ public class Mordekaiser_unc_sweepbreak() : CardModel(1, CardType.Attack, CardRa
     
 }
 
-public class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     
     protected override bool ShouldGlowGoldInternal => WasCardQuiesceLastCard;

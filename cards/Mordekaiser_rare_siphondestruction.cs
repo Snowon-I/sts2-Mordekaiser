@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_siphondestruction() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_siphondestruction() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override bool GainsBlock => true;
     

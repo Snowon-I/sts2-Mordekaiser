@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_darksoulbarrier() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Mordekaiser_com_darksoulbarrier() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
 

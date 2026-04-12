@@ -9,7 +9,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithcritical() : CardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_wraithcritical() : CardModel(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(16m, ValueProp.Move)];
     

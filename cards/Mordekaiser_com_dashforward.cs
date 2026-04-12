@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_dashforward() : CardModel(0, CardType.Skill, CardRarity.Common, TargetType.Self)
+public sealed class Mordekaiser_com_dashforward() : CardModel(0, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(3m)];

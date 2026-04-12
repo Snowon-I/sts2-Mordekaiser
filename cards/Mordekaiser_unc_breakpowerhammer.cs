@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_breakpowerhammer() : CardModel(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_breakpowerhammer() : CardModel(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(25m, ValueProp.Move)];

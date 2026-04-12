@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_quiesceecho() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Mordekaiser_rare_quiesceecho() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(15m),

@@ -9,7 +9,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 

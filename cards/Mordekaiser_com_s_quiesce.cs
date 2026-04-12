@@ -10,7 +10,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy)
 {
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];

@@ -1,3 +1,4 @@
+#if !TOOLS
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 
 namespace Mordekaiser.Core.Nodes.Vfx;
@@ -11,3 +12,4 @@ public partial class MordekaiserCardTrailVfx : NCardTrailVfx
 	}
 
 }
+#endif

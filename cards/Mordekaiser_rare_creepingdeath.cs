@@ -10,7 +10,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_creepingdeath() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_creepingdeath() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 

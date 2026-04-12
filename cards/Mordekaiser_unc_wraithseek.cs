@@ -8,7 +8,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(11m, ValueProp.Move)
@@ -24,13 +24,13 @@ public class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack, CardRa
         var card1 = PileType.Draw.GetPile(Owner).Cards.FirstOrDefault(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && c.Type == CardType.Attack );
         if (card1 != null)
         {
-            await CardPileCmd.Add(card1,PileType.Draw); 
+            await CardPileCmd.Add(card1,PileType.Hand); 
             if (card1.Keywords.Contains(CardKeyword.Exhaust))
             {
                 var card2 = PileType.Draw.GetPile(Owner).Cards.FirstOrDefault(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && c.Type == CardType.Attack );
                 if (card2 != null)
                 {
-                    await CardPileCmd.Add(card2,PileType.Draw);
+                    await CardPileCmd.Add(card2,PileType.Hand);
                     if (!card2.Keywords.Contains(CardKeyword.Exhaust))
                     {
                         card2.AddKeyword(CardKeyword.Exhaust);

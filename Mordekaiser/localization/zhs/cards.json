@@ -176,5 +176,5 @@
   "MORDEKAISER_RARE_SOULTOME.title":"灵魂归我",
   "MORDEKAISER_RARE_SOULTOME.description":"每当你杀死一名敌人时，获得1点灵魂",
   "MORDEKAISER_RARE_SOULSTEELFORM.title":"灵铁形态",
-  "MORDEKAISER_RARE_SOULSTEELFORM.description":"你的回合开始时，你的消耗牌堆每有一张牌，获得1点格挡{IfUpgraded:show:。\n[gold]寂灭[/gold]：获得1层[/gold]灵铁形态[/gold]。|。}"
+  "MORDEKAISER_RARE_SOULSTEELFORM.description":"你的回合开始时，你的消耗牌堆每有一张牌，获得1点格挡{IfUpgraded:show:。\n[gold]寂灭[/gold]：获得1层[gold]灵铁形态[/gold]。|。}"
 }

@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_soulpowerreave() : CardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_soulpowerreave() : CardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 

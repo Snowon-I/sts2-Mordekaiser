@@ -14,13 +14,12 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.relics;
 
-public class Mordekaiser_relic : RelicModel
+public sealed class Mordekaiser_relic : RelicModel
 {
-
 	private int _monstersouls;
 	
 	private int _mordekaiserleavel = 1;
-
+	
 	public override string PackedIconPath => $"res://images/relics/akabeko.png";
 
 	protected override string PackedIconOutlinePath => $"res://images/relics/akabeko.png";
@@ -43,7 +42,7 @@ public class Mordekaiser_relic : RelicModel
 	protected override IEnumerable<DynamicVar> CanonicalVars =>
 	[ 
 		new("mordekaisergetsoul", 6), 
-		new("mordekaisernowleavel", 1) 
+		new("mordekaisernowleavel", Mordekaiserleavel)
 	];
 
 	[SavedProperty]
@@ -68,7 +67,6 @@ public class Mordekaiser_relic : RelicModel
 		{
 			AssertMutable();
 			_mordekaiserleavel = value;
-			InvokeDisplayAmountChanged();
 		}
 	}
 	
@@ -81,13 +79,13 @@ public class Mordekaiser_relic : RelicModel
 			RoomType.Boss => 4,
 			_ => 0
 		};
+		Flash();
 		while (MonsterSouls >= DynamicVars["mordekaisergetsoul"].BaseValue)
 		{
 			MonsterSouls -= 6;
-			Mordekaiserleavel += 1;
-			DynamicVars["mordekaisernowleavel"].BaseValue += 1;
+			Mordekaiserleavel ++;
+			Flash();
 		}
-		Flash();
 		return Task.CompletedTask;
 	}
 	
@@ -127,8 +125,8 @@ public class Mordekaiser_relic : RelicModel
 
 	public override async Task BeforeCombatStart()
 	{
-		Flash();
-		await PowerCmd.Apply<Mordekaiser_potentialblock>(Owner.Creature,5m, Owner.Creature,null);
+		if ((decimal)Mordekaiserleavel >= 2)
+			await PowerCmd.Apply<Mordekaiser_potentialblock>(Owner.Creature,5m, Owner.Creature,null);
 	}
 	
 }

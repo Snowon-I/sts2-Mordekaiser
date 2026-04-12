@@ -1,11 +1,12 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_collapse() : CardModel(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_collapse() : CardModel(2, CardType.Skill, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
@@ -14,7 +15,7 @@ public class Mordekaiser_rare_collapse() : CardModel(2, CardType.Skill, CardRari
         ArgumentNullException.ThrowIfNull(CombatState);
         foreach (var enemy in CombatState.HittableEnemies)
         {
-            var halfHp = (dynamic)Math.Floor(enemy.MaxHp * 0.5);
+            var halfHp = Math.Floor(enemy.MaxHp * 0.5m);
             await CreatureCmd.LoseMaxHp(choiceContext, enemy, halfHp, true);
         }
     }

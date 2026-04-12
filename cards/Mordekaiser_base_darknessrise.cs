@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, CardRarity.Ancient, TargetType.Self)
+public sealed class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Power, CardRarity.Ancient, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
     

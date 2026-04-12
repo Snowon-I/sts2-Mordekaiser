@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_rare_underworldpact() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+public sealed class Mordekaiser_rare_underworldpact() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new HpLossVar(5m)];
     

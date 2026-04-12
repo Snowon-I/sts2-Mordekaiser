@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public class Mordekaiser_unc_shadowdrain() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_shadowdrain() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
     

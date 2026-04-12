@@ -20,7 +20,10 @@ public class Mordekaiser_blessing_com : AfflictionModel
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
             var addCard = Card.Owner.Character.CardPool.GetUnlockedCards(Card.Owner.UnlockState, Card.Owner.RunState.CardMultiplayerConstraint).Where(c => c.Type is CardType.Attack or CardType.Skill && c.Rarity is CardRarity.Common or CardRarity.Uncommon or CardRarity.Rare).TakeRandom(5,Card.Owner.RunState.Rng.CombatCardSelection).First();
-            await CardCmd.Afflict<Mordekaiser_blessing_com>(addCard,1);
+            var giveCard = card.Owner.Creature.CombatState?.CreateCard(addCard,card.Owner);
+            if (giveCard == null) return;
+            await CardPileCmd.AddGeneratedCardToCombat(giveCard, PileType.Hand, addedByPlayer: true);
+            await CardCmd.Afflict<Mordekaiser_blessing_com>(giveCard,1);
         }
     }
     
@@ -43,7 +46,10 @@ public class Mordekaiser_blessing_upgrade : AfflictionModel
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
             var addCard = Card.Owner.Character.CardPool.GetUnlockedCards(Card.Owner.UnlockState, Card.Owner.RunState.CardMultiplayerConstraint).Where(c => c.Type is CardType.Attack or CardType.Skill && c.Rarity is CardRarity.Common or CardRarity.Uncommon or CardRarity.Rare).TakeRandom(5,Card.Owner.RunState.Rng.CombatCardSelection).First();
-            await CardCmd.Afflict<Mordekaiser_blessing_upgrade>(addCard,1);
+            var giveCard = card.Owner.Creature.CombatState?.CreateCard(addCard,card.Owner);
+            if (giveCard == null) return;
+            await CardPileCmd.AddGeneratedCardToCombat(giveCard, PileType.Hand, addedByPlayer: true);
+            await CardCmd.Afflict<Mordekaiser_blessing_upgrade>(giveCard,1);
         }
     }
     

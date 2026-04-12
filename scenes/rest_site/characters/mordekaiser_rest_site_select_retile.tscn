@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgy88bk44xxvk"]
 
-[ext_resource type="Script" uid="uid://yqh7th5lqe1c" path="res://src/Core/Nodes/Combat/MordekaiserSelectionReticle.cs" id="1_lc2fu"]
+[ext_resource type="Script" uid="uid://cdar0a7h5b37q" path="res://src/Core/Nodes/RestSite/MordekaiserSelectionReticle.cs" id="1_g4upt"]
 [ext_resource type="Texture2D" uid="uid://bgcm1b7kcbxmp" path="res://images/ui/combat/Mordekaiser_combat_reticle.png" id="2_75ikg"]
 
 [node name="SelectionReticle" type="Control"]
@@ -12,7 +12,7 @@ offset_right = 123.0
 offset_bottom = -1.0
 pivot_offset = Vector2(126, 84)
 mouse_filter = 2
-script = ExtResource("1_lc2fu")
+script = ExtResource("1_g4upt")
 
 [node name="Border" type="TextureRect" parent="."]
 layout_mode = 0
