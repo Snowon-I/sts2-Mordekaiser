@@ -20,7 +20,7 @@ public class Mordekaiser_soulcallpower : PowerModel
         if (player != Owner.Player) return;
         var card = CardFactory.GetDistinctForCombat(player, from c in player.Character.CardPool.GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint)
             where c.Type == CardType.Attack && c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)
-            select c, 1, player.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+            select c, Amount, player.RunState.Rng.CombatCardGeneration).FirstOrDefault();
         if (card != null)
             await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, addedByPlayer: true);
     }

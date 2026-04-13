@@ -24,6 +24,8 @@ public sealed class Mordekaiser_unc_solidguardsoulform() : CardModel(1, CardType
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
     }
+    
+    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

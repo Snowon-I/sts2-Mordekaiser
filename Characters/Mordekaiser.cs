@@ -5,10 +5,12 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
+using MegaCrit.Sts2.Core.Entities.Ancients;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Nodes.Audio;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
@@ -241,4 +243,38 @@ public static class FixMordekaiserCharacterEpochCrash
 		return localPlayer.Character is not Mordekaiser;
 	}
 	
+}
+
+[HarmonyPatch(typeof(TheArchitect), "DefineDialogues")]
+public static class MordekaiserArchitectDialogue
+{
+	static void Postfix(ref AncientDialogueSet __result)
+	{
+		var charDialogu = __result.CharacterDialogues;
+
+		string MordekaiserId = ModelDb.Character<Mordekaiser>().Id.Entry;
+
+		if (__result.CharacterDialogues.ContainsKey(MordekaiserId))
+			return;
+
+		charDialogu[MordekaiserId] =
+		[
+			new AncientDialogue("", "", "")
+			{
+				VisitIndex = 0,
+				EndAttackers = ArchitectAttackers.Both
+			},
+			new AncientDialogue("", "", "")
+			{
+				VisitIndex = 1,
+				EndAttackers = ArchitectAttackers.Both
+			},
+			new AncientDialogue("", "", "")
+			{
+				VisitIndex = 2,
+				EndAttackers = ArchitectAttackers.Both
+			}
+		];
+	}
+
 }

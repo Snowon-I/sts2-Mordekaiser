@@ -84,6 +84,7 @@ public sealed class Mordekaiser_relic : RelicModel
 		{
 			MonsterSouls -= 6;
 			Mordekaiserleavel ++;
+			DynamicVars["mordekaisernowleavel"].BaseValue = Mordekaiserleavel;
 			Flash();
 		}
 		return Task.CompletedTask;
@@ -119,6 +120,15 @@ public sealed class Mordekaiser_relic : RelicModel
 					CardCmd.Upgrade(Mordekaiserdeathsgrasp);
 				}
 				await CardPileCmd.AddGeneratedCardToCombat(Mordekaiserdeathsgrasp, PileType.Hand, addedByPlayer: true);
+			}
+			if ((decimal)Mordekaiserleavel >= 4)
+			{
+				CardModel Mordekaiser_realmofdeath = Owner.Creature.CombatState!.CreateCard<Mordekaiser_ability_realmofdeath>(Owner);
+				if (Mordekaiserleavel >= 8)
+				{
+					CardCmd.Upgrade(Mordekaiser_realmofdeath);
+				}
+				await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_realmofdeath, PileType.Hand, addedByPlayer: true);
 			}
 		}
 	}

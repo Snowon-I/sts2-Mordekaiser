@@ -19,11 +19,6 @@ config/name="Mordekaiser"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Mordekaiserlisten="*res://scenes/screens/char_select/Mordekaiserlisten.tscn"
-MordekaiserLibrary="*res://scenes/cardlibrary/mordekaiserLibrary.tscn"
-
 [debug]
 
 settings/gdscript/always_track_call_stacks=true
@@ -43,7 +38,7 @@ export/convert_text_resources_to_binary=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray("res://addons/dev_tools/plugin.cfg", "res://addons/mega_text/plugin.cfg", "res://addons/megacontentcreator/plugin.cfg")
 
 [importer_defaults]
 

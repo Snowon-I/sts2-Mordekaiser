@@ -11,7 +11,7 @@ using Mordekaiser.scripts;
 
 namespace Mordekaiser.cards;
 
-public sealed class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+public sealed class Mordekaiser_rare_underworldblessing() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,MordekaiserKeyWord.MordekaiserQuiesce];
     

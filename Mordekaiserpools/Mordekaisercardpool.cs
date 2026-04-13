@@ -24,6 +24,7 @@ public class Mordekaisercardpool : CardPoolModel
         ModelDb.Card<Mordekaiser_ability_deathsgrasp>(),
         ModelDb.Card<Mordekaiser_ability_indestructible_block>(),
         ModelDb.Card<Mordekaiser_ability_indestructible_live>(),
+        ModelDb.Card<Mordekaiser_ability_realmofdeath>(),
         
         ModelDb.Card<Mordekaiser_base_strike>(),
         ModelDb.Card<Mordekaiser_base_defend>(),

@@ -16,7 +16,7 @@ public sealed class Mordekaiser_com_darkdrain() : CardModel(1, CardType.Skill, C
             choiceContext,
             Owner,
             DynamicVars.Cards.IntValue,
-            PileType.Draw.GetPile(Owner),PileType.Hand.GetPile(Owner),
+            PileType.Exhaust.GetPile(Owner),PileType.Hand.GetPile(Owner),
             card => card.Where(c => c.Type == CardType.Attack),
             false
             );

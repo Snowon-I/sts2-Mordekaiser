@@ -25,7 +25,7 @@ public sealed class Mordekaiser_rare_wraithstorm() : CardModel(1, CardType.Skill
         await MordekaiserCardUtils.ExhaustMordekaiserCard(
             choiceContext,
             Owner,DynamicVars["stromValue"].IntValue,
-            PileType.Exhaust.GetPile(Owner),
+            PileType.Discard.GetPile(Owner),
             cards => cards.Take(DynamicVars["stromValue"].IntValue)
             );
         await PlayerCmd.GainEnergy(DynamicVars["stromValue"].IntValue, Owner);

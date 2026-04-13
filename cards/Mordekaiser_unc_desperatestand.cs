@@ -12,7 +12,7 @@ public sealed class Mordekaiser_unc_desperatestand() : CardModel(1, CardType.Ski
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<StrengthPower>(2),
-        new PowerVar<DexterityPower>(-2)
+        new PowerVar<DexterityPower>(2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -23,7 +23,7 @@ public sealed class Mordekaiser_unc_desperatestand() : CardModel(1, CardType.Ski
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars.Strength.BaseValue,Owner.Creature,this);
-        await PowerCmd.Apply<DexterityPower>(Owner.Creature, DynamicVars.Dexterity.BaseValue,Owner.Creature,this);
+        await PowerCmd.Apply<DexterityPower>(Owner.Creature, -DynamicVars.Dexterity.BaseValue,Owner.Creature,this);
     }
     
     public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";

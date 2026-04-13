@@ -64,7 +64,7 @@ public class Mordekaiser_darkenergy : PowerModel
             {
                 DynamicVars.Damage.BaseValue = 1;
             }
-            await CreatureCmd.Damage(context,Owner.CombatState.HittableEnemies,DynamicVars.Damage, Owner);
+            await CreatureCmd.Damage(context,enemy,DynamicVars.Damage, Owner);
         }
     }
     

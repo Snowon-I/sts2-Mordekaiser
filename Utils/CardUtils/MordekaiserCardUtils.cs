@@ -26,6 +26,8 @@ public class MordekaiserCardUtils
         bool noCost = false
         )
     {
+        if (drawCard)
+            await CardPileCmd.ShuffleIfNecessary(choiceContext, Owner);
         var targetCard = howGetCard(cardPile.Cards).TakeRandom(cardnum,Owner.RunState.Rng.CombatCardSelection).ToList();
         if (targetCard.Count == 0)
             ThinkCmd.Play(new LocString("combat_messages", noDrawMessage), Owner.Creature, 2.0);
@@ -39,10 +41,8 @@ public class MordekaiserCardUtils
                 foreach (var card in targetCard)
                     card.EnergyCost.SetThisTurnOrUntilPlayed(0);
             if (triggerMordekaiserQuiesce)
-            {
                 foreach (var card in targetCard.Where(cards => cards.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)))
                     await card.AfterCardExhausted(choiceContext, card, false);
-            }
         }
         return targetCard;
     }

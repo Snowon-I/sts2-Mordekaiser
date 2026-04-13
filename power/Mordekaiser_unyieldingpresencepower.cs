@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -53,11 +54,11 @@ public class Mordekaiser_unyieldingpresencepower : PowerModel
     
     public override decimal ModifyDamageCap(Creature? target, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        if (target != Owner && !_lockLife )
+        if (target == Owner && _lockLife )
         {
-            return decimal.MaxValue;
+            return 0;
         }
-        return 0;
+        return decimal.MaxValue;
     }
     
     public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,

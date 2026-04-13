@@ -1,6 +1,7 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -24,13 +25,15 @@ public sealed class Mordekaiser_unc_wraithseek() : CardModel(1, CardType.Attack,
         var card1 = PileType.Draw.GetPile(Owner).Cards.FirstOrDefault(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && c.Type == CardType.Attack );
         if (card1 != null)
         {
-            await CardPileCmd.Add(card1,PileType.Hand); 
+            await CardPileCmd.Add(card1,PileType.Hand);
+            await Hook.AfterCardDrawn(Owner.Creature.CombatState!, choiceContext, card1, false);
             if (card1.Keywords.Contains(CardKeyword.Exhaust))
             {
                 var card2 = PileType.Draw.GetPile(Owner).Cards.FirstOrDefault(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && c.Type == CardType.Attack );
                 if (card2 != null)
                 {
                     await CardPileCmd.Add(card2,PileType.Hand);
+                    await Hook.AfterCardDrawn(Owner.Creature.CombatState!, choiceContext, card2, false);
                     if (!card2.Keywords.Contains(CardKeyword.Exhaust))
                     {
                         card2.AddKeyword(CardKeyword.Exhaust);

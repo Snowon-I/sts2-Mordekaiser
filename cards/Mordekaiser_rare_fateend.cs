@@ -9,7 +9,7 @@ using Mordekaiser.Utils.CardUtils;
 
 namespace Mordekaiser.cards;
 
-public sealed class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
@@ -20,12 +20,12 @@ public sealed class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, C
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ArgumentNullException.ThrowIfNull(CombatState);
+        ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .TargetingAllOpponents(CombatState)
+            .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-        if (CombatState != null)
+        if (cardPlay.Target != null)
         {
             var cardModel = (await CardSelectCmd.FromHand(prefs: new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), context: choiceContext, player: Owner, filter: model => model.Type == CardType.Attack, source: this)).FirstOrDefault();
             if (cardModel != null)
