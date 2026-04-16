@@ -18,7 +18,7 @@ public sealed class Mordekaiser_unc_underworldempower() : CardModel(1, CardType.
             Owner,
             DynamicVars.Cards.IntValue,
             PileType.Draw.GetPile(Owner),PileType.Hand.GetPile(Owner),
-            card => card.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)),
+            card => card.Where(c => c.Keywords.Contains(CardKeyword.Exhaust)),
             true,
             triggerMordekaiserQuiesce:true
         );
