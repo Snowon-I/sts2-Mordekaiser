@@ -1,0 +1,33 @@
+{
+	"textures": [
+		{
+			"image": "energy_mordekaiser.png",
+			"size": {
+				"w": 78,
+				"h": 78
+			},
+			"sprites": [
+				{
+					"filename": "card/energy_mordekaiser.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 76,
+						"h": 76
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:754b1461a233e23275d070aff0aca36c:635bd8cc5cbddd2b41e0de306bd26625:be6f185a25718f8a73343d6015714c3b$"
+	}
+}

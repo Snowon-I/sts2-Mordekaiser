@@ -30,8 +30,6 @@ public sealed class Mordekaiser_rare_quiesceecho() : CardModel(1, CardType.Attac
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.ExtraDamage.UpgradeValueBy(2m);

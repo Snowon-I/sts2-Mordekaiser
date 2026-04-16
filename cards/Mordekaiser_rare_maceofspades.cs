@@ -34,8 +34,6 @@ public sealed class Mordekaiser_rare_maceofspades() : CardModel(1, CardType.Atta
         
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);

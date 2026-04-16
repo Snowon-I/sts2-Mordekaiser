@@ -20,8 +20,6 @@ public sealed class Mordekaiser_rare_wraithpower() : CardModel(1, CardType.Skill
         await PowerCmd.Apply<Mordekaiser_wraithgivepower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, cardPlay.Card);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars["Power"].UpgradeValueBy(5);

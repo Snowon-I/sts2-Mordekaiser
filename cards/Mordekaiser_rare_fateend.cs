@@ -43,8 +43,6 @@ public sealed class Mordekaiser_rare_fateend() : CardModel(2, CardType.Attack, C
         }
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

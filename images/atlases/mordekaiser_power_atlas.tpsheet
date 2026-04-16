@@ -1,0 +1,423 @@
+{
+	"textures": [
+		{
+			"image": "mordekaiser_power_atlas.png",
+			"size": {
+				"w": 509,
+				"h": 248
+			},
+			"sprites": [
+				{
+					"filename": "mordekaiser_absolutewillpower.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_darkenergypower.png",
+					"region": {
+						"x": 1,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_darknessrisepower.png",
+					"region": {
+						"x": 1,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_dashstancepower.png",
+					"region": {
+						"x": 1,
+						"y": 133,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_solidguardsoulpower.png",
+					"region": {
+						"x": 1,
+						"y": 199,
+						"w": 64,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 8,
+						"w": 0,
+						"h": 16
+					}
+				},
+				{
+					"filename": "mordekaiser_deathdominionpower.png",
+					"region": {
+						"x": 67,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_deceasedsdomainpower.png",
+					"region": {
+						"x": 67,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_doomhourpower.png",
+					"region": {
+						"x": 67,
+						"y": 133,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulsteelformpower.png",
+					"region": {
+						"x": 67,
+						"y": 199,
+						"w": 64,
+						"h": 48
+					},
+					"margin": {
+						"x": 0,
+						"y": 8,
+						"w": 0,
+						"h": 16
+					}
+				},
+				{
+					"filename": "mordekaiser_doomsoulreleasepower.png",
+					"region": {
+						"x": 133,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_eternalimmortalitypower.png",
+					"region": {
+						"x": 133,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_finaljudgmentpower.png",
+					"region": {
+						"x": 133,
+						"y": 133,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soultomepower.png",
+					"region": {
+						"x": 133,
+						"y": 199,
+						"w": 64,
+						"h": 34
+					},
+					"margin": {
+						"x": 0,
+						"y": 15,
+						"w": 0,
+						"h": 30
+					}
+				},
+				{
+					"filename": "mordekaiser_potentialblockpower.png",
+					"region": {
+						"x": 199,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_ruindoompower.png",
+					"region": {
+						"x": 199,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_shadowdrainpower.png",
+					"region": {
+						"x": 199,
+						"y": 133,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulforgebodypower.png",
+					"region": {
+						"x": 265,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulreavepower.png",
+					"region": {
+						"x": 331,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulreleasepower.png",
+					"region": {
+						"x": 397,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_emberbladeinitiatepower.png",
+					"region": {
+						"x": 463,
+						"y": 1,
+						"w": 34,
+						"h": 64
+					},
+					"margin": {
+						"x": 17,
+						"y": 0,
+						"w": 30,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_spreadpower.png",
+					"region": {
+						"x": 265,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_underworldpower.png",
+					"region": {
+						"x": 265,
+						"y": 133,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_wraithgivepower.png",
+					"region": {
+						"x": 331,
+						"y": 67,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_unyieldingpresencepower.png",
+					"region": {
+						"x": 397,
+						"y": 67,
+						"w": 63,
+						"h": 64
+					},
+					"margin": {
+						"x": 1,
+						"y": 0,
+						"w": 1,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulguarddarkpower.png",
+					"region": {
+						"x": 331,
+						"y": 133,
+						"w": 60,
+						"h": 64
+					},
+					"margin": {
+						"x": 2,
+						"y": 0,
+						"w": 4,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_unbreakablepower.png",
+					"region": {
+						"x": 393,
+						"y": 133,
+						"w": 59,
+						"h": 64
+					},
+					"margin": {
+						"x": 3,
+						"y": 0,
+						"w": 5,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulcallpower.png",
+					"region": {
+						"x": 454,
+						"y": 133,
+						"w": 54,
+						"h": 64
+					},
+					"margin": {
+						"x": 5,
+						"y": 0,
+						"w": 10,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:18d171c2377e0700816572d9a40e1235:f4d9951e879313c3ec0864e7e145e85b:f5c6449ca053ce4ebfb1e68f7bf2f31f$"
+	}
+}

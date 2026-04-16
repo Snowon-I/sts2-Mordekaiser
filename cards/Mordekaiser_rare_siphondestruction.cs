@@ -29,8 +29,6 @@ public sealed class Mordekaiser_rare_siphondestruction() : CardModel(1, CardType
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(5m);

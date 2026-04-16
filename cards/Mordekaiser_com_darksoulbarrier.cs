@@ -19,9 +19,7 @@ public sealed class Mordekaiser_com_darksoulbarrier() : CardModel(1, CardType.Sk
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(3m);

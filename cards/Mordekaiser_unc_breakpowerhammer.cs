@@ -34,9 +34,7 @@ public sealed class Mordekaiser_unc_breakpowerhammer() : CardModel(3, CardType.A
                 await PowerCmd.Apply<WeakPower>(cardPlay.Target, 2m, Owner.Creature, this);
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);

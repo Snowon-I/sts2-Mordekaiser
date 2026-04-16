@@ -29,8 +29,6 @@ public sealed class Mordekaiser_com_quiescestrike() : CardModel(1, CardType.Atta
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(5m);
@@ -63,8 +61,6 @@ public sealed class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Atta
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4m);
@@ -82,10 +78,10 @@ public sealed class Mordekaiser_com_unleashshadow() : CardModel(2, CardType.Atta
     
 }
 
-public sealed class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public sealed class Mordekaiser_com_steelcharge() : CardModel(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(12m, ValueProp.Move),
+        new DamageVar(7m, ValueProp.Move),
         new PowerVar<StrengthPower>(1m)
     ];
     
@@ -101,8 +97,6 @@ public sealed class Mordekaiser_com_steelcharge() : CardModel(2, CardType.Attack
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
-
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -149,8 +143,6 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
-
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

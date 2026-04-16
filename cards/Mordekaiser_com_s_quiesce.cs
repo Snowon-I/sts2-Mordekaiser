@@ -37,9 +37,7 @@ public sealed class Mordekaiser_com_wraithfear() : CardModel(1, CardType.Skill, 
         DynamicVars["Power"].UpgradeValueBy(1m);
         DynamicVars["quiescePower"].UpgradeValueBy(1m);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
         if (card == this && CombatState != null)

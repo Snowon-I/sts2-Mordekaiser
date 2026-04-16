@@ -21,9 +21,7 @@ public sealed class Mordekaiser_unc_shadowdrain() : CardModel(1, CardType.Skill,
         await PowerCmd.Apply<Mordekaiser_shadowdrainpower>(CombatState.HittableEnemies,
             ((CalculatedVar)DynamicVars["Power"]).Calculate(Owner.Creature), Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

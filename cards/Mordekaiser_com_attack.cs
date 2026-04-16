@@ -34,8 +34,6 @@ public sealed class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, Car
             );
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);

@@ -20,8 +20,6 @@ public sealed class Mordekaiser_rare_collapse() : CardModel(2, CardType.Skill, C
         }
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);

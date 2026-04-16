@@ -4,19 +4,30 @@ using Godot;
 using HarmonyLib;
 using JetBrains.Annotations;
 using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
+using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 using MegaCrit.Sts2.Core.Entities.Ancients;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Nodes.Audio;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
+using MegaCrit.Sts2.Core.Nodes.Screens.Timeline;
+using MegaCrit.Sts2.Core.Platform;
+using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.Saves.Managers;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.Timeline;
+using MegaCrit.Sts2.Core.Timeline.Epochs;
+using MegaCrit.Sts2.Core.Unlocks;
 using Mordekaiser.cards;
+using Mordekaiser.Core.Timeline.Epochs;
 using Mordekaiser.Mordekaiserpools;
 using Mordekaiser.relics;
 
@@ -56,7 +67,7 @@ public sealed class Mordekaiser : CharacterModel
 		ModelDb.Card<Mordekaiser_base_darknessrise>(),
 	];
 
-	public override IReadOnlyList<RelicModel> StartingRelics => [ModelDb.Relic<Mordekaiser_relic>()];
+	public override IReadOnlyList<RelicModel> StartingRelics => [ModelDb.Relic<Mordekaiser_soulcrown>()];
 
 	public override float AttackAnimDelay => 0.15f;
 
@@ -121,7 +132,6 @@ public sealed class Mordekaiser : CharacterModel
 }
 
 
-[UsedImplicitly] //消除未被使用警告
 [HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)] //nameof可以改为"AllCharacters",如果后续被保护的话
 public static class MordekaiserPatchAdd
 {
@@ -135,6 +145,19 @@ public static class MordekaiserPatchAdd
 		
 }
 
+[HarmonyPatch(typeof(UnlockState), nameof(UnlockState.Characters), MethodType.Getter)] //nameof可以改为"AllCharacters",如果后续被保护的话
+public static class MordekaiserLockPatchAdd
+{
+	public static void Postfix(UnlockState __instance,ref IEnumerable<CharacterModel> __result)
+	{
+		var MordekaiserCharater = __result.ToList();
+		if (!__instance.IsEpochRevealed<Mordekaiser1Epoch>())
+			MordekaiserCharater.Remove(ModelDb.Character<Mordekaiser>());
+		__result = MordekaiserCharater;
+	}
+		
+}
+
 [HarmonyPatch(typeof(NCharacterSelectScreen), nameof(NCharacterSelectScreen.SelectCharacter))]
 [HarmonyPatch([typeof(NCharacterSelectButton), typeof(CharacterModel)])]
 public static class SelectMordekaiserCharacter
@@ -143,7 +166,6 @@ public static class SelectMordekaiserCharacter
 
 	public static void Postfix(NCharacterSelectButton charSelectButton, CharacterModel characterModel)
 	{
-
 		if (string.IsNullOrEmpty(characterModel.Id.Entry))return;
 
 		var isMordekaiserByType = characterModel is Mordekaiser;
@@ -187,35 +209,6 @@ public static class ConfirmMordekaiserCharacter
 		}
 	}
 	
-}
-
-[HarmonyPatch(typeof(NCard), "Reload")]
-public static class MordekaiserEnergyAdd
-{
-	private const string CustomEnergyIconPath = "res://images/atlases/mordekaiser_energy.png";
-	
-	public static void Postfix(NCard __instance)
-	{
-		if (!__instance.IsNodeReady() || __instance.Model?.Pool == null ) return;
-		
-		var targetPool = __instance.Model.Pool;
-		
-		if (targetPool is not Mordekaisercardpool ) return;
-
-		// 1. 反射获取NCard的私有字段 _energyIcon
-		var energyIconField = typeof(NCard).GetField(
-			"_energyIcon", 
-			BindingFlags.NonPublic | BindingFlags.Instance
-		);
-		
-		var originalEnergyIcon = energyIconField?.GetValue(__instance) as TextureRect;
-		
-		if (originalEnergyIcon == null ) return;
-
-		originalEnergyIcon.Texture = ResourceLoader.Load<Texture2D>(CustomEnergyIconPath);
-
-	}
-
 }
 
 [HarmonyPatch(typeof(ProgressSaveManager))]
@@ -277,4 +270,90 @@ public static class MordekaiserArchitectDialogue
 		];
 	}
 
+}
+
+[HarmonyPatch(typeof(AtlasResourceLoader), nameof(AtlasResourceLoader.ParsePath))]
+public static class AtlasResourceLoader_Mordekaiser_Patch
+{
+	public static void Postfix(string path, ref (string? AtlasName, string? SpriteName) __result)
+	{
+		if (__result.SpriteName == null) return;
+		
+		if (__result.SpriteName.StartsWith("mordekaiser_") && __result.SpriteName.EndsWith("power"))
+		{
+			 __result = ("mordekaiser_power_atlas", __result.SpriteName);
+			 return;
+		}
+		
+		if (__result.SpriteName.StartsWith("card/energy") && __result.SpriteName.EndsWith("mordekaiser"))
+		{
+			__result = ("energy_mordekaiser", __result.SpriteName);
+			return;
+		}
+		
+		if (__result.SpriteName.StartsWith("mordekaiser/mordekaiser"))
+		{
+			__result = ("mordekaiser_cards", __result.SpriteName);
+			return;
+		}
+		
+		if (__result.SpriteName.StartsWith("mordekaiser") && __result.SpriteName.EndsWith("_epoch"))
+		{
+			__result = ("mordekaiser_epoch", __result.SpriteName);
+		}
+
+	}
+	
+}
+
+[HarmonyPatch]
+public static class Mordekaiser_Epochs_Patch
+{
+	
+	[HarmonyPostfix]
+	[HarmonyPatch(typeof(NTimelineScreen), nameof(NTimelineScreen.OnSubmenuOpened))]
+	static async void Post1(NTimelineScreen __instance)
+	{
+		try
+		{
+			var MordekaiserEpoch = EpochModel.Get<Mordekaiser1Epoch>();
+			var slot1 = new EpochSlotData(MordekaiserEpoch.Id, EpochSlotState.Obtained);
+			if (__instance.GetChildren().OfType<NEpochSlot>().Any(slot => slot.eraPosition == MordekaiserEpoch.EraPosition)) return;
+			var progress = SaveManager.Instance.Progress;
+			var serializableEpoch = progress.Epochs.FirstOrDefault(e => e.Id == MordekaiserEpoch.Id);
+			if (serializableEpoch == null || serializableEpoch.State == EpochState.ObtainedNoSlot) return;
+			if (!progress.IsEpochObtained(MordekaiserEpoch.Id))
+				return;
+			await __instance.AddEpochSlots([slot1],false);
+		}
+		catch (Exception e)
+		{
+			GD.PrintErr(e);
+		}
+	}
+	
+	[HarmonyPostfix]
+	[HarmonyPatch(typeof(ProgressSaveManager), nameof(ProgressSaveManager.UpdateWithRunData))]
+	static void Post2(ProgressSaveManager __instance, SerializableRun serializableRun, bool victory)
+	{
+		SerializablePlayer? serializablePlayer;
+		var progress = __instance.Progress;
+		var MordekaiserEpoch = EpochModel.Get<Mordekaiser1Epoch>();
+		if (progress.IsEpochObtained(MordekaiserEpoch.Id))return;
+		
+		if (serializableRun.Players.Count == 1)
+		{
+			serializablePlayer = serializableRun.Players.First();
+		}
+		else
+		{
+			var localPlayerId = PlatformUtil.GetLocalPlayerId(serializableRun.PlatformType); 
+			serializablePlayer = serializableRun.Players.FirstOrDefault(p => p.NetId == localPlayerId);
+		}
+		SaveManager.Instance.UnlockSlot(MordekaiserEpoch.Id);
+		SaveManager.Instance.Progress.ObtainEpoch(MordekaiserEpoch.Id);
+		serializablePlayer!.DiscoveredEpochs.Add(MordekaiserEpoch.Id);
+		__instance.SaveProgress();
+	}
+	
 }

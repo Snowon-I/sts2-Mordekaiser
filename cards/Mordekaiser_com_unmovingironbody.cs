@@ -24,9 +24,7 @@ public sealed class Mordekaiser_com_unmovingironbody() : CardModel(1, CardType.S
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<DexterityPower>(Owner.Creature, -2, Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(5m);

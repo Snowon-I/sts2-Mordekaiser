@@ -19,8 +19,6 @@ public sealed class Mordekaiser_unc_wraithrecall() : CardModel(1, CardType.Skill
         await CardPileCmd.Add(cardModel, PileType.Hand);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

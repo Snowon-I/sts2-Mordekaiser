@@ -21,8 +21,6 @@ public sealed class Mordekaiser_com_dualhammerslam() : CardModel(1, CardType.Att
             .Execute(choiceContext);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);

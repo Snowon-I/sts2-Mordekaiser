@@ -24,9 +24,7 @@ public sealed class Mordekaiser_rare_unbreakable() : CardModel(1, CardType.Skill
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
         await PowerCmd.Apply<Mordekaiser_unbreakablepower>(Owner.Creature,DynamicVars.Block.BaseValue,Owner.Creature,this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(5m);

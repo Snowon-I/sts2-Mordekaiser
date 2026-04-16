@@ -11,15 +11,15 @@ namespace Mordekaiser.cards;
 
 public class Mordekaiser_ability_realmofdeath() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.AnyEnemy)
 {
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Innate];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain,CardKeyword.Exhaust];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<Mordekaiser_deceasedsdomainpower>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Power",3m),
-        new ("GainHp",10m)
+        new ("Power",2m),
+        new ("GainHp",5m)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -40,15 +40,13 @@ public class Mordekaiser_ability_realmofdeath() : CardModel(0, CardType.Skill, C
             await PowerCmd.Apply<DexterityPower>(Owner.Creature,dexPower.Amount,Owner.Creature,cardPlay.Card);
             await PowerCmd.Remove(dexPower);
         }
-        await PowerCmd.Apply<Mordekaiser_deceasedsdomainpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<Mordekaiser_deceasedsdomainpower>(cardPlay.Target, DynamicVars["Power"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_deceasedsdomainpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
-        DynamicVars["Power"].UpgradeValueBy(2m);
+        DynamicVars["Power"].UpgradeValueBy(1m);
         DynamicVars["GainHp"].UpgradeValueBy(5m);
     }
     

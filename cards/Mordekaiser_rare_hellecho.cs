@@ -35,8 +35,6 @@ public sealed class Mordekaiser_rare_hellecho() : CardModel(3, CardType.Attack, 
         );
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.ExtraDamage.UpgradeValueBy(4m);

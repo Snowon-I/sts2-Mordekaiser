@@ -18,9 +18,7 @@ public sealed class Mordekaiser_rare_underworldblessing() : CardModel(1, CardTyp
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
     
     protected override void OnUpgrade(){}
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
         if (card == this && CombatState != null)

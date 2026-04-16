@@ -24,8 +24,6 @@ public sealed class Mordekaiser_unc_ruindoom() : CardModel(1, CardType.Power, Ca
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

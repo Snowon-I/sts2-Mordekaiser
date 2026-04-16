@@ -25,9 +25,7 @@ public sealed class Mordekaiser_com_darkdrain() : CardModel(1, CardType.Skill, C
             card.RemoveKeyword(CardKeyword.Exhaust); 
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);

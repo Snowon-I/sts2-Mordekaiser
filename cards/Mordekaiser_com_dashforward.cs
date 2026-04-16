@@ -24,9 +24,7 @@ public sealed class Mordekaiser_com_dashforward() : CardModel(0, CardType.Skill,
         await PowerCmd.Apply<Mordekaiser_dashforwardpower>(Owner.Creature, DynamicVars.Strength.BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<VulnerablePower>(Owner.Creature, 1m, Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Strength.UpgradeValueBy(1m);

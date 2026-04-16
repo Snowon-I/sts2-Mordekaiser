@@ -35,8 +35,6 @@ public sealed class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.At
         await PowerCmd.Apply<VulnerablePower>(CombatState!.HittableEnemies, DynamicVars["Power"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<WeakPower>(CombatState.HittableEnemies, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

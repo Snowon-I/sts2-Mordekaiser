@@ -21,8 +21,6 @@ public sealed class Mordekaiser_rare_underworldpact() : CardModel(1, CardType.Sk
         await PowerCmd.Apply<Mordekaiser_underworldpower>(Owner.Creature, 1m, Owner.Creature, cardPlay.Card);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.HpLoss.UpgradeValueBy(-2);

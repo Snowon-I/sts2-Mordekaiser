@@ -19,13 +19,11 @@ public sealed class Mordekaiser_unc_underworldempower() : CardModel(1, CardType.
             DynamicVars.Cards.IntValue,
             PileType.Draw.GetPile(Owner),PileType.Hand.GetPile(Owner),
             card => card.Where(c => c.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce)),
-            false,
+            true,
             triggerMordekaiserQuiesce:true
         );
     }
     
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-        
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

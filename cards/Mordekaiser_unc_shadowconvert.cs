@@ -49,8 +49,6 @@ public sealed class Mordekaiser_unc_shadowconvert() : CardModel(1, CardType.Skil
             }
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

@@ -29,8 +29,6 @@ public sealed class Mordekaiser_unc_wraithsummonstrike() : CardModel(1, CardType
         await MordekaiserCardUtils.ExhaustMordekaiserCard(choiceContext, Owner, 1, PileType.Draw.GetPile(Owner),
             cards => cards.Where(c => c.Type == CardType.Attack));
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {
@@ -67,9 +65,7 @@ public sealed class Mordekaiser_unc_sweepbreak() : CardModel(1, CardType.Attack,
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);
@@ -98,7 +94,7 @@ public sealed class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attac
         get
         {
             var _lastcard = CombatManager.Instance.History.CardPlaysStarted.LastOrDefault(c => c.CardPlay.Card.Owner == Owner);
-            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce);
+            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && _lastcard.CardPlay.Card != this;
         }
         
     }    
@@ -121,9 +117,7 @@ public sealed class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attac
             await CardCmd.Exhaust(choiceContext,this);
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(5m);

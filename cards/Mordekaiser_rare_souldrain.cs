@@ -16,7 +16,7 @@ public sealed class Mordekaiser_rare_souldrain() : CardModel(3, CardType.Attack,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var mordekaiserrelic = Owner.GetRelic<Mordekaiser_relic>();
+        var mordekaiserrelic = Owner.GetRelic<Mordekaiser_soulcrown>();
         if (mordekaiserrelic != null)
             mordekaiserrelic.MonsterSouls++;
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
@@ -25,8 +25,6 @@ public sealed class Mordekaiser_rare_souldrain() : CardModel(3, CardType.Attack,
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }
-
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

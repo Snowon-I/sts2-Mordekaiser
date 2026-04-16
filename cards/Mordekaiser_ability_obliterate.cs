@@ -1,9 +1,11 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
@@ -12,15 +14,20 @@ public sealed class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Att
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CalculationBaseVar(12m),
+        new CalculationBaseVar(10m),
         new ExtraDamageVar(1m),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, _) => MordekaiserObliterateAttack(card))
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(MordekaiserObliterateAttack)
     ];
     
-    private static decimal MordekaiserObliterateAttack(CardModel card)
+    private static decimal MordekaiserObliterateAttack(CardModel card,Creature? creature)
     {
-        decimal MordekaiserObliterateAttackNum = card.IsUpgraded? 6m : 4m;
-        return card.CombatState!.HittableEnemies.Count(c => c.IsAlive) == 1 ? MordekaiserObliterateAttackNum : 0m;
+        if (card.CombatState == null || creature == null )
+            return 0m;
+        var MordekaiserObliterateAttackNum = card.IsUpgraded? 6m : 4m;
+        var enemies = card.CombatState.HittableEnemies;
+        if (!enemies.Any(c => c.HasPower<Mordekaiser_deceasedsdomainpower>()))
+            return enemies.Count(c => c.IsAlive) == 1 ? MordekaiserObliterateAttackNum : 0m;
+        return enemies.Any(c => c.GetPower<Mordekaiser_deceasedsdomainpower>()!.Applier == creature) ? MordekaiserObliterateAttackNum : 0m;
     }
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -31,8 +38,6 @@ public sealed class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Att
             .TargetingAllOpponents(CombatState!)
             .Execute(choiceContext);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

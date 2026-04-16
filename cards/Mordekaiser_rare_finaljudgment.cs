@@ -19,8 +19,6 @@ public sealed class Mordekaiser_rare_finaljudgment() : CardModel(2, CardType.Ski
         await PowerCmd.Apply<Mordekaiser_finaljudgmentpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars["Power"].UpgradeValueBy(-3m);

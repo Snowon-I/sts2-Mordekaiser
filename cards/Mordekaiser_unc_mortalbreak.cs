@@ -25,9 +25,7 @@ public sealed class Mordekaiser_unc_mortalbreak() : CardModel(2, CardType.Attack
                 ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(5m);

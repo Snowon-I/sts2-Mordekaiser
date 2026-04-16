@@ -25,9 +25,7 @@ public sealed class Mordekaiser_unc_desperatestand() : CardModel(1, CardType.Ski
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars.Strength.BaseValue,Owner.Creature,this);
         await PowerCmd.Apply<DexterityPower>(Owner.Creature, -DynamicVars.Dexterity.BaseValue,Owner.Creature,this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Strength.UpgradeValueBy(1);

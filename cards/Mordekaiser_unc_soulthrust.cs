@@ -19,7 +19,7 @@ public sealed class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack,
         get
         {
             var _lastcard = CombatManager.Instance.History.CardPlaysStarted.LastOrDefault(c => c.CardPlay.Card.Owner == Owner);
-            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce);
+            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && _lastcard.CardPlay.Card != this;
         }
     }
 
@@ -49,8 +49,6 @@ public sealed class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack,
             }
         }
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     
     protected override void OnUpgrade()

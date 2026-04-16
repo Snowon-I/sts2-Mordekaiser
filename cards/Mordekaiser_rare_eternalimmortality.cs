@@ -24,8 +24,6 @@ public sealed class Mordekaiser_rare_eternalimmortality() : CardModel(1, CardTyp
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

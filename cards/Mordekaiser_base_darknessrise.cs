@@ -15,7 +15,7 @@ public sealed class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Powe
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
         HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.FromPower<Mordekaiser_darkenergy>()
+        HoverTipFactory.FromPower<Mordekaiser_darkenergypower>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<StrengthPower>(1m)];
@@ -23,11 +23,9 @@ public sealed class Mordekaiser_base_darknessrise() : CardModel(0, CardType.Powe
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<StrengthPower>(Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
-        await PowerCmd.Apply<Mordekaiser_darknessrise>(Owner.Creature, 1m, Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_darknessrisepower>(Owner.Creature, 1m, Owner.Creature, this);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars["StrengthPower"].UpgradeValueBy(1m);

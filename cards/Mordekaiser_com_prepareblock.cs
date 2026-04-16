@@ -28,9 +28,7 @@ public sealed class Mordekaiser_com_prepareblock() : CardModel(1, CardType.Skill
             true,"MORDEKAISER_NO_DRAW_TAGSTRIKE"
         );
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(2m);

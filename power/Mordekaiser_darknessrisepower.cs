@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.power;
 
-public class Mordekaiser_darknessrise : PowerModel
+public class Mordekaiser_darknessrisepower : PowerModel
 {
     public override PowerType Type => PowerType.Buff;
 
@@ -21,11 +21,11 @@ public class Mordekaiser_darknessrise : PowerModel
     {
         if (cardPlay.Card.Owner.Creature != Owner) return;
         if (Owner.CombatState == null) return;
-        var darkenergy = Owner.GetPower<Mordekaiser_darkenergy>();
+        var darkenergy = Owner.GetPower<Mordekaiser_darkenergypower>();
         if (cardPlay.Card.Type == CardType.Attack)
         {
             if (darkenergy == null)
-                darkenergy = await PowerCmd.Apply<Mordekaiser_darkenergy>(Owner, 1m, Owner, null);
+                darkenergy = await PowerCmd.Apply<Mordekaiser_darkenergypower>(Owner, 1m, Owner, null);
             else
             if (darkenergy.Amount < 3)
                 await PowerCmd.ModifyAmount(darkenergy,1m, Owner,null);
@@ -35,13 +35,13 @@ public class Mordekaiser_darknessrise : PowerModel
         else
         {
             if (darkenergy == null) return;
-            await PowerCmd.ModifyAmount(Owner.GetPower<Mordekaiser_darkenergy>()!, -1, Owner, null);
+            await PowerCmd.ModifyAmount(Owner.GetPower<Mordekaiser_darkenergypower>()!, -1, Owner, null);
         }
     }
 
 }
 
-public class Mordekaiser_darkenergy : PowerModel
+public class Mordekaiser_darkenergypower : PowerModel
 {
     public override PowerType Type => PowerType.Buff;
 

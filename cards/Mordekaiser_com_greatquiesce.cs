@@ -37,9 +37,7 @@ public sealed class Mordekaiser_com_greatquiesce() : CardModel(2, CardType.Skill
             card => card
         );
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

@@ -20,8 +20,6 @@ public sealed class Mordekaiser_unc_wraithcycle() : CardModel(1, CardType.Skill,
             await CardCmd.Exhaust(choiceContext,card);
     }
     
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-        
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);

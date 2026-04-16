@@ -27,9 +27,7 @@ public sealed class Mordekaiser_unc_soulbodybarrier() : CardModel(1, CardType.Sk
             cards => cards.Where(c => c.Type == CardType.Skill)
         );
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(4m);

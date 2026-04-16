@@ -33,8 +33,6 @@ public sealed class Mordekaiser_com_steelstrike() : CardModel(1, CardType.Attack
         );
     }
 
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2m);

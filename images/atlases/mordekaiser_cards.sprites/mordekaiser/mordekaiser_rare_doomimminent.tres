@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b4pek84b3h7oc"]
+
+[ext_resource type="Texture2D" uid="uid://c1svfswbd2rqa" path="res://images/atlases/mordekaiser_cards.png" id="1_4lpwg"]
+
+[resource]
+atlas = ExtResource("1_4lpwg")
+region = Rect2(253, 895, 250, 190)

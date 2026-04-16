@@ -7,7 +7,7 @@ namespace Mordekaiser.Mordekaiserpools;
 
 public sealed class Mordekaiserpotionpool : PotionPoolModel
 {
-    public override string EnergyColorName => "ironclad";
+    public override string EnergyColorName => "mordekaiser";
 
     public override Color LabOutlineColor => StsColors.red;
 

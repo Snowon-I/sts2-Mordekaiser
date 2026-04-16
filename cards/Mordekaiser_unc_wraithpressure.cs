@@ -14,7 +14,7 @@ public sealed class Mordekaiser_unc_wraithpressure() : CardModel(1, CardType.Ski
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new CalculationBaseVar(0m),
 		new CalculationExtraVar(1m),
-		new CalculatedVar("Power").WithMultiplier((_,c) => c != null ? c.Player.Deck.Cards.Count(card => card.Pile.Type == PileType.Exhaust) : 0)
+		new CalculatedVar("Power").WithMultiplier((_,c) => c != null ? c.Player!.Deck.Cards.Count(card => card.Pile!.Type == PileType.Exhaust) : 0)
 	];
 	
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];
@@ -25,12 +25,9 @@ public sealed class Mordekaiser_unc_wraithpressure() : CardModel(1, CardType.Ski
 		await PowerCmd.Apply<Mordekaiser_wraithpressurepower>(CombatState.HittableEnemies,((CalculatedVar)DynamicVars["Power"]).Calculate(Owner.Creature),Owner.Creature,this);
 	}
 	
-	public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-	
 	protected override void OnUpgrade()
 	{
 		DynamicVars.CalculationExtra.UpgradeValueBy(1);
 	}
-	
 	
 }

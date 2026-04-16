@@ -1,0 +1,1293 @@
+{
+	"textures": [
+		{
+			"image": "mordekaiser_cards.png",
+			"size": {
+				"w": 2043,
+				"h": 2238
+			},
+			"sprites": [
+				{
+					"filename": "mordekaiser/mordekaiser_ability_deathsgrasp.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_ability_indestructible_block.png",
+					"region": {
+						"x": 228,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_ability_indestructible_live.png",
+					"region": {
+						"x": 455,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_ability_obliterate.png",
+					"region": {
+						"x": 682,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_ability_realmofdeath.png",
+					"region": {
+						"x": 909,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_base_darknessrise.png",
+					"region": {
+						"x": 1136,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_creepingdeath.png",
+					"region": {
+						"x": 1363,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_maceofspades.png",
+					"region": {
+						"x": 1590,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_siphondestruction.png",
+					"region": {
+						"x": 1817,
+						"y": 1,
+						"w": 225,
+						"h": 316
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_base_criticalattack.png",
+					"region": {
+						"x": 1,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_base_defend.png",
+					"region": {
+						"x": 253,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_base_strike.png",
+					"region": {
+						"x": 505,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_agonytorment.png",
+					"region": {
+						"x": 757,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_chargedhammerswing.png",
+					"region": {
+						"x": 1009,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_crushslam.png",
+					"region": {
+						"x": 1261,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_darkdrain.png",
+					"region": {
+						"x": 1513,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_darksoulbarrier.png",
+					"region": {
+						"x": 1765,
+						"y": 319,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_dashforward.png",
+					"region": {
+						"x": 1,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_dualhammerslam.png",
+					"region": {
+						"x": 253,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_fleshreap.png",
+					"region": {
+						"x": 505,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_greatquiesce.png",
+					"region": {
+						"x": 757,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_prepareblock.png",
+					"region": {
+						"x": 1009,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_quiescestrike.png",
+					"region": {
+						"x": 1261,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_sacrifice.png",
+					"region": {
+						"x": 1513,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_steelcharge.png",
+					"region": {
+						"x": 1765,
+						"y": 511,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_steelstrike.png",
+					"region": {
+						"x": 1,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_strike.png",
+					"region": {
+						"x": 253,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_underworldstrike.png",
+					"region": {
+						"x": 505,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_unleashshadow.png",
+					"region": {
+						"x": 757,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_unmovingironbody.png",
+					"region": {
+						"x": 1009,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_com_wraithfear.png",
+					"region": {
+						"x": 1261,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_absolutewill.png",
+					"region": {
+						"x": 1513,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_collapse.png",
+					"region": {
+						"x": 1765,
+						"y": 703,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_deathdominion.png",
+					"region": {
+						"x": 1,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_doomimminent.png",
+					"region": {
+						"x": 253,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_eternalimmortality.png",
+					"region": {
+						"x": 505,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_fateend.png",
+					"region": {
+						"x": 757,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_finaljudgment.png",
+					"region": {
+						"x": 1009,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_hellecho.png",
+					"region": {
+						"x": 1261,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_quiesceecho.png",
+					"region": {
+						"x": 1513,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_souldrain.png",
+					"region": {
+						"x": 1765,
+						"y": 895,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_soulsteelform.png",
+					"region": {
+						"x": 1,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_soultome.png",
+					"region": {
+						"x": 253,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_tearsoul.png",
+					"region": {
+						"x": 505,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_unbreakable.png",
+					"region": {
+						"x": 757,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_underworldblessing.png",
+					"region": {
+						"x": 1009,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_underworldpact.png",
+					"region": {
+						"x": 1261,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_unyieldingpresence.png",
+					"region": {
+						"x": 1513,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_wraithpower.png",
+					"region": {
+						"x": 1765,
+						"y": 1087,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_rare_wraithstorm.png",
+					"region": {
+						"x": 1,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_breakpowerhammer.png",
+					"region": {
+						"x": 253,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_dashstance.png",
+					"region": {
+						"x": 505,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_defendwraith.png",
+					"region": {
+						"x": 757,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_desperatestand.png",
+					"region": {
+						"x": 1009,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_doomhour.png",
+					"region": {
+						"x": 1261,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_doomsoulendrelease.png",
+					"region": {
+						"x": 1513,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_emberbladeinitiate.png",
+					"region": {
+						"x": 1765,
+						"y": 1279,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_meteorwraithhammer.png",
+					"region": {
+						"x": 1,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_mortalbreak.png",
+					"region": {
+						"x": 253,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_purifywraith.png",
+					"region": {
+						"x": 505,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_ruindoom.png",
+					"region": {
+						"x": 757,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_shadowconvert.png",
+					"region": {
+						"x": 1009,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_shadowdrain.png",
+					"region": {
+						"x": 1261,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_solidguardsoulform.png",
+					"region": {
+						"x": 1513,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulbarrier.png",
+					"region": {
+						"x": 1765,
+						"y": 1471,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulbodybarrier.png",
+					"region": {
+						"x": 1,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulcall.png",
+					"region": {
+						"x": 253,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulfollow.png",
+					"region": {
+						"x": 505,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulforgebody.png",
+					"region": {
+						"x": 757,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulguarddarkdoom.png",
+					"region": {
+						"x": 1009,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulpowerreave.png",
+					"region": {
+						"x": 1261,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulreleasedoom.png",
+					"region": {
+						"x": 1513,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_soulthrust.png",
+					"region": {
+						"x": 1765,
+						"y": 1663,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_sweepbreak.png",
+					"region": {
+						"x": 1,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_underworldempower.png",
+					"region": {
+						"x": 253,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithcritical.png",
+					"region": {
+						"x": 505,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithcycle.png",
+					"region": {
+						"x": 757,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithdrain.png",
+					"region": {
+						"x": 1009,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithecho.png",
+					"region": {
+						"x": 1261,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithpressure.png",
+					"region": {
+						"x": 1513,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithpursuit.png",
+					"region": {
+						"x": 1765,
+						"y": 1855,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithrecall.png",
+					"region": {
+						"x": 1,
+						"y": 2047,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithseek.png",
+					"region": {
+						"x": 253,
+						"y": 2047,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithsummonstrike.png",
+					"region": {
+						"x": 505,
+						"y": 2047,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser/mordekaiser_unc_wraithwarcry.png",
+					"region": {
+						"x": 757,
+						"y": 2047,
+						"w": 250,
+						"h": 190
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a27359818c4383b42dc41c26170b7176:9183e15889354635cc9c8cfc666b8640:5d31e08b5e262e8fabcbb0a6c2d9ee91$"
+	}
+}

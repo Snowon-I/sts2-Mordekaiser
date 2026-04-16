@@ -28,8 +28,6 @@ public sealed class Mordekaiser_com_fleshreap() : CardModel(2, CardType.Attack, 
         await PowerCmd.Apply<VulnerablePower>(CombatState!.HittableEnemies, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
 
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     protected override void OnUpgrade()
     {

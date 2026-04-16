@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -14,23 +15,16 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-
+    
     public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
     {
-        if (!CombatManager.Instance.IsInProgress)
-            return amount;
-        
+        if (!CombatManager.Instance.IsInProgress || cardSource != null && target == null) return amount;
+
         var MordekaiserInSolo = giver.HasPower<Mordekaiser_deceasedsdomainpower>();
-        if (target == null)
-        {
-            return MordekaiserInSolo ? 0 : amount;
-        }
+        if (target == null) return MordekaiserInSolo ? 0 : amount;
+        
         var targetInMordekaiserISolo = target.HasPower<Mordekaiser_deceasedsdomainpower>();
-        if (!targetInMordekaiserISolo && !MordekaiserInSolo)
-        {
-            return amount;
-        }
-        return 0;
+        return !targetInMordekaiserISolo && !MordekaiserInSolo ? amount : targetInMordekaiserISolo && MordekaiserInSolo ? amount : 0;
     }
     
     public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target, decimal amount, Creature? applier, out decimal modifiedAmount)
@@ -52,7 +46,7 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
             return true;
         }
         var MordekaiserInSolo = applier.HasPower<Mordekaiser_deceasedsdomainpower>();
-        if (!targetInMordekaiserISolo && !MordekaiserInSolo)
+        if ((!targetInMordekaiserISolo && !MordekaiserInSolo) || (targetInMordekaiserISolo && MordekaiserInSolo))
         {
             modifiedAmount = amount;
             return true;
@@ -65,46 +59,47 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
     {
         if (!CombatManager.Instance.IsInProgress)
             return amount;
-        
         var targetInMordekaiserISolo = target.HasPower<Mordekaiser_deceasedsdomainpower>();
         if (dealer == null)
             return targetInMordekaiserISolo ? 0 : amount;
         var MordekaiserInSolo = dealer.HasPower<Mordekaiser_deceasedsdomainpower>();
-        if (!MordekaiserInSolo && !targetInMordekaiserISolo)
-            return amount;
-        return 0;
+        
+        return !MordekaiserInSolo && !targetInMordekaiserISolo ? amount : MordekaiserInSolo && targetInMordekaiserISolo ? amount : 0;
     }
     
     public override decimal ModifyDamageCap(Creature? target, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        if (!CombatManager.Instance.IsInProgress)
+        if (!CombatManager.Instance.IsInProgress || cardSource != null && target == null)
             return decimal.MaxValue;
 
         if (target == null)
         {
-            if (dealer == null)
-                return decimal.MaxValue;
+            if (dealer == null) return decimal.MaxValue;
             var MordekaiserInSolo = dealer.HasPower<Mordekaiser_deceasedsdomainpower>();
             return !MordekaiserInSolo ? decimal.MaxValue : 0;
         }
+        
         var targetInMordekaiserISolo = target.HasPower<Mordekaiser_deceasedsdomainpower>();
-        if (dealer == null) return decimal.MaxValue;
+        if (dealer != null)
         {
             var MordekaiserInSolo = dealer.HasPower<Mordekaiser_deceasedsdomainpower>();
-            return !MordekaiserInSolo && !targetInMordekaiserISolo ? decimal.MaxValue : 0;
+            return !MordekaiserInSolo && !targetInMordekaiserISolo ? decimal.MaxValue : MordekaiserInSolo && targetInMordekaiserISolo ? decimal.MaxValue : 0;
         }
+        return decimal.MaxValue;
     }
     
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
         if (side == CombatSide.Enemy)
+        {
             await PowerCmd.ModifyAmount(this, -1, Owner, null);
-        var enemie = Owner.CombatState?.Enemies.Where(e => e.GetPower<Mordekaiser_deceasedsdomainpower>()?.Applier == Owner ).ToList();
-        if (enemie == null || enemie.Count == 0)
-            await PowerCmd.Remove<Mordekaiser_deceasedsdomainpower>(Owner);
-        else
-            foreach (var enemy in enemie)
-                await PowerCmd.ModifyAmount(this, -1, enemy, null);
+            if (Owner.Side == CombatSide.Player)
+            {
+                var enemie = Owner.CombatState?.Enemies.Where(e => e.GetPower<Mordekaiser_deceasedsdomainpower>()?.Applier == Owner ).ToList();
+                if (enemie == null || enemie.Count == 0)
+                    await PowerCmd.Remove<Mordekaiser_deceasedsdomainpower>(Owner);
+            }
+        }
     }
 
     public override async Task AfterRemoved(Creature oldOwner)

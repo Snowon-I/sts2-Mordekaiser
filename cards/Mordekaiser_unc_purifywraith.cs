@@ -26,8 +26,6 @@ public sealed class Mordekaiser_unc_purifywraith() : CardModel(1, CardType.Skill
         await PowerCmd.Remove<FrailPower>(Owner.Creature);
         await CreatureCmd.GainBlock(Owner.Creature,gainblock,DynamicVars.CalculatedBlock.Props,cardPlay);
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
 
     
     protected override void OnUpgrade()

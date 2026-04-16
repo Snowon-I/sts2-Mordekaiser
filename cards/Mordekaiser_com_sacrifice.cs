@@ -31,9 +31,7 @@ public sealed class Mordekaiser_com_sacrifice() : CardModel(1, CardType.Skill, C
             cards => cards
         );
     }
-    
-    public override string PortraitPath => $"res://images/card_portraits/{Id.Entry.ToLowerInvariant()}.png";
-    
+
     protected override void OnUpgrade()
     {
         DynamicVars["Power"].UpgradeValueBy(1m);
