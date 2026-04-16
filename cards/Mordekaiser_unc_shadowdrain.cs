@@ -18,8 +18,7 @@ public sealed class Mordekaiser_unc_shadowdrain() : CardModel(1, CardType.Skill,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(CombatState);
-        await PowerCmd.Apply<Mordekaiser_shadowdrainpower>(CombatState.HittableEnemies,
-            ((CalculatedVar)DynamicVars["Power"]).Calculate(Owner.Creature), Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_shadowdrainpower>(Owner.Creature, DynamicVars.Cards.BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
