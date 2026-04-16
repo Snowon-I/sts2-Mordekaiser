@@ -14,6 +14,12 @@ public class Mordekaiser_blessing_com : AfflictionModel
 
     public override bool HasExtraCardText => true;
     
+    public override void AfterApplied()
+    {
+        if (!Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce))
+            Card.AddKeyword(MordekaiserKeyWord.MordekaiserQuiesce);
+    }
+    
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
         if (card == Card)
@@ -37,6 +43,8 @@ public class Mordekaiser_blessing_upgrade : AfflictionModel
     
     public override void AfterApplied()
     {
+        if (!Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce))
+            Card.AddKeyword(MordekaiserKeyWord.MordekaiserQuiesce);
         Card.EnergyCost.SetThisCombat(0);
     }
     

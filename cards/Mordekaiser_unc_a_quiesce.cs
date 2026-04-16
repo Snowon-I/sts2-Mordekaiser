@@ -93,8 +93,8 @@ public sealed class Mordekaiser_unc_defendwraith() : CardModel(1, CardType.Attac
     private bool WasCardQuiesceLastCard {
         get
         {
-            var _lastcard = CombatManager.Instance.History.CardPlaysStarted.LastOrDefault(c => c.CardPlay.Card.Owner == Owner);
-            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce) && _lastcard.CardPlay.Card != this;
+            var _lastcard = CombatManager.Instance.History.CardPlaysStarted.LastOrDefault(c => c.CardPlay.Card.Owner == Owner && c.CardPlay.Card != this);
+            return _lastcard != null && _lastcard.CardPlay.Card.Keywords.Contains(MordekaiserKeyWord.MordekaiserQuiesce);
         }
         
     }    
