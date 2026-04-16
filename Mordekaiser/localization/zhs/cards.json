@@ -91,7 +91,7 @@
   "MORDEKAISER_UNC_SOULBODYBARRIER.title":"灵躯屏障",
   "MORDEKAISER_UNC_SOULBODYBARRIER.description":"获得{Block:diff()}点[gold]格挡[/gold]，消耗[gold]弃牌堆[/gold]里的随机1张技能牌。",
   "MORDEKAISER_UNC_SHADOWDRAIN.title":"暗影消取",
-  "MORDEKAISER_UNC_SHADOWDRAIN.description":"本回合，你接下来打出的{Cards:diff()}张攻击牌将消耗。",
+  "MORDEKAISER_UNC_SHADOWDRAIN.description":"本回合，你接下来打出的{Cards:diff()}张攻击牌将[gold]消耗[/gold]。",
   "MORDEKAISER_UNC_DESPERATESTAND.title":"破釜沉舟",
   "MORDEKAISER_UNC_DESPERATESTAND.description":"失去{DexterityPower:diff()}点[gold]敏捷[/gold]，获得{StrengthPower:diff()}点[gold]力量[/gold]",
   "MORDEKAISER_UNC_PURIFYWRAITH.title":"净化冥铁",

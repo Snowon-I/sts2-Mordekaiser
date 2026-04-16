@@ -3,8 +3,8 @@
 		{
 			"image": "mordekaiser_power_atlas.png",
 			"size": {
-				"w": 509,
-				"h": 248
+				"w": 254,
+				"h": 509
 			},
 			"sprites": [
 				{
@@ -53,6 +53,21 @@
 					}
 				},
 				{
+					"filename": "mordekaiser_dashforwardpower.png",
+					"region": {
+						"x": 67,
+						"y": 1,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
 					"filename": "mordekaiser_dashstancepower.png",
 					"region": {
 						"x": 1,
@@ -68,37 +83,7 @@
 					}
 				},
 				{
-					"filename": "mordekaiser_solidguardsoulpower.png",
-					"region": {
-						"x": 1,
-						"y": 199,
-						"w": 64,
-						"h": 48
-					},
-					"margin": {
-						"x": 0,
-						"y": 8,
-						"w": 0,
-						"h": 16
-					}
-				},
-				{
 					"filename": "mordekaiser_deathdominionpower.png",
-					"region": {
-						"x": 67,
-						"y": 1,
-						"w": 64,
-						"h": 64
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					}
-				},
-				{
-					"filename": "mordekaiser_deceasedsdomainpower.png",
 					"region": {
 						"x": 67,
 						"y": 67,
@@ -115,8 +100,8 @@
 				{
 					"filename": "mordekaiser_doomhourpower.png",
 					"region": {
-						"x": 67,
-						"y": 133,
+						"x": 133,
+						"y": 1,
 						"w": 64,
 						"h": 64
 					},
@@ -128,25 +113,10 @@
 					}
 				},
 				{
-					"filename": "mordekaiser_soulsteelformpower.png",
-					"region": {
-						"x": 67,
-						"y": 199,
-						"w": 64,
-						"h": 48
-					},
-					"margin": {
-						"x": 0,
-						"y": 8,
-						"w": 0,
-						"h": 16
-					}
-				},
-				{
 					"filename": "mordekaiser_doomsoulreleasepower.png",
 					"region": {
-						"x": 133,
-						"y": 1,
+						"x": 1,
+						"y": 199,
 						"w": 64,
 						"h": 64
 					},
@@ -160,22 +130,7 @@
 				{
 					"filename": "mordekaiser_eternalimmortalitypower.png",
 					"region": {
-						"x": 133,
-						"y": 67,
-						"w": 64,
-						"h": 64
-					},
-					"margin": {
-						"x": 0,
-						"y": 0,
-						"w": 0,
-						"h": 0
-					}
-				},
-				{
-					"filename": "mordekaiser_finaljudgmentpower.png",
-					"region": {
-						"x": 133,
+						"x": 67,
 						"y": 133,
 						"w": 64,
 						"h": 64
@@ -188,25 +143,10 @@
 					}
 				},
 				{
-					"filename": "mordekaiser_soultomepower.png",
-					"region": {
-						"x": 133,
-						"y": 199,
-						"w": 64,
-						"h": 34
-					},
-					"margin": {
-						"x": 0,
-						"y": 15,
-						"w": 0,
-						"h": 30
-					}
-				},
-				{
 					"filename": "mordekaiser_potentialblockpower.png",
 					"region": {
-						"x": 199,
-						"y": 1,
+						"x": 133,
+						"y": 67,
 						"w": 64,
 						"h": 64
 					},
@@ -220,8 +160,8 @@
 				{
 					"filename": "mordekaiser_ruindoompower.png",
 					"region": {
-						"x": 199,
-						"y": 67,
+						"x": 1,
+						"y": 265,
 						"w": 64,
 						"h": 64
 					},
@@ -235,8 +175,8 @@
 				{
 					"filename": "mordekaiser_shadowdrainpower.png",
 					"region": {
-						"x": 199,
-						"y": 133,
+						"x": 67,
+						"y": 199,
 						"w": 64,
 						"h": 64
 					},
@@ -250,8 +190,8 @@
 				{
 					"filename": "mordekaiser_soulforgebodypower.png",
 					"region": {
-						"x": 265,
-						"y": 1,
+						"x": 133,
+						"y": 133,
 						"w": 64,
 						"h": 64
 					},
@@ -265,8 +205,8 @@
 				{
 					"filename": "mordekaiser_soulreavepower.png",
 					"region": {
-						"x": 331,
-						"y": 1,
+						"x": 1,
+						"y": 331,
 						"w": 64,
 						"h": 64
 					},
@@ -280,8 +220,8 @@
 				{
 					"filename": "mordekaiser_soulreleasepower.png",
 					"region": {
-						"x": 397,
-						"y": 1,
+						"x": 67,
+						"y": 265,
 						"w": 64,
 						"h": 64
 					},
@@ -293,25 +233,10 @@
 					}
 				},
 				{
-					"filename": "mordekaiser_emberbladeinitiatepower.png",
-					"region": {
-						"x": 463,
-						"y": 1,
-						"w": 34,
-						"h": 64
-					},
-					"margin": {
-						"x": 17,
-						"y": 0,
-						"w": 30,
-						"h": 0
-					}
-				},
-				{
 					"filename": "mordekaiser_spreadpower.png",
 					"region": {
-						"x": 265,
-						"y": 67,
+						"x": 133,
+						"y": 199,
 						"w": 64,
 						"h": 64
 					},
@@ -325,8 +250,23 @@
 				{
 					"filename": "mordekaiser_underworldpower.png",
 					"region": {
-						"x": 265,
-						"y": 133,
+						"x": 1,
+						"y": 397,
+						"w": 64,
+						"h": 64
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_wraithgetpower.png",
+					"region": {
+						"x": 67,
+						"y": 331,
 						"w": 64,
 						"h": 64
 					},
@@ -340,8 +280,8 @@
 				{
 					"filename": "mordekaiser_wraithgivepower.png",
 					"region": {
-						"x": 331,
-						"y": 67,
+						"x": 67,
+						"y": 331,
 						"w": 64,
 						"h": 64
 					},
@@ -353,25 +293,100 @@
 					}
 				},
 				{
+					"filename": "mordekaiser_deceasedsdomainpower.png",
+					"region": {
+						"x": 133,
+						"y": 265,
+						"w": 64,
+						"h": 63
+					},
+					"margin": {
+						"x": 0,
+						"y": 1,
+						"w": 0,
+						"h": 1
+					}
+				},
+				{
+					"filename": "mordekaiser_finaljudgmentpower.png",
+					"region": {
+						"x": 67,
+						"y": 397,
+						"w": 64,
+						"h": 63
+					},
+					"margin": {
+						"x": 0,
+						"y": 1,
+						"w": 0,
+						"h": 1
+					}
+				},
+				{
+					"filename": "mordekaiser_solidguardsoulpower.png",
+					"region": {
+						"x": 67,
+						"y": 462,
+						"w": 64,
+						"h": 46
+					},
+					"margin": {
+						"x": 0,
+						"y": 9,
+						"w": 0,
+						"h": 18
+					}
+				},
+				{
+					"filename": "mordekaiser_soultomepower.png",
+					"region": {
+						"x": 1,
+						"y": 463,
+						"w": 64,
+						"h": 32
+					},
+					"margin": {
+						"x": 0,
+						"y": 16,
+						"w": 0,
+						"h": 32
+					}
+				},
+				{
 					"filename": "mordekaiser_unyieldingpresencepower.png",
 					"region": {
-						"x": 397,
-						"y": 67,
-						"w": 63,
+						"x": 133,
+						"y": 330,
+						"w": 61,
 						"h": 64
 					},
 					"margin": {
-						"x": 1,
+						"x": 2,
 						"y": 0,
-						"w": 1,
+						"w": 3,
 						"h": 0
 					}
 				},
 				{
-					"filename": "mordekaiser_soulguarddarkpower.png",
+					"filename": "mordekaiser_unbreakablepower.png",
 					"region": {
-						"x": 331,
-						"y": 133,
+						"x": 196,
+						"y": 330,
+						"w": 57,
+						"h": 64
+					},
+					"margin": {
+						"x": 4,
+						"y": 0,
+						"w": 7,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_wraithpressurepower.png",
+					"region": {
+						"x": 133,
+						"y": 396,
 						"w": 60,
 						"h": 64
 					},
@@ -383,32 +398,62 @@
 					}
 				},
 				{
-					"filename": "mordekaiser_unbreakablepower.png",
+					"filename": "mordekaiser_soulguarddarkpower.png",
 					"region": {
-						"x": 393,
-						"y": 133,
-						"w": 59,
+						"x": 195,
+						"y": 396,
+						"w": 58,
 						"h": 64
 					},
 					"margin": {
 						"x": 3,
 						"y": 0,
-						"w": 5,
+						"w": 6,
 						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_soulsteelformpower.png",
+					"region": {
+						"x": 133,
+						"y": 462,
+						"w": 64,
+						"h": 46
+					},
+					"margin": {
+						"x": 0,
+						"y": 9,
+						"w": 0,
+						"h": 18
 					}
 				},
 				{
 					"filename": "mordekaiser_soulcallpower.png",
 					"region": {
-						"x": 454,
-						"y": 133,
-						"w": 54,
+						"x": 199,
+						"y": 1,
+						"w": 52,
 						"h": 64
 					},
 					"margin": {
-						"x": 5,
+						"x": 6,
 						"y": 0,
-						"w": 10,
+						"w": 12,
+						"h": 0
+					}
+				},
+				{
+					"filename": "mordekaiser_emberbladeinitiatepower.png",
+					"region": {
+						"x": 199,
+						"y": 67,
+						"w": 32,
+						"h": 64
+					},
+					"margin": {
+						"x": 18,
+						"y": 0,
+						"w": 32,
 						"h": 0
 					}
 				}
@@ -418,6 +463,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:18d171c2377e0700816572d9a40e1235:f4d9951e879313c3ec0864e7e145e85b:f5c6449ca053ce4ebfb1e68f7bf2f31f$"
+		"smartupdate": "$TexturePacker:SmartUpdate:07e77ca107e542f65b1f936fe43b6719:36d1970f43e89702957925e3367b0cb4:f5c6449ca053ce4ebfb1e68f7bf2f31f$"
 	}
 }
