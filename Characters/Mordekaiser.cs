@@ -1,22 +1,18 @@
-using System.Reflection;
 using System.Runtime.InteropServices;
 using Godot;
 using HarmonyLib;
-using JetBrains.Annotations;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
-using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 using MegaCrit.Sts2.Core.Entities.Ancients;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Nodes.Audio;
-using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
 using MegaCrit.Sts2.Core.Nodes.Screens.CharacterSelect;
 using MegaCrit.Sts2.Core.Nodes.Screens.Timeline;
 using MegaCrit.Sts2.Core.Platform;
@@ -24,7 +20,6 @@ using MegaCrit.Sts2.Core.Saves;
 using MegaCrit.Sts2.Core.Saves.Managers;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.Timeline;
-using MegaCrit.Sts2.Core.Timeline.Epochs;
 using MegaCrit.Sts2.Core.Unlocks;
 using Mordekaiser.cards;
 using Mordekaiser.Core.Timeline.Epochs;
@@ -317,14 +312,27 @@ public static class Mordekaiser_Epochs_Patch
 		try
 		{
 			var MordekaiserEpoch = EpochModel.Get<Mordekaiser1Epoch>();
-			var slot1 = new EpochSlotData(MordekaiserEpoch.Id, EpochSlotState.Obtained);
-			if (__instance.GetChildren().OfType<NEpochSlot>().Any(slot => slot.eraPosition == MordekaiserEpoch.EraPosition)) return;
+			var targetEpochSlotAll = __instance.GetChildrenRecursive<NEpochSlot>();
+			foreach (var slot in targetEpochSlotAll)
+			{
+				var state = SaveManager.Instance.Progress.Epochs.FirstOrDefault(e => e.Id == slot.model.Id)?.State;
+				if (state is EpochState.Revealed)
+					slot.SetState(EpochSlotState.Complete);
+				if (state is EpochState.NotObtained)
+					slot.SetState(EpochSlotState.NotObtained);
+			}
+			
 			var progress = SaveManager.Instance.Progress;
 			var serializableEpoch = progress.Epochs.FirstOrDefault(e => e.Id == MordekaiserEpoch.Id);
-			if (serializableEpoch == null || serializableEpoch.State == EpochState.ObtainedNoSlot) return;
+
+			if (serializableEpoch == null || serializableEpoch.State == EpochState.Revealed) return;
 			if (!progress.IsEpochObtained(MordekaiserEpoch.Id))
 				return;
+			
+			var slot1 = new EpochSlotData(MordekaiserEpoch.Id, EpochSlotState.Obtained);
 			await __instance.AddEpochSlots([slot1],false);
+			
+			SaveManager.Instance.UnlockSlot(MordekaiserEpoch.Id);
 		}
 		catch (Exception e)
 		{
@@ -339,8 +347,7 @@ public static class Mordekaiser_Epochs_Patch
 		SerializablePlayer? serializablePlayer;
 		var progress = __instance.Progress;
 		var MordekaiserEpoch = EpochModel.Get<Mordekaiser1Epoch>();
-		if (progress.IsEpochObtained(MordekaiserEpoch.Id))return;
-		
+		if (progress.IsEpochObtained(MordekaiserEpoch.Id)) return;
 		if (serializableRun.Players.Count == 1)
 		{
 			serializablePlayer = serializableRun.Players.First();
@@ -350,7 +357,6 @@ public static class Mordekaiser_Epochs_Patch
 			var localPlayerId = PlatformUtil.GetLocalPlayerId(serializableRun.PlatformType); 
 			serializablePlayer = serializableRun.Players.FirstOrDefault(p => p.NetId == localPlayerId);
 		}
-		SaveManager.Instance.UnlockSlot(MordekaiserEpoch.Id);
 		SaveManager.Instance.Progress.ObtainEpoch(MordekaiserEpoch.Id);
 		serializablePlayer!.DiscoveredEpochs.Add(MordekaiserEpoch.Id);
 		__instance.SaveProgress();

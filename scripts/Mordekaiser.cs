@@ -1,5 +1,4 @@
 using System.Reflection;
-using Godot;
 using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Assets;
