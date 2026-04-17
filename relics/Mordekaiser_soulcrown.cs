@@ -30,7 +30,9 @@ public sealed class Mordekaiser_soulcrown : RelicModel
 	protected override string PackedIconOutlinePath => $"res://images/Mordekaiser_relic/{Id.Entry.ToLowerInvariant()}_outline.png";
 
 	protected override string BigIconPath => $"res://images/Mordekaiser_relic/{Id.Entry.ToLowerInvariant()}_big.png";
-	
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new("mordekaisernowleavel",Mordekaiserleavel)];
+
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => 
 	[
 		HoverTipFactory.FromCard<Mordekaiser_ability_obliterate>(Mordekaiserleavel >= 5),
@@ -147,6 +149,8 @@ public sealed class Mordekaiser_soulcrown_orobas : RelicModel
 	private int _mordekaiserleavel = 5;
 
 	private const int _mordekaiserneedsouls = 6;
+	
+	protected override IEnumerable<DynamicVar> CanonicalVars => [new("mordekaisernowleavel",Mordekaiserleavel)];
 
 	public override string PackedIconPath => $"res://images/Mordekaiser_relic/{ModelDb.Relic<Mordekaiser_soulcrown>().Id.Entry.ToLowerInvariant()}.png";
 

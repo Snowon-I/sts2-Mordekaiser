@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.TestSupport;
 using MegaCrit.Sts2.Core.ValueProps;
 using Mordekaiser.scripts;
 
@@ -116,6 +117,7 @@ public sealed class Mordekaiser_com_steelcharge() : CardModel(1, CardType.Attack
 
 public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
 {
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
         new ExtraDamageVar(12m),
@@ -126,7 +128,7 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
     // * (model.IsUpgraded? 14m/12m : 16m/14m)
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
-        if (card != this || Pile is not { Type: PileType.Hand } || NCard.FindOnTable(card) == null || card.EnergyCost.Canonical < 0 )
+        if (card.Owner != Owner || card.EnergyCost.Canonical < 0)
             return Task.CompletedTask;
         var cost = NextEnergyCost();
         card.EnergyCost.SetThisCombat(cost);
