@@ -16,6 +16,7 @@ public class Mordekaiser_soulforgebodypower : PowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner.Creature != Owner) return;
+        if (!cardPlay.Card.Keywords.Contains(CardKeyword.Exhaust)) return;
         await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
     }
     

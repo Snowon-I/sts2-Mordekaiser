@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -25,7 +26,7 @@ public sealed class Mordekaiser_rare_siphondestruction() : CardModel(1, CardType
             .FromCard(this)
             .TargetingAllOpponents(CombatState)
             .Execute(choiceContext);
-        DynamicVars.Damage.BaseValue = attackCommand.Results.Sum(r=> r.UnblockedDamage);
+        DynamicVars.Block.BaseValue = attackCommand.Results.Sum(r=> r.UnblockedDamage);
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay);
     }
 

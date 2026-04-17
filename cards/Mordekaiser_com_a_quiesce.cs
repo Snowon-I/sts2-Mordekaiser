@@ -126,11 +126,17 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
     // * (model.IsUpgraded? 14m/12m : 16m/14m)
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
-        if (card != this || Pile is not { Type: PileType.Hand } || NCard.FindOnTable(card) == null )
+        if (card != this || Pile is not { Type: PileType.Hand } || NCard.FindOnTable(card) == null || card.EnergyCost.Canonical < 0 )
             return Task.CompletedTask;
-        EnergyCost.SetThisCombat(Owner.RunState.Rng.CombatEnergyCosts.NextInt(4));
+        var cost = NextEnergyCost();
+        card.EnergyCost.SetThisCombat(cost);
         NCard.FindOnTable(card)?.PlayRandomizeCostAnim();
         return Task.CompletedTask;
+    }
+    
+    private int NextEnergyCost()
+    {
+        return Owner.RunState.Rng.CombatEnergyCosts.NextInt(4);
     }
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];
