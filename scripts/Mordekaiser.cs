@@ -30,7 +30,7 @@ public class Mordekaiser
 		RegisterStoryManually();
 		InjectMordekaiserEpochId("MORDEKAISER1_EPOCH");
 		
-		_harmony = new Harmony("sts2.reme.XW_Mordekaiser");
+		_harmony = new Harmony("sts2.snowI.XW_Mordekaiser");
 		_harmony.PatchAll();
 	}
 	

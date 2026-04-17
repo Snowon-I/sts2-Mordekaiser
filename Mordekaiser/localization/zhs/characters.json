@@ -1,10 +1,10 @@
 ﻿{
-  "MORDEKAISER.aromaPrinciple": "[sine][darkBlue]哼……无聊的幻想。[/darkBlue][/sine]",
+  "MORDEKAISER.aromaPrinciple": "[sine][blue]哼……无聊的幻想。[/blue][/sine]",
   "MORDEKAISER.banter.alive.endTurnPing": "赶紧。",
   "MORDEKAISER.banter.dead.endTurnPing": "（冥界在等待）",
   "MORDEKAISER.cardsModifierDescription": "莫德凯撒的卡牌现在会出现在奖励和商店中。",
   "MORDEKAISER.cardsModifierTitle": "莫德凯撒卡牌",
-  "MORDEKAISER.description": "两度被杀，三度重生。\n无人知道他有多强大的力量，他来到此处，只为了杀戮和征服。",
+  "MORDEKAISER.description": "两度毙命，三度重生。\n无人知道他有多强大的力量，他来到此处，只为了杀戮和征服。",
   "MORDEKAISER.eventDeathPrevention": "天命不在此地。",
   "MORDEKAISER.goldMonologue": "[sine]这些东西理应属于我[/sine]",
   "MORDEKAISER.possessiveAdjective": "他的",

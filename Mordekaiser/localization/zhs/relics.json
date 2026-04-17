@@ -1,5 +1,11 @@
 ﻿{
   "MORDEKAISER_SOULCROWN.title": "灵魂冠冕",
   "MORDEKAISER_SOULCROWN.description": "[font_size=15]当前等级：[blue]{mordekaisernowleavel}[/blue]\n每当你清理一个怪物房间时，根据房间类型（敌人/精英/boss），收割1/2/4点灵魂。\n每当你收割6点灵魂时，将该遗物升级。\n战斗开始时，根据等级依次将对应的牌置入你的手牌\n1/2/3/4：破灭之锤/不灭之身/断魂一扼/轮回绝境\n5/6/7/8：将破灭之锤/不灭之身/断魂一扼/轮回绝境升级[/font_size]",
-  "MORDEKAISER_SOULCROWN.flavor": "生死之王的冠冕。\n[gold]“所有灵魂都归我所有”——莫德凯撒[/gold]"
+  "MORDEKAISER_SOULCROWN.flavor": "生死之王的冠冕。\n[gold]“所有灵魂都归我所有”——莫德凯撒[/gold]",
+
+  "MORDEKAISER_SOULCROWN_OROBAS.title": "灵魂冠冕",
+  "MORDEKAISER_SOULCROWN_OROBAS.description": "[font_size=15]当前等级：[blue]{mordekaisernowleavel}[/blue]\n每当你清理一个怪物房间时，根据房间类型（敌人/精英/boss），收割1/2/4点灵魂。\n每当你收割6点灵魂时，将该遗物升级。\n战斗开始时，根据等级依次将对应的牌置入你的手牌\n1/2/3/4：破灭之锤/不灭之身/断魂一扼/轮回绝境\n5/6/7/8：将破灭之锤/不灭之身/断魂一扼/轮回绝境升级[/font_size]",
+  "MORDEKAISER_SOULCROWN_OROBAS.flavor": "欧罗巴斯不知道在何处找到的同款灵魂冠冕，里面已经充斥了一些灵魂了。\n[gold]“真是好东西！真是好东西”——欧罗巴斯[/gold]"
+
+
 }

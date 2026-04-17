@@ -318,6 +318,8 @@ public static class Mordekaiser_Epochs_Patch
 				var state = SaveManager.Instance.Progress.Epochs.FirstOrDefault(e => e.Id == slot.model.Id)?.State;
 				if (state is EpochState.Revealed)
 					slot.SetState(EpochSlotState.Complete);
+				if (state is EpochState.Obtained)
+					slot.SetState(EpochSlotState.Obtained);
 				if (state is EpochState.NotObtained)
 					slot.SetState(EpochSlotState.NotObtained);
 			}
@@ -330,7 +332,7 @@ public static class Mordekaiser_Epochs_Patch
 				return;
 			
 			var slot1 = new EpochSlotData(MordekaiserEpoch.Id, EpochSlotState.Obtained);
-			await __instance.AddEpochSlots([slot1],false);
+			await __instance.AddEpochSlots([slot1],true);
 			
 			SaveManager.Instance.UnlockSlot(MordekaiserEpoch.Id);
 		}

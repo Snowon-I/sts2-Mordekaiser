@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://diu6kgjsxeh2y"]
 
 [ext_resource type="Script" uid="uid://cxblemps8k1yc" path="res://src/Core/Nodes/Vfx/MordekaiserCardTrailVfx.cs" id="1_aqt2m"]
-[ext_resource type="Material" path="res://materials/mordekaiser_item_material_additive_shared.tres" id="2_khk7c"]
+[ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://materials/mordekaiser_item_material_additive_shared.tres" id="2_khk7c"]
 [ext_resource type="Texture2D" uid="uid://bxy0l6arjbyb8" path="res://images/packed/vfx/mordekaiser_trail.png" id="3_slxm4"]
-[ext_resource type="Texture2D" uid="uid://cyw577275dvri" path="res://images/vfx/brush_particle_2.png" id="4_4mkmh"]
+[ext_resource type="Texture2D" uid="uid://cyw577275dvri" path="res://images/vfx/mordekaiser_brush_particle_2.png" id="4_4mkmh"]
 [ext_resource type="Script" uid="uid://dptqeefpjlw0t" path="res://src/Core/Nodes/Vfx/MordekaiserCardTrail.cs" id="4_7mf2a"]
 [ext_resource type="Texture2D" uid="uid://co0p0btynk4sg" path="res://images/packed/vfx/mordekaiser_small_card_silhouette.png" id="5_j84bg"]
 [ext_resource type="Texture2D" uid="uid://sl0y7o0qtb4h" path="res://images/packed/vfx/mordekaiser_trail2.png" id="5_pwewy"]

@@ -1,10 +1,10 @@
 {
 	"textures": [
 		{
-			"image": "mordekaiser_cards.png",
+			"image": "mordekaiser_cards_0.png",
 			"size": {
 				"w": 2043,
-				"h": 2238
+				"h": 2046
 			},
 			"sprites": [
 				{
@@ -1221,12 +1221,21 @@
 						"w": 0,
 						"h": 0
 					}
-				},
+				}
+			]
+		},
+		{
+			"image": "mordekaiser_cards_1.png",
+			"size": {
+				"w": 1008,
+				"h": 192
+			},
+			"sprites": [
 				{
 					"filename": "mordekaiser/mordekaiser_unc_wraithrecall.png",
 					"region": {
 						"x": 1,
-						"y": 2047,
+						"y": 1,
 						"w": 250,
 						"h": 190
 					},
@@ -1241,7 +1250,7 @@
 					"filename": "mordekaiser/mordekaiser_unc_wraithseek.png",
 					"region": {
 						"x": 253,
-						"y": 2047,
+						"y": 1,
 						"w": 250,
 						"h": 190
 					},
@@ -1256,7 +1265,7 @@
 					"filename": "mordekaiser/mordekaiser_unc_wraithsummonstrike.png",
 					"region": {
 						"x": 505,
-						"y": 2047,
+						"y": 1,
 						"w": 250,
 						"h": 190
 					},
@@ -1271,7 +1280,7 @@
 					"filename": "mordekaiser/mordekaiser_unc_wraithwarcry.png",
 					"region": {
 						"x": 757,
-						"y": 2047,
+						"y": 1,
 						"w": 250,
 						"h": 190
 					},
@@ -1288,6 +1297,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:a27359818c4383b42dc41c26170b7176:9183e15889354635cc9c8cfc666b8640:5d31e08b5e262e8fabcbb0a6c2d9ee91$"
+		"smartupdate": "$TexturePacker:SmartUpdate:c7e4be2c4a36b512d411ae5d67fdaeee:9183e15889354635cc9c8cfc666b8640:2872dfd9d00995bf896d44fa0c1c58f9$"
 	}
 }

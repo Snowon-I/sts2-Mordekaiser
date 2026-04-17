@@ -17,8 +17,11 @@ public sealed class Mordekaiser_rare_souldrain() : CardModel(3, CardType.Attack,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var mordekaiserrelic = Owner.GetRelic<Mordekaiser_soulcrown>();
+        var mordekaiserrelicorobas = Owner.GetRelic<Mordekaiser_soulcrown_orobas>();
         if (mordekaiserrelic != null)
             mordekaiserrelic.MonsterSouls++;
+        if (mordekaiserrelicorobas != null)
+            mordekaiserrelicorobas.MonsterSouls++;
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)

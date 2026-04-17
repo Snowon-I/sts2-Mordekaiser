@@ -9,12 +9,12 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public sealed class Mordekaiser_unc_wraithpressure() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+public sealed class Mordekaiser_unc_wraithpressure() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.AllEnemies)
 {
 	protected override IEnumerable<DynamicVar> CanonicalVars => [
 		new CalculationBaseVar(0m),
 		new CalculationExtraVar(1m),
-		new CalculatedVar("Power").WithMultiplier((_,c) => c != null ? c.Player!.Deck.Cards.Count(card => card.Pile!.Type == PileType.Exhaust) : 0)
+		new CalculatedVar("Power").WithMultiplier((c,_) => c.IsInCombat ? c.Owner.Piles.Any(p => p.Type == PileType.Exhaust) ? c.Owner.Piles.FirstOrDefault(p => p.Type == PileType.Exhaust)!.Cards.Count : 0m : 0m )
 	];
 	
 	protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];

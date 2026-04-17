@@ -12,7 +12,8 @@ public class Mordekaiserrelicpool : RelicPoolModel
     public override Color LabOutlineColor => StsColors.red;
 
     protected override IEnumerable<RelicModel> GenerateAllRelics() => [ 
-        ModelDb.Relic<Mordekaiser_soulcrown>()
+        ModelDb.Relic<Mordekaiser_soulcrown>(),
+        ModelDb.Relic<Mordekaiser_soulcrown_orobas>()
     ];
 
 }

@@ -23,8 +23,11 @@ public sealed class Mordekaiser_rare_tearsoul() : CardModel(3, CardType.Skill, C
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var mordekaiserrelic = Owner.GetRelic<Mordekaiser_soulcrown>();
+        var mordekaiserrelicorobas = Owner.GetRelic<Mordekaiser_soulcrown_orobas>();
         if (mordekaiserrelic != null)
             mordekaiserrelic.MonsterSouls++;
+        if (mordekaiserrelicorobas != null)
+            mordekaiserrelicorobas.MonsterSouls++;
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await PowerCmd.Apply<VulnerablePower>(cardPlay.Target, DynamicVars["Power"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<WeakPower>(cardPlay.Target, DynamicVars["Power"].BaseValue, Owner.Creature, this);

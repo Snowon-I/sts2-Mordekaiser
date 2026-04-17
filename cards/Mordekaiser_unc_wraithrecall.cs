@@ -15,6 +15,7 @@ public sealed class Mordekaiser_unc_wraithrecall() : CardModel(1, CardType.Skill
     {
         var prefs = new CardSelectorPrefs(SelectionScreenPrompt,0,DynamicVars.Cards.IntValue);
         var cards = PileType.Exhaust.GetPile(Owner).Cards.Where(c => c.Type == CardType.Skill).OrderBy(c => c.Rarity).ThenBy(c => c.Id).ToList();
+        if (cards.Count == 0)return; 
         var cardModel = await CardSelectCmd.FromSimpleGrid(choiceContext, cards, Owner, prefs);
         await CardPileCmd.Add(cardModel, PileType.Hand);
     }

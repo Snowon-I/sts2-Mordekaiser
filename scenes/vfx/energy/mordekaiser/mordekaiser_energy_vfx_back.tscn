@@ -1,0 +1,164 @@
+[gd_scene load_steps=22 format=3 uid="uid://boarex0bj03vf"]
+
+[ext_resource type="Texture2D" uid="uid://cipqsxod0yok3" path="res://images/vfx/common/mordekaiser_glow.png" id="1_8c0r7"]
+[ext_resource type="Script" uid="uid://bgrd4c7ulcago" path="res://src/Core/Nodes/Combat/MordekaiserEnergyParticlesContainer.cs" id="1_ay6ii"]
+[ext_resource type="Texture2D" uid="uid://bsafb2q7d3t3q" path="res://images/vfx/common/mordekaiser_ring_polar_a.png" id="2_ku7xg"]
+
+[sub_resource type="Shader" id="Shader_ku7xg"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec2 pivot_offset = vec2(0.0, 0.0);
+
+uniform sampler2D lut;
+
+varying vec4 vertex_color;
+
+void vertex() {
+	vertex_color = COLOR;
+	VERTEX += pivot_offset * (1.0/TEXTURE_PIXEL_SIZE);
+}
+
+void fragment() {
+	vec4 grayscale = texture(TEXTURE, UV);
+
+	vec4 lut_tex = texture(lut, vec2(grayscale.r));
+	vec4 color_sub = lut_tex * vertex_color;
+
+	COLOR = vec4(color_sub.rgb, vertex_color.a * grayscale.r);
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_ku7xg"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ay6ii"]
+gradient = SubResource("Gradient_ku7xg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay6ii"]
+shader = SubResource("Shader_ku7xg")
+shader_parameter/pivot_offset = Vector2(0, 0)
+shader_parameter/lut = SubResource("GradientTexture1D_ay6ii")
+
+[sub_resource type="Curve" id="Curve_8c0r7"]
+_data = [Vector2(0, 0.3455631), 0.0, -0.75325775, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ay6ii"]
+curve = SubResource("Curve_8c0r7")
+
+[sub_resource type="Curve" id="Curve_mosi5"]
+_data = [Vector2(0, 0), 0.0, 11.5422, 0, 0, Vector2(0.203175, 0.842474), 0.0, 0.210613, 0, 0, Vector2(1, 1), 0.197691, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ku7xg"]
+curve = SubResource("Curve_mosi5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ay6ii"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 3.5
+scale_max = 3.5
+scale_curve = SubResource("CurveTexture_ku7xg")
+alpha_curve = SubResource("CurveTexture_ay6ii")
+
+[sub_resource type="Shader" id="Shader_ay6ii"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D erosion_curve;
+uniform float erosion_offset = 0.1;
+
+varying float lifetime;
+varying vec4 vertex_color;
+
+vec2 polar_coordinates(vec2 uv, vec2 center, float zoom, float repeat)
+{
+	vec2 dir = uv - center;
+	float radius = length(dir) * 2.0;
+	float angle = atan(dir.y, dir.x) * 1.0/(3.1416 * 2.0);
+	return mod(vec2(radius * zoom, angle * repeat), 1.0);
+}
+
+vec2 polar_uv_twist(vec2 polar_uv, float twist) {
+	return vec2(
+			polar_uv.x,
+			(polar_uv.x * twist) + polar_uv.y
+			);
+}
+
+void vertex() {
+	vertex_color = COLOR;
+	lifetime = INSTANCE_CUSTOM.y/INSTANCE_CUSTOM.w;
+}
+
+void fragment() {
+	vec4 texture_color =  texture(TEXTURE, polar_coordinates(UV, vec2(0.5, 0.5), 1, 1));
+	
+	float erosion_curve_val = texture(erosion_curve, vec2(lifetime)).r;
+	float erosion_val = smoothstep(erosion_curve_val, erosion_curve_val + erosion_offset, texture_color.r);
+	
+	COLOR = vec4(vertex_color.rgb, vertex_color.a * erosion_val);
+}"
+
+[sub_resource type="Curve" id="Curve_f7f6p"]
+_data = [Vector2(0, 0.5023437), 0.0, 1.1571862, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0ftfg"]
+width = 64
+curve = SubResource("Curve_f7f6p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7f6p"]
+shader = SubResource("Shader_ay6ii")
+shader_parameter/erosion_curve = SubResource("CurveTexture_0ftfg")
+shader_parameter/erosion_offset = 0.1
+
+[sub_resource type="Curve" id="Curve_ay6ii"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 3), 0.0, -8.724115, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_60bky"]
+curve = SubResource("Curve_ay6ii")
+
+[sub_resource type="Curve" id="Curve_ku7xg"]
+_data = [Vector2(0, 0.24573374), 0.0, 9.362278, 0, 0, Vector2(0.15059222, 0.85052836), 0.1843756, 0.18312787, 0, 0, Vector2(1, 1), 0.15977234, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f7f6p"]
+curve = SubResource("Curve_ku7xg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_60bky"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 1.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_f7f6p")
+emission_curve = SubResource("CurveTexture_60bky")
+
+[node name="MordekaiserEnergyVfxBack" type="Node2D" node_paths=PackedStringArray("_particles")]
+script = ExtResource("1_ay6ii")
+_particles = [NodePath("vfx_common_glow"), NodePath("vfx_common_ring_polar_a")]
+
+[node name="vfx_common_glow" type="GPUParticles2D" parent="."]
+self_modulate = Color(3.657937e-06, 0.76200885, 0.76201934, 1)
+material = SubResource("ShaderMaterial_ay6ii")
+emitting = false
+amount = 1
+texture = ExtResource("1_8c0r7")
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_ay6ii")
+
+[node name="vfx_common_ring_polar_a" type="GPUParticles2D" parent="."]
+self_modulate = Color(0, 0.7607843, 0.7607843, 1)
+material = SubResource("ShaderMaterial_f7f6p")
+emitting = false
+amount = 1
+texture = ExtResource("2_ku7xg")
+lifetime = 0.4
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_60bky")

@@ -43,6 +43,7 @@ public sealed class Mordekaiser_unc_soulthrust() : CardModel(1, CardType.Attack,
                 int num = 0;
                 while ( num < (int)DynamicVars.Cards.BaseValue )
                 {
+                    ArgumentNullException.ThrowIfNull(cardPlay.Target);
                     num++;
                     await _lastcard.CardPlay.Card.AfterCardExhausted(choiceContext, _lastcard.CardPlay.Card, false);
                 }

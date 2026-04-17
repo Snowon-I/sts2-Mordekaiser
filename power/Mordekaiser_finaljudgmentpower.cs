@@ -24,7 +24,7 @@ public class Mordekaiser_finaljudgmentpower : PowerModel
                 await CreatureCmd.Kill(Enemy);
             }
         }
-        Amount -= 1;
+        await PowerCmd.ModifyAmount(this, -1, Owner, null);
     }
     
 }

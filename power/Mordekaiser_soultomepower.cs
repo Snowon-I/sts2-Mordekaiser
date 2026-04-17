@@ -18,8 +18,11 @@ public class Mordekaiser_soultomepower : PowerModel
         if (dealer != Owner) return Task.CompletedTask;
         if (!result.WasTargetKilled) return Task.CompletedTask;
         var relic = Owner.Player?.GetRelic<Mordekaiser_soulcrown>();
-        if (relic == null ) return Task.CompletedTask;
-        relic.MonsterSouls++;
+        var relicorbas = Owner.Player?.GetRelic<Mordekaiser_soulcrown_orobas>();
+        if (relic != null )
+            relic.MonsterSouls++;
+        if (relicorbas != null )
+            relicorbas.MonsterSouls++;
         return Task.CompletedTask;
     }
 }

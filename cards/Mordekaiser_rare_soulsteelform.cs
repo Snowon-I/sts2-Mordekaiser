@@ -15,11 +15,11 @@ public sealed class Mordekaiser_rare_soulsteelform() : CardModel(3, CardType.Pow
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_soulcallpower>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_soulsteelformpower>()];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<Mordekaiser_soulcallpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_soulsteelformpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
 
     public override async Task OnEnqueuePlayVfx(Creature? target)
@@ -32,7 +32,7 @@ public sealed class Mordekaiser_rare_soulsteelform() : CardModel(3, CardType.Pow
         if (card == this && CombatState != null && IsUpgraded )
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
-            await PowerCmd.Apply<Mordekaiser_soulcallpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<Mordekaiser_soulsteelformpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
         }
     }
     
