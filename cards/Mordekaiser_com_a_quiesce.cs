@@ -128,7 +128,7 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
 
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
-        if (card.Owner != Owner || card.EnergyCost.Canonical < 0)
+        if (card.Owner != Owner || card.EnergyCost.Canonical < 0 || card != this)
             return Task.CompletedTask;
         var cost = NextEnergyCost();
         card.EnergyCost.SetThisCombat(cost);

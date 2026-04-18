@@ -1,4 +1,5 @@
 using System.Reflection;
+using Godot;
 using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Assets;
@@ -29,6 +30,7 @@ public class Mordekaiser
 		RegisterEpochManually<Mordekaiser1Epoch>();
 		RegisterStoryManually();
 		InjectMordekaiserEpochId("MORDEKAISER1_EPOCH");
+		GD.Print("当前版本0.1.0");
 		
 		_harmony = new Harmony("sts2.snowI.XW_Mordekaiser");
 		_harmony.PatchAll();

@@ -69,6 +69,7 @@ public sealed class Mordekaiser_soulcrown : RelicModel
 		{
 			AssertMutable();
 			_mordekaiserleavel = value;
+			DynamicVars["mordekaisernowleavel"].BaseValue = _mordekaiserleavel;
 		}
 	}
 	
@@ -194,6 +195,7 @@ public sealed class Mordekaiser_soulcrown_orobas : RelicModel
 		{
 			AssertMutable();
 			_mordekaiserleavel = value;
+			DynamicVars["mordekaisernowleavel"].BaseValue = _mordekaiserleavel;
 		}
 	}
 	

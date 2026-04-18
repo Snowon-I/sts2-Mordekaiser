@@ -25,7 +25,7 @@ public class Mordekaiser_ability_realmofdeath() : CardModel(0, CardType.Skill, C
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
-        var hp = Math.Floor(cardPlay.Target.CurrentHp * DynamicVars["GainHp"].BaseValue * 0.01m) ;
+        var hp = Math.Floor(cardPlay.Target.MaxHp * DynamicVars["GainHp"].BaseValue * 0.01m) ;
         var strPower = cardPlay.Target.GetPower<StrengthPower>();
         var dexPower = cardPlay.Target.GetPower<DexterityPower>();
         await CreatureCmd.SetCurrentHp(cardPlay.Target,cardPlay.Target.CurrentHp - hp);

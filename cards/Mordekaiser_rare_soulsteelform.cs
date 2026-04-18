@@ -36,4 +36,9 @@ public sealed class Mordekaiser_rare_soulsteelform() : CardModel(3, CardType.Pow
         }
     }
     
+    protected override void OnUpgrade()
+    {
+        CardCmd.ApplyKeyword(this,MordekaiserKeyWord.MordekaiserQuiesce);
+    }
+    
 }

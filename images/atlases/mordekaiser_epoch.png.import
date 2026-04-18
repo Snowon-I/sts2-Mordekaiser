@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bldojrbh8bu4o"
-path.bptc="res://.godot/imported/mordekaiser_epoch.png-f282647b06342f8722504dd933485feb.bptc.ctex"
+path="res://.godot/imported/mordekaiser_epoch.png-f282647b06342f8722504dd933485feb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/atlases/mordekaiser_epoch.png"
-dest_files=["res://.godot/imported/mordekaiser_epoch.png-f282647b06342f8722504dd933485feb.bptc.ctex"]
+dest_files=["res://.godot/imported/mordekaiser_epoch.png-f282647b06342f8722504dd933485feb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.85
 compress/uastc_level=4
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
