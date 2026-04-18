@@ -25,12 +25,11 @@ public sealed class Mordekaiser_com_strike() : CardModel(1, CardType.Attack, Car
         await MordekaiserCardUtils.DrawMordekaiserTypeCard(
             choiceContext,
             Owner,
-            1,
+            2,
             PileType.Draw.GetPile(Owner), PileType.Hand.GetPile(Owner),
             cards => cards.Where(c => c.Id.Entry == "MORDEKAISER_BASE_STRIKE"),
             true,
-            "MORDEKAISER_NO_DRAW_BASEATTACK",
-            noCost: true
+            "MORDEKAISER_NO_DRAW_BASEATTACK"
             );
     }
 

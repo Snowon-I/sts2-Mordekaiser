@@ -13,11 +13,11 @@ public sealed class Mordekaiser_rare_soultome() : CardModel(3, CardType.Power, C
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_soulcallpower>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<Mordekaiser_soultomepower>()];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<Mordekaiser_soulcallpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<Mordekaiser_soultomepower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }
 
     public override async Task OnEnqueuePlayVfx(Creature? target)

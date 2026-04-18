@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -27,7 +28,8 @@ public sealed class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Att
         var enemies = card.Owner.Creature.CombatState!.HittableEnemies;
         if (!enemies.Any(c => c.HasPower<Mordekaiser_deceasedsdomainpower>()))
             return enemies.Count(c => c.IsAlive) == 1 ? MordekaiserObliterateAttackNum : 0m;
-        return enemies.Any(c => c.GetPower<Mordekaiser_deceasedsdomainpower>()!.Applier == card.Owner.Creature) ? MordekaiserObliterateAttackNum : 0m;
+        var _num = enemies.Where(c => c.HasPower<Mordekaiser_deceasedsdomainpower>()).ToList();
+        return _num.Count(c => c.GetPower<Mordekaiser_deceasedsdomainpower>()!.Applier == card.Owner.Creature) == 1 ? MordekaiserObliterateAttackNum : 0m;
     }
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

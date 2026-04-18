@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
@@ -17,8 +18,8 @@ public class Mordekaiser_soulreavepower : PowerModel
         if (Owner.CombatState is null) return;
         if (amount >= 0) return;
         if (applier == null) return;
-        if (!Owner.CombatState.Enemies.Contains(applier)) return;
-        if (power != applier.GetPower<StrengthPower>()) return;
+        if (power.Owner.IsPlayer) return;
+        if (power.Id != ModelDb.Power<StrengthPower>().Id) return;
         await PowerCmd.Apply<StrengthPower>(Owner, Amount, Owner, null);
     }
 }

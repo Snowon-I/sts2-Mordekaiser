@@ -125,7 +125,7 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((model, _) => model.EnergyCost.GetWithModifiers(CostModifiers.All)),
         new CalculatedVar("quiescedamagevar").WithMultiplier((model, _) => model.EnergyCost.GetWithModifiers(CostModifiers.All))
     ];
-    // * (model.IsUpgraded? 14m/12m : 16m/14m)
+
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
         if (card.Owner != Owner || card.EnergyCost.Canonical < 0)

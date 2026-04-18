@@ -21,21 +21,20 @@ public class Mordekaiser_darknessrisepower : PowerModel
     {
         if (cardPlay.Card.Owner.Creature != Owner) return;
         if (Owner.CombatState == null) return;
-        var darkenergy = Owner.GetPower<Mordekaiser_darkenergypower>();
+        var powers = Owner.Powers.Where(p => p.Id == ModelDb.Power<Mordekaiser_darkenergypower>().Id).ToList();
+        var powernum = powers.Count;
         if (cardPlay.Card.Type == CardType.Attack)
         {
-            if (darkenergy == null)
-                darkenergy = await PowerCmd.Apply<Mordekaiser_darkenergypower>(Owner, 1m, Owner, null);
-            else
-            if (darkenergy.Amount < 3)
-                await PowerCmd.ModifyAmount(darkenergy,1m, Owner,null);
-            if (darkenergy!.Amount == 3 && !darkenergy.Mordekaiser_DEGetAll )
-                darkenergy.Mordekaiser_DEGetAll = true;
-        }
-        else
-        {
-            if (darkenergy == null) return;
-            await PowerCmd.ModifyAmount(Owner.GetPower<Mordekaiser_darkenergypower>()!, -1, Owner, null);
+            if (Amount >= powernum)
+            {
+                var _time = Amount - powernum;
+                var _apply = 0;
+                while (_time > _apply)
+                {
+                    _apply++;
+                    await PowerCmd.Apply<Mordekaiser_darkenergypower>(Owner, 1m, Owner, null);
+                }
+            }
         }
     }
 
@@ -46,13 +45,15 @@ public class Mordekaiser_darkenergypower : PowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    
+
+    public override bool IsInstanced => true;
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(0m, ValueProp.Unpowered)
     ];
 
-    public bool Mordekaiser_DEGetAll;
+    private bool Mordekaiser_DEGetAll;
     
     private async Task Mordekaiser_EnemyHpCount(PlayerChoiceContext context)
     {
@@ -71,6 +72,25 @@ public class Mordekaiser_darkenergypower : PowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner.Creature != Owner) return;
+        if (cardPlay.Card.Type == CardType.Attack)
+        {
+            if (Amount < 3)
+            {
+                await PowerCmd.ModifyAmount(this,1m, Owner,null);
+            }
+            if (Amount == 3 && !Mordekaiser_DEGetAll )
+                Mordekaiser_DEGetAll = true;
+        }
+        else
+        {
+            if (Mordekaiser_DEGetAll && Amount == 1 )
+            {
+                await Mordekaiser_EnemyHpCount(context);
+                await PowerCmd.ModifyAmount(this, -1, Owner, null);
+                return;
+            }
+            await PowerCmd.ModifyAmount(this, -1, Owner, null);
+        }
         if (!Mordekaiser_DEGetAll) return;
         await Mordekaiser_EnemyHpCount(context);
     }

@@ -87,7 +87,7 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
         { 
             await PowerCmd.Apply<Mordekaiser_potentialblockpower>(Owner.Creature,5m, Owner.Creature,null);
             CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_block>(Owner)!;
-            await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Discard, addedByPlayer: true);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Discard, addedByPlayer: true),0.5f);
         }
     }
 
