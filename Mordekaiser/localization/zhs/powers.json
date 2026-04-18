@@ -75,7 +75,7 @@
   "MORDEKAISER_UNYIELDINGPRESENCEPOWER.description":"当你要被杀死时，锁定你的血量，而后在你的回合结束时，直接死亡",
   "MORDEKAISER_UNYIELDINGPRESENCEPOWER.smartDescription":"当你要被杀死时，锁定你的血量，而后在[blue]{Amount}[/blue]个回合结束时，直接死亡",
   "MORDEKAISER_ABSOLUTEWILLPOWER.title":"为所欲为",
-  "MORDEKAISER_ABSOLUTEWILLPOWER.description":"在你的回合开始时，获得1点[/gold]和[gold]敏捷[/gold]",
+  "MORDEKAISER_ABSOLUTEWILLPOWER.description":"在你的回合开始时，获得1点[gold]力量[/gold]和[gold]敏捷[/gold]",
   "MORDEKAISER_ABSOLUTEWILLPOWER.smartDescription":"在你的回合开始时，获得[blue]{Amount}[/blue]点[gold]力量[/gold]和[gold]敏捷[/gold]",
   "MORDEKAISER_SOULTOMEPOWER.title":"灵魂归我",
   "MORDEKAISER_SOULTOMEPOWER.description":"每当你杀死一名敌人时，获得1点灵魂",

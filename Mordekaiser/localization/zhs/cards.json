@@ -76,7 +76,7 @@
   "MORDEKAISER_UNC_DEFENDWRAITH.title":"守御冥击",
   "MORDEKAISER_UNC_DEFENDWRAITH.description":"造成{Damage:diff()}点伤害。若你打出的上一张牌是[gold]寂灭牌[/gold]，此牌[gold]消耗[/gold]。[gold]寂灭[/gold]：获得{Block:diff()}[gold]格挡[/gold]。",
   "MORDEKAISER_UNC_MORTALBREAK.title":"绝命破击",
-  "MORDEKAISER_UNC_MORTALBREAK.description":"造成{Damage:diff()}点伤害。若目标拥有[gold]虚弱[/gold]，目标[gold]失去[gold]{Damage:diff()}点血量。",
+  "MORDEKAISER_UNC_MORTALBREAK.description":"造成{Damage:diff()}点伤害。若目标拥有[gold]虚弱[/gold]，目标[gold]失去[/gold]{Damage:diff()}点血量。",
   "MORDEKAISER_UNC_WRAITHCRITICAL.title":"冥魂爆击",
   "MORDEKAISER_UNC_WRAITHCRITICAL.description":"造成{Damage:diff()}点伤害。随机消耗[gold]弃牌堆[/gold]里的1张[gold]寂灭牌[/gold]。",
   "MORDEKAISER_UNC_METEORWRAITHHAMMER.title":"陨星冥锤",
