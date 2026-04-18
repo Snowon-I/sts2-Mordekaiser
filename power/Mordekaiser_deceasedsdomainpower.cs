@@ -1,10 +1,13 @@
 ﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Mordekaiser.cards;
 
 
 namespace Mordekaiser.power;
@@ -18,7 +21,7 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
     public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
     {
         if (!CombatManager.Instance.IsInProgress || cardSource != null && target == null) return amount;
-
+        if (power.Id == ModelDb.Power<MinionPower>().Id) return amount ;
         var MordekaiserInSolo = giver.HasPower<Mordekaiser_deceasedsdomainpower>();
         if (target == null) return MordekaiserInSolo ? 0 : amount;
         
@@ -33,6 +36,11 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
             modifiedAmount = amount;
             return true;
         }
+        if (canonicalPower.Id == ModelDb.Power<MinionPower>().Id)
+        {
+            modifiedAmount = amount;
+            return true;
+        } 
         var targetInMordekaiserISolo = target.HasPower<Mordekaiser_deceasedsdomainpower>();
         if (applier == null)
         {
@@ -53,7 +61,17 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
         modifiedAmount = 0;
         return false;
     }
-    
+
+    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
+    {
+        if (power.Applier == Owner && power.Id == ModelDb.Power<MinionPower>().Id)
+        {
+            var powerd = ModelDb.Power<Mordekaiser_deceasedsdomainpower>().ToMutable();
+            await PowerCmd.Apply(powerd,power.Owner, Amount, null, null);
+            powerd.Applier = Applier; 
+        }
+    }
+
     public override decimal ModifyHpLostAfterOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
     {
         if (!CombatManager.Instance.IsInProgress)
