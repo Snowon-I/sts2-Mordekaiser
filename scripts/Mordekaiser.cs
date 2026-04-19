@@ -30,7 +30,7 @@ public class Mordekaiser
 		RegisterEpochManually<Mordekaiser1Epoch>();
 		RegisterStoryManually();
 		InjectMordekaiserEpochId("MORDEKAISER1_EPOCH");
-		GD.Print("莫德凯撒mod当前版本0.1.2");
+		GD.Print("莫德凯撒mod当前版本0.1.3");
 		
 		_harmony = new Harmony("sts2.snowI.XW_Mordekaiser");
 		_harmony.PatchAll();
