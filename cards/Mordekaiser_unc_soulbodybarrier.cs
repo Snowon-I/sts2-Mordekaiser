@@ -11,8 +11,6 @@ namespace Mordekaiser.cards;
 public sealed class Mordekaiser_unc_soulbodybarrier() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(9m, ValueProp.Move)];
 

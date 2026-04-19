@@ -12,8 +12,6 @@ namespace Mordekaiser.cards;
 public sealed class Mordekaiser_rare_unbreakable() : CardModel(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(15m, ValueProp.Move)];
     

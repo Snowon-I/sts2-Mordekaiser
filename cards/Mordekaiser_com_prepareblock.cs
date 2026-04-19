@@ -11,8 +11,6 @@ namespace Mordekaiser.cards;
 public sealed class Mordekaiser_com_prepareblock() : CardModel(1, CardType.Skill, CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7m, ValueProp.Move)];
 

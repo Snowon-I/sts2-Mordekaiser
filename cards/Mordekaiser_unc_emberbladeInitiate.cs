@@ -9,7 +9,7 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public sealed class Mordekaiser_unc_emberbladeinitiate() : CardModel(1, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public sealed class Mordekaiser_unc_emberbladeinitiate() : CardModel(0, CardType.Power, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new("Power",1m)];
 

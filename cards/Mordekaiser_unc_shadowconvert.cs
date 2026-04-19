@@ -44,7 +44,7 @@ public sealed class Mordekaiser_unc_shadowconvert() : CardModel(1, CardType.Skil
                 var _weakPowerNum = target.GetPowerAmount<WeakPower>();
                 await PowerCmd.Apply<StrengthPower>(target, -_vulnerablePowerNum,Owner.Creature,this);
                 await PowerCmd.Apply<DexterityPower>(target, -_weakPowerNum,Owner.Creature,this);
-                await PowerCmd.Remove<StrengthPower>(target);
+                await PowerCmd.Remove<VulnerablePower>(target);
                 await PowerCmd.Remove<WeakPower>(target);
             }
         }

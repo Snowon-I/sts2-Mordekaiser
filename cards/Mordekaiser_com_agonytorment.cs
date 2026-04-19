@@ -17,8 +17,6 @@ public sealed class Mordekaiser_com_agonytorment() : CardModel(1, CardType.Attac
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<WeakPower>()];
-    
-    public override IEnumerable<CardTag> Tags => [CardTag.Strike];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

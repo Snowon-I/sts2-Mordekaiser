@@ -19,28 +19,12 @@ public class Mordekaiser_potentialblockpower : PowerModel
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 
-    public override async Task AfterAttack(AttackCommand command)
+    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
+        Creature target, CardModel? cardSource)
     {
-        if (command.Attacker != Owner || command.TargetSide == Owner.Side ) return;
-        var MordekaiserAttackGainPB = new Dictionary<Creature, List<DamageResult>>();
-        foreach (var result in command.Results)
-        {
-            if (result.Receiver.IsEnemy)
-            {
-                if (!MordekaiserAttackGainPB.TryGetValue(result.Receiver, out var value))
-                {
-                    value = [];
-                    MordekaiserAttackGainPB.Add(result.Receiver, value);
-                }
-
-                value.Add(result);
-            }
-        }
-        foreach (var Creature in MordekaiserAttackGainPB.Keys)
-        {
-            var num = (int)Math.Floor(MordekaiserAttackGainPB[Creature].Sum(r => r.TotalDamage * 0.1));
-            await PowerCmd.ModifyAmount(this, num, Owner, null);
-        }
+        if (dealer != Owner || target.Side == Owner.Side ) return;
+        var _getnum = result.UnblockedDamage * 0.5m;
+        await PowerCmd.ModifyAmount(this, _getnum, Owner, null);
         Flash();
     }
 

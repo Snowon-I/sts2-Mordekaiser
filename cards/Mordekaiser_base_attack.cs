@@ -10,8 +10,6 @@ namespace Mordekaiser.cards;
 public sealed class Mordekaiser_base_strike() : CardModel(0, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Eternal];
 
     public override IEnumerable<CardTag> Tags => [CardTag.Strike];
 

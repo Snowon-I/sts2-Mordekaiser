@@ -1,13 +1,14 @@
 ﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Platform;
+using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
-using Mordekaiser.cards;
 
 
 namespace Mordekaiser.power;
@@ -17,6 +18,18 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new StringVar("Applier"),
+    ];
+    
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        if (applier != null)
+            ((StringVar)DynamicVars["Applier"]).StringValue = PlatformUtil.GetPlayerName(RunManager.Instance.NetService.Platform, applier.Player!.NetId);
+        return Task.CompletedTask;
+    }
     
     public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
     {
@@ -69,6 +82,8 @@ public class Mordekaiser_deceasedsdomainpower : PowerModel
             var powerd = ModelDb.Power<Mordekaiser_deceasedsdomainpower>().ToMutable();
             await PowerCmd.Apply(powerd,power.Owner, Amount, null, null);
             powerd.Applier = Applier; 
+            if (powerd.Applier != null)
+                ((StringVar)powerd.DynamicVars["Applier"]).StringValue = PlatformUtil.GetPlayerName(RunManager.Instance.NetService.Platform, powerd.Applier.Player!.NetId);
         }
     }
 

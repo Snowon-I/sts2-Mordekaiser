@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Runtime.InteropServices;
 using Godot;
 using HarmonyLib;
@@ -233,36 +234,34 @@ public static class FixMordekaiserCharacterEpochCrash
 	
 }
 
-[HarmonyPatch(typeof(TheArchitect), "DefineDialogues")]
+[HarmonyPatch(typeof(TheArchitect), nameof(TheArchitect.DialogueSet), MethodType.Getter)]
 public static class MordekaiserArchitectDialogue
 {
-	static void Postfix(ref AncientDialogueSet __result)
+	
+	private static readonly PropertyInfo? _visitIndexProp = typeof(AncientDialogue).GetProperty("VisitIndex");
+	
+	static void Postfix(TheArchitect __instance , ref AncientDialogueSet __result)
 	{
-		var charDialogu = __result.CharacterDialogues;
+        var mordekaiserId = ModelDb.Character<Mordekaiser>().Id.Entry;
 
-		string MordekaiserId = ModelDb.Character<Mordekaiser>().Id.Entry;
+        if (__result.CharacterDialogues.ContainsKey(mordekaiserId))
+        {
+            return;
+        }
 
-		if (__result.CharacterDialogues.ContainsKey(MordekaiserId))
-			return;
+        var dialogues = new List<AncientDialogue>
+        {
+            new ("", "", "") { EndAttackers = ArchitectAttackers.Both },
+            new ("", "", "") { EndAttackers = ArchitectAttackers.Both },
+            new ("", "", "") { EndAttackers = ArchitectAttackers.Both }
+        };
+        __result.CharacterDialogues[mordekaiserId] = dialogues.AsReadOnly();
 
-		charDialogu[MordekaiserId] =
-		[
-			new AncientDialogue("", "", "")
-			{
-				VisitIndex = 0,
-				EndAttackers = ArchitectAttackers.Both
-			},
-			new AncientDialogue("", "", "")
-			{
-				VisitIndex = 1,
-				EndAttackers = ArchitectAttackers.Both
-			},
-			new AncientDialogue("", "", "")
-			{
-				VisitIndex = 2,
-				EndAttackers = ArchitectAttackers.Both
-			}
-		];
+        for (var i = 0; i < dialogues.Count; i++)
+        {
+            dialogues[i].PopulateLines(__instance.Id.Entry, mordekaiserId, i);
+            _visitIndexProp?.SetValue(dialogues[i], (int?)i);
+        }
 	}
 
 }

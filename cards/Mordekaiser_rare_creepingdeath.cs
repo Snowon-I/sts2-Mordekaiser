@@ -10,13 +10,13 @@ using Mordekaiser.power;
 
 namespace Mordekaiser.cards;
 
-public sealed class Mordekaiser_rare_creepingdeath() : CardModel(1, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
+public sealed class Mordekaiser_rare_creepingdeath() : CardModel(0, CardType.Attack, CardRarity.Rare, TargetType.AllEnemies)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(12m, ValueProp.Move),
-        new HpLossVar(5m)
+        new DamageVar(10m, ValueProp.Move),
+        new HpLossVar(3m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [
@@ -39,7 +39,7 @@ public sealed class Mordekaiser_rare_creepingdeath() : CardModel(1, CardType.Att
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6m);
+        DynamicVars.Damage.UpgradeValueBy(5m);
     }
     
 }

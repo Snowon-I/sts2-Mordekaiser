@@ -25,10 +25,18 @@ public class Mordekaiser_ability_realmofdeath() : CardModel(0, CardType.Skill, C
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
+        if (cardPlay.Target.HasPower<Mordekaiser_deceasedsdomainpower>() && 
+            !cardPlay.Card.Owner.Creature.HasPower<Mordekaiser_deceasedsdomainpower>() && 
+            cardPlay.Target.GetPower<Mordekaiser_deceasedsdomainpower>()?.Applier != cardPlay.Card.Owner.Creature) return;
+        
         var hp = Math.Floor(cardPlay.Target.MaxHp * DynamicVars["GainHp"].BaseValue * 0.01m) ;
         var strPower = cardPlay.Target.GetPower<StrengthPower>();
         var dexPower = cardPlay.Target.GetPower<DexterityPower>();
-        await CreatureCmd.SetCurrentHp(cardPlay.Target,cardPlay.Target.CurrentHp - hp);
+        var setHp = cardPlay.Target.CurrentHp - hp;
+        if (setHp <= 0) 
+            await CreatureCmd.SetCurrentHp(cardPlay.Target,0);
+        else await CreatureCmd.SetCurrentHp(cardPlay.Target,setHp);
+        
         await CreatureCmd.Heal(Owner.Creature,hp);
         if (strPower != null)
         {

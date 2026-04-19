@@ -18,8 +18,6 @@ public sealed class Mordekaiser_unc_soulfollow() : CardModel(0, CardType.Skill, 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [MordekaiserKeyWord.MordekaiserQuiesce];
     
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(7m, ValueProp.Move)];
 
@@ -92,8 +90,6 @@ public sealed class Mordekaiser_unc_wraithwarcry() : CardModel(1, CardType.Skill
 public sealed class Mordekaiser_unc_dashstance() : CardModel(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(10m,ValueProp.Move),
@@ -132,8 +128,6 @@ public sealed class Mordekaiser_unc_soulbarrier() : CardModel(2, CardType.Skill,
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust,MordekaiserKeyWord.MordekaiserQuiesce];
     
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(18m, ValueProp.Move)];
     

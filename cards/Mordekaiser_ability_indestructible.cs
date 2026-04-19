@@ -13,8 +13,6 @@ namespace Mordekaiser.cards;
 public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain, CardKeyword.Exhaust];
     
@@ -53,8 +51,6 @@ public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, Ca
 public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, CardType.Skill, CardRarity.Ancient, TargetType.Self)
 {
     public override bool GainsBlock => true;
-
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust, MordekaiserKeyWord.MordekaiserQuiesce];
     
