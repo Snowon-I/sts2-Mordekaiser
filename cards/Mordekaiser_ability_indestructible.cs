@@ -16,7 +16,7 @@ public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, Ca
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain, CardKeyword.Exhaust];
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Mordekaiser_ability_indestructible_live>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Mordekaiser_ability_indestructible_live>(upgrade:IsUpgraded)];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
@@ -43,6 +43,8 @@ public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, Ca
         await CreatureCmd.TriggerAnim(Owner.Creature,"Cast",1f);
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.CalculatedBlock.Calculate(Owner.Creature),DynamicVars.CalculatedBlock.Props, cardPlay);
         CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_live>(Owner)!;
+        if (IsUpgraded)
+            CardCmd.Upgrade(Mordekaiser_indestructible);
         await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Hand, addedByPlayer: true);
         await PowerCmd.Remove(Owner.Creature.GetPower<Mordekaiser_potentialblockpower>());
     }
@@ -54,7 +56,7 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust, MordekaiserKeyWord.MordekaiserQuiesce];
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Mordekaiser_ability_indestructible_block>()];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Mordekaiser_ability_indestructible_block>(upgrade:IsUpgraded)];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0m),
@@ -84,6 +86,8 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
             await PowerCmd.Apply<Mordekaiser_potentialblockpower>(Owner.Creature,5m, Owner.Creature,null);
             CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_block>(Owner)!;
             CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(Mordekaiser_indestructible, PileType.Discard, addedByPlayer: true),0.5f);
+            if (IsUpgraded)
+                CardCmd.Upgrade(Mordekaiser_indestructible);
         }
     }
 

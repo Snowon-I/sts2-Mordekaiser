@@ -25,9 +25,10 @@ script = ExtResource("1_j0ijg")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="EnergyVfxBack" parent="." instance=ExtResource("2_uk3xh")]
+[node name="EnergyVfxBack" parent="." node_paths=PackedStringArray("_particles") instance=ExtResource("2_uk3xh")]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+_particles = []
 
 [node name="Layers" type="Control" parent="."]
 unique_name_in_owner = true
@@ -116,9 +117,10 @@ texture = ExtResource("7_f8k13")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="EnergyVfxFront" parent="." instance=ExtResource("8_xw8e8")]
+[node name="EnergyVfxFront" parent="." node_paths=PackedStringArray("_particles") instance=ExtResource("8_xw8e8")]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+_particles = []
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

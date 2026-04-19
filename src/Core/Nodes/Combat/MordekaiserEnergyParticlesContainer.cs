@@ -1,3 +1,5 @@
+using Godot;
+using Godot.Collections;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 
 namespace Mordekaiser.Core.Nodes.Combat;

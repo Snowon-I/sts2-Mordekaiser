@@ -9,6 +9,7 @@ atlas_res = ExtResource("1_f8vaj")
 skeleton_file_res = ExtResource("2_f8vaj")
 
 [node name="MordekaiserMerchant" type="Node2D"]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_02mq3")
 
 [node name="SpineSprite" type="SpineSprite" parent="."]

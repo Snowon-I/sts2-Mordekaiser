@@ -163,8 +163,8 @@ public sealed class Mordekaiser_com_chargedhammerswing() : CardModel(0, CardType
         if (card == this && CombatState != null)
         {
             CombatManager.Instance.History.MordekaiserQuiesceTrigger(CombatState,card);
-            var target = CombatState!.HittableEnemies[0];
-            ArgumentNullException.ThrowIfNull(target);
+            var target = CombatState.HittableEnemies.Count >0 ? CombatState.HittableEnemies[0] : null;
+            if (target == null) return;
             await DamageCmd.Attack(DynamicVars.CalculatedDamage)
                 .FromCard(this)
                 .Targeting(target)

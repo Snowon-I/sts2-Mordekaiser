@@ -85,6 +85,7 @@ public sealed class Mordekaiser_soulcrown : RelicModel
 		Flash();
 		while (MonsterSouls >= _mordekaiserneedsouls)
 		{
+			CreatureCmd.GainMaxHp(Owner.Creature, 3m);
 			MonsterSouls -= 6;
 			Mordekaiserleavel ++;
 			Flash();
@@ -211,6 +212,7 @@ public sealed class Mordekaiser_soulcrown_orobas : RelicModel
 		Flash();
 		while (MonsterSouls >= _mordekaiserneedsouls)
 		{
+			CreatureCmd.GainMaxHp(Owner.Creature, 5m);
 			MonsterSouls -= _mordekaiserneedsouls;
 			Mordekaiserleavel ++;
 			Flash();

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dtsi14fwl3xqp" path="res://src/Core/Nodes/Combat/MordekaiserCreatureVisuals.cs" id="1_u15op"]
 
 [node name="Mordekaiser" type="Node2D"]
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_u15op")
 metadata/_edit_group_ = true
 

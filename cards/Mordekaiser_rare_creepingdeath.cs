@@ -28,7 +28,7 @@ public sealed class Mordekaiser_rare_creepingdeath() : CardModel(0, CardType.Att
     {
         await CreatureCmd.Damage(choiceContext, Owner.Creature, DynamicVars.HpLoss.BaseValue, 
             ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
-        ArgumentNullException.ThrowIfNull(CombatState);
+        if (CombatState == null) return;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .TargetingAllOpponents(CombatState)

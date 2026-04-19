@@ -22,37 +22,39 @@ public class Mordekaiser_doomsoulreleasepower : PowerModel
         var _cards =
             Owner.Player.Piles.FirstOrDefault(p => p.Type == PileType.Exhaust)!.Cards.Where(c =>
                 c.Type is CardType.Attack or CardType.Skill or CardType.Power).TakeRandom(Amount, Owner.Player.RunState.Rng.CombatCardSelection).ToList();
+        
         foreach (var _card in _cards)
         {
+            bool exist_target;
             Creature? target;
+            if (Owner.CombatState == null) return;
             switch (_card.TargetType)
             {
+                case TargetType.RandomEnemy:
                 case TargetType.AnyEnemy:
-                    ArgumentNullException.ThrowIfNull(Owner.CombatState);
+                    exist_target = true;
                     target = Owner.CombatState.Enemies.FirstOrDefault();
-                    ArgumentNullException.ThrowIfNull(target);
                     break;
                 case TargetType.AnyPlayer:
                 case TargetType.AnyAlly:
-                    ArgumentNullException.ThrowIfNull(Owner.CombatState);
+                    exist_target = true;
                     target = Owner.CombatState.PlayerCreatures.FirstOrDefault();
-                    ArgumentNullException.ThrowIfNull(target);
-                    break;
-                case TargetType.AllAllies:
-                    target = null;
-                    ArgumentNullException.ThrowIfNull(Owner.CombatState);
                     break;
                 case TargetType.TargetedNoCreature:
-                    ArgumentNullException.ThrowIfNull(Owner.CombatState);
+                    exist_target = true;
                     target = Owner.CombatState.Creatures.FirstOrDefault();
-                    ArgumentNullException.ThrowIfNull(target);
                     break;
+                case TargetType.AllAllies:
+                case TargetType.None:
+                case TargetType.Self:
+                case TargetType.AllEnemies:
+                case TargetType.Osty:
                 default:
+                    exist_target = false;
                     target = null;
-                    ArgumentNullException.ThrowIfNull(Owner.CombatState);
                     break;
             }
-            ArgumentNullException.ThrowIfNull(Owner.CombatState);
+            if (exist_target && target == null) return;
             await CardCmd.AutoPlay(
                 choiceContext,
                 _card,
