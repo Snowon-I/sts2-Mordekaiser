@@ -76,10 +76,17 @@ public class Mordekaiser_darkenergypower : PowerModel
         {
             if (Amount < 3)
             {
+                if (Amount == 1 && !Mordekaiser_DEGetAll)
+                {
+                    SfxCmd.Play("event:/Mordekaiser/Mordekaiser_darkness_second");
+                }
                 await PowerCmd.ModifyAmount(this,1m, Owner,null);
             }
-            if (Amount == 3 && !Mordekaiser_DEGetAll )
+            if (Amount == 3 && !Mordekaiser_DEGetAll)
+            {
+                SfxCmd.Play("event:/Mordekaiser/Mordekaiser_darkness_trigger");
                 Mordekaiser_DEGetAll = true;
+            }
         }
         else
         {

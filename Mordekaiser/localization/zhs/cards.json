@@ -152,7 +152,7 @@
   "MORDEKAISER_RARE_UNDERWORLDBLESSING.title":"冥界赐福",
   "MORDEKAISER_RARE_UNDERWORLDBLESSING.description":"[gold]寂灭[/gold]：将1张随机牌加入你的[gold]手牌[/gold]，其获得此寂灭{IfUpgraded:show:，该牌耗能为0{energyPrefix:energyIcons(1)}。|。}",
   "MORDEKAISER_RARE_WRAITHSTORM.title":"冥灵风暴",
-  "MORDEKAISER_RARE_WRAITHSTORM.description":"将[gold]消耗牌堆[/gold]里的随机{stromValue:diff()}张牌放到[gold]弃牌堆[/gold]中，消耗[gold]弃牌堆[/gold]里的{stromValue:diff()}张牌，获得{stromValue:diff()}点能量。",
+  "MORDEKAISER_RARE_WRAITHSTORM.description":"将[gold]消耗牌堆[/gold]里的随机{stromValue:diff()}张牌放到[gold]弃牌堆[/gold]中，消耗[gold]弃牌堆[/gold]里的{stromValue:diff()}张牌，获得{stromValue:diff()}点能量{energyPrefix:energyIcons(stromValue)}。",
   "MORDEKAISER_RARE_WRAITHPOWER.title":"暗魂之力",
   "MORDEKAISER_RARE_WRAITHPOWER.description":"在下个回合，获得{Power:diff()}点[gold]力量[/gold]。",
   "MORDEKAISER_RARE_UNDERWORLDPACT.title":"冥界契约",

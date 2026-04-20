@@ -41,6 +41,7 @@ public sealed class Mordekaiser_ability_indestructible_block() : CardModel(0, Ca
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature,"Cast",1f);
+        SfxCmd.Play("event:/Mordekaiser/Mordekaiser_indestructible_block");
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.CalculatedBlock.Calculate(Owner.Creature),DynamicVars.CalculatedBlock.Props, cardPlay);
         CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_live>(Owner)!;
         if (IsUpgraded)
@@ -75,6 +76,7 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        SfxCmd.Play("event:/Mordekaiser/Mordekaiser_indestructible_live");
         await CreatureCmd.Heal(Owner.Creature,((CalculatedVar)DynamicVars["HealVar"]).Calculate(Owner.Creature));
         await CreatureCmd.LoseBlock(Owner.Creature, Owner.Creature.Block);
     }

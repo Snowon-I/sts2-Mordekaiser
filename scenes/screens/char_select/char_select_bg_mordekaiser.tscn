@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxywjnfjjs4fw"]
+[gd_scene load_steps=5 format=3 uid="uid://dxywjnfjjs4fw"]
 
 [ext_resource type="VideoStream" uid="uid://cb3g0ihuc5btd" path="res://images/charater_select_Mordekaiser/character_movie_Mordekaiser.ogv" id="1_0d84c"]
 [ext_resource type="AudioStream" uid="uid://btupd07lqsm1u" path="res://video/Mordekaiser_theme.ogg" id="2_to31w"]
 [ext_resource type="AudioStream" uid="uid://c45sagcs20tn3" path="res://video/Modekaiser open.wav" id="3_to31w"]
+
+[sub_resource type="GDScript" id="GDScript_to31w"]
+resource_name = "time to play"
+script/source = "extends AudioStreamPlayer2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	await get_tree().create_timer(3).timeout
+	play()
+"
 
 [node name="CharSelectBgMordekaiser" type="Control"]
 layout_mode = 3
@@ -33,9 +44,8 @@ loop = true
 position = Vector2(936, 528)
 stream = ExtResource("2_to31w")
 volume_db = -5.0
-autoplay = true
+script = SubResource("GDScript_to31w")
 
 [node name="Mordekaiser select" type="AudioStreamPlayer2D" parent="AudioListener2D"]
 position = Vector2(936, 528)
 stream = ExtResource("3_to31w")
-autoplay = true

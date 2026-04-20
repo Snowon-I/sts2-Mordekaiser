@@ -39,7 +39,7 @@ public sealed class Mordekaiser : CharacterModel
 
 	public override int StartingHp => 60;
 
-	public override int StartingGold => 0;
+	public override int StartingGold => 1;
 
 	public override CardPoolModel CardPool => ModelDb.CardPool<Mordekaisercardpool>();
 
@@ -79,7 +79,7 @@ public sealed class Mordekaiser : CharacterModel
 
 	public override Color RemoteTargetingLineOutline => new ("127c80FF");
 
-	public override string CharacterSelectSfx => $"event:/sfx/characters/ironclad/ironclad_select";
+	public override string CharacterSelectSfx => "event:/Mordekaiser/Mordekaiser_select";
 
 	public override List<string> GetArchitectAttackVfx()
 	{
@@ -126,7 +126,6 @@ public sealed class Mordekaiser : CharacterModel
 	}
 	
 }
-
 
 [HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)] //nameof可以改为"AllCharacters",如果后续被保护的话
 public static class MordekaiserPatchAdd

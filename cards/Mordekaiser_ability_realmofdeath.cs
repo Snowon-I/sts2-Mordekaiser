@@ -38,16 +38,17 @@ public class Mordekaiser_ability_realmofdeath() : CardModel(0, CardType.Skill, C
         else await CreatureCmd.SetCurrentHp(cardPlay.Target,setHp);
         
         await CreatureCmd.Heal(Owner.Creature,hp);
-        if (strPower != null)
+        if (strPower is { Amount: > 0 })
         {
-            await PowerCmd.Apply<StrengthPower>(Owner.Creature,strPower.Amount,Owner.Creature,cardPlay.Card);
+            await PowerCmd.Apply<StrengthPower>(Owner.Creature, strPower.Amount,Owner.Creature, cardPlay.Card);
             await PowerCmd.Remove(strPower);
         }
-        if (dexPower != null)
+        if (dexPower is { Amount: > 0 })
         {
-            await PowerCmd.Apply<DexterityPower>(Owner.Creature,dexPower.Amount,Owner.Creature,cardPlay.Card);
+            await PowerCmd.Apply<DexterityPower>(Owner.Creature, dexPower.Amount,Owner.Creature, cardPlay.Card);
             await PowerCmd.Remove(dexPower);
         }
+        SfxCmd.Play("event:/Mordekaiser/Mordekaiser_realmofdeath");
         await PowerCmd.Apply<Mordekaiser_deceasedsdomainpower>(cardPlay.Target, DynamicVars["Power"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<Mordekaiser_deceasedsdomainpower>(Owner.Creature, DynamicVars["Power"].BaseValue, Owner.Creature, this);
     }

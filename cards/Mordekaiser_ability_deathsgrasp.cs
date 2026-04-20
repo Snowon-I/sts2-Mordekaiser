@@ -29,7 +29,8 @@ public sealed class Mordekaiser_ability_deathsgrasp() : CardModel(0, CardType.At
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .WithAttackerAnim("Obliterate",0.1f,Owner.Creature)
+            .WithAttackerFx(null,"event:/Mordekaiser/Mordekaiser_deathsgrasp")
+            .WithAttackerAnim("cast",0.1f,Owner.Creature)
             .TargetingAllOpponents(CombatState!)
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(CombatState!.HittableEnemies, DynamicVars["Power"].BaseValue, Owner.Creature, this);

@@ -4,6 +4,7 @@ using Godot.Bridge;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.Timeline;
@@ -17,12 +18,13 @@ namespace Mordekaiser.scripts;
 public class Mordekaiser
 {
 	private static Harmony? _harmony;
-
+	
 	public static void XW_Mordekaiser()
 	{
 		ScriptManagerBridge.LookupScriptsInAssembly(assembly: typeof(Mordekaiser).Assembly);
-		
+        
 		SavedPropertiesTypeCache.InjectTypeIntoCache(typeof(Mordekaiser_soulcrown));
+		SavedPropertiesTypeCache.InjectTypeIntoCache(typeof(Mordekaiser_soulcrown_orobas));
 		AtlasManager.LoadAtlas("mordekaiser_power_atlas");
 		AtlasManager.LoadAtlas("energy_mordekaiser");
 		AtlasManager.LoadAtlas("mordekaiser_cards");
@@ -30,10 +32,11 @@ public class Mordekaiser
 		RegisterEpochManually<Mordekaiser1Epoch>();
 		RegisterStoryManually();
 		InjectMordekaiserEpochId("MORDEKAISER1_EPOCH");
-		GD.Print("莫德凯撒mod当前版本0.1.4");
 		
+		Log.Info("莫德凯撒mod当前版本0.1.5");
 		_harmony = new Harmony("sts2.snowI.XW_Mordekaiser");
 		_harmony.PatchAll();
+
 	}
 	
 	private static void RegisterEpochManually<T>() where T : EpochModel, new()
@@ -56,7 +59,7 @@ public class Mordekaiser
 	private static void RegisterStoryManually()
 	{
 		var storyModelType = typeof(StoryModel);
-		var dictField = storyModelType.GetField("_storyTypeDictionary", BindingFlags.NonPublic | BindingFlags.Static);;
+		var dictField = storyModelType.GetField("_storyTypeDictionary", BindingFlags.NonPublic | BindingFlags.Static);
 		if (dictField == null)
 		{
 		}
@@ -87,7 +90,6 @@ public class Mordekaiser
 		}
 		allIdsField.SetValue(null, newList);
 	}
-	
 }
 
 public class MordekaiserKeyWord

@@ -1,9 +1,11 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Mordekaiser.power;
@@ -60,23 +62,26 @@ public class Mordekaiser_unyieldingpresencepower : PowerModel
         return decimal.MaxValue;
     }
     
-    public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+    public override Task BeforeDamageReceived(PlayerChoiceContext choiceContext, Creature target, decimal result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
         if (target != Owner) return Task.CompletedTask;
-        if (result.UnblockedDamage >= Owner.CurrentHp)
+        if (result >= Owner.CurrentHp)
         {
             _hp = Owner.CurrentHp;
         }
         return Task.CompletedTask;
     }
     
-    public override async Task AfterPreventingDeath(Creature creature)
+    public override Task AfterPreventingDeath(Creature creature)
     {
-        if (creature != Owner) return;
+        if (creature != Owner) return Task.CompletedTask;
         _lockLife = true;
-        await CreatureCmd.SetCurrentHp(Owner,_hp);
+        if (_hp < 1)
+            _hp = 1;
+        CreatureCmd.SetCurrentHp(Owner,_hp);
         Owner.ShowsInfiniteHp = true;
+        return Task.CompletedTask;
     }
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
@@ -88,10 +93,18 @@ public class Mordekaiser_unyieldingpresencepower : PowerModel
                await PowerCmd.ModifyAmount(this,-1m,Owner,null);
             else
             {
+                Owner.ShowsInfiniteHp = false;
                 _cantDied = false;
                 await CreatureCmd.Kill(Owner);
             }
         }
+    }
+    
+    public override Task AfterCombatEnd(CombatRoom room)
+    {
+        if (Owner.ShowsInfiniteHp)
+            Owner.ShowsInfiniteHp = false;
+        return Task.CompletedTask;
     }
     
 }

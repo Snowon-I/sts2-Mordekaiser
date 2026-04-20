@@ -36,7 +36,8 @@ public sealed class Mordekaiser_ability_obliterate() : CardModel(0, CardType.Att
     {
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
             .FromCard(this)
-            .WithAttackerAnim("Obliterate",0.1f,Owner.Creature)
+            .WithAttackerAnim("Obliterate",0.5f,Owner.Creature)
+            .WithAttackerFx(null, "event:/Mordekaiser/Mordekaser_obliterate")
             .TargetingAllOpponents(CombatState!)
             .Execute(choiceContext);
     }
