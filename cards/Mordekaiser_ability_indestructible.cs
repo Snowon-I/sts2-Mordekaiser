@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -55,7 +56,7 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
 {
     public override bool GainsBlock => true;
     
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust, MordekaiserKeyWord.MordekaiserQuiesce];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardKeyword.Exhaust];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Mordekaiser_ability_indestructible_block>(upgrade:IsUpgraded)];
     
@@ -83,7 +84,7 @@ public sealed class Mordekaiser_ability_indestructible_live() : CardModel(0, Car
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {
-        if (card == this)
+        if (card == this && CombatState != null)
         { 
             await PowerCmd.Apply<Mordekaiser_potentialblockpower>(Owner.Creature,5m, Owner.Creature,null);
             CardModel Mordekaiser_indestructible = Owner.Creature.CombatState?.CreateCard<Mordekaiser_ability_indestructible_block>(Owner)!;

@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Mordekaiser.cards;
 
 namespace Mordekaiser.power;
 
@@ -21,7 +22,7 @@ public class Mordekaiser_doomsoulreleasepower : PowerModel
         if (Owner.Player == null) return;
         var _cards =
             Owner.Player.Piles.FirstOrDefault(p => p.Type == PileType.Exhaust)!.Cards.Where(c =>
-                c.Type is CardType.Attack or CardType.Skill or CardType.Power).TakeRandom(Amount, Owner.Player.RunState.Rng.CombatCardSelection).ToList();
+                c.Type is CardType.Attack or CardType.Skill or CardType.Power && c.Id != ModelDb.Card<Mordekaiser_ability_indestructible_live>().Id).TakeRandom(Amount, Owner.Player.RunState.Rng.CombatCardSelection).ToList();
         
         foreach (var _card in _cards)
         {

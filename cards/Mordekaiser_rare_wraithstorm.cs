@@ -11,29 +11,31 @@ public sealed class Mordekaiser_rare_wraithstorm() : CardModel(0, CardType.Skill
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new ("stromValue",2m)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new EnergyVar(2)
+    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await MordekaiserCardUtils.DrawMordekaiserTypeCard(
             choiceContext,
-            Owner,DynamicVars["stromValue"].IntValue,
+            Owner,DynamicVars.Energy.IntValue,
             PileType.Exhaust.GetPile(Owner),PileType.Discard.GetPile(Owner),
             cards => cards.Where(_ => true), 
             false
             );
         await MordekaiserCardUtils.ExhaustMordekaiserCard(
             choiceContext,
-            Owner,DynamicVars["stromValue"].IntValue,
+            Owner,DynamicVars.Energy.IntValue,
             PileType.Discard.GetPile(Owner),
-            cards => cards.Take(DynamicVars["stromValue"].IntValue)
+            cards => cards.Take(DynamicVars.Energy.IntValue)
             );
-        await PlayerCmd.GainEnergy(DynamicVars["stromValue"].IntValue, Owner);
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["stromValue"].UpgradeValueBy(1m);
+        DynamicVars.Energy.UpgradeValueBy(1);
     }
     
 }

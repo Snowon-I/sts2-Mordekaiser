@@ -127,7 +127,7 @@ public sealed class Mordekaiser : CharacterModel
 	
 }
 
-[HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)] //nameof可以改为"AllCharacters",如果后续被保护的话
+[HarmonyPatch(typeof(ModelDb), nameof(ModelDb.AllCharacters), MethodType.Getter)]
 public static class MordekaiserPatchAdd
 {
 	public static void Postfix(ref IEnumerable<CharacterModel> __result)
@@ -140,7 +140,7 @@ public static class MordekaiserPatchAdd
 		
 }
 
-[HarmonyPatch(typeof(UnlockState), nameof(UnlockState.Characters), MethodType.Getter)] //nameof可以改为"AllCharacters",如果后续被保护的话
+[HarmonyPatch(typeof(UnlockState), nameof(UnlockState.Characters), MethodType.Getter)]
 public static class MordekaiserLockPatchAdd
 {
 	public static void Postfix(UnlockState __instance,ref IEnumerable<CharacterModel> __result)
@@ -209,7 +209,6 @@ public static class ConfirmMordekaiserCharacter
 [HarmonyPatch(typeof(ProgressSaveManager))]
 public static class FixMordekaiserCharacterEpochCrash
 {
-	// 目标：两个会抛异常的方法
 	[HarmonyPatch("CheckFifteenElitesDefeatedEpoch")]
 	[HarmonyPrefix]
 	public static bool Prefix_elites(Player localPlayer)
@@ -224,7 +223,7 @@ public static class FixMordekaiserCharacterEpochCrash
 		return localPlayer.Character is not Mordekaiser;
 	}
 	
-	[HarmonyPatch("ObtainCharUnlockEpoch")] //打败boss，可做
+	[HarmonyPatch("ObtainCharUnlockEpoch")]
 	[HarmonyPrefix]
 	public static bool Prefix_Obtain(Player localPlayer)
 	{

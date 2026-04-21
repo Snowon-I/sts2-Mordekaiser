@@ -17,7 +17,7 @@ public class Mordekaiser_finaljudgmentpower : PowerModel
     
     public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (side == Owner.Side && !Owner.IsDead && Amount == 1)
+        if (!Owner.IsDead && Amount == 1)
         {
             foreach (var Enemy in CombatState.HittableEnemies)
             {
