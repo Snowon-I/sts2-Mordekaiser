@@ -16,7 +16,7 @@ public sealed class Mordekaiser_base_criticalattack() : CardModel(1, CardType.At
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .WithAttackerAnim("Obliterate",0.1f,Owner.Creature)
+            .WithAttackerFx(null, "event:/Mordekaiser/Mordekaiser_attack")
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }

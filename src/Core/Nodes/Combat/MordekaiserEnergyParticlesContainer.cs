@@ -13,7 +13,7 @@ public partial class MordekaiserEnergyParticlesContainer : Node2D
 	
 		public void SetEmitting(bool emitting)
 	{
-		for (int i = 0; i < _particles.Count; i++)
+		for (int i = 0; i < _particles!.Count; i++)
 		{
 			_particles[i].Emitting = emitting;
 		}
@@ -21,7 +21,7 @@ public partial class MordekaiserEnergyParticlesContainer : Node2D
 
 	public void Restart()
 	{
-		for (int i = 0; i < _particles.Count; i++)
+		for (int i = 0; i < _particles!.Count; i++)
 		{
 			_particles[i].Restart();
 		}

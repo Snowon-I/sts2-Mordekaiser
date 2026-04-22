@@ -19,38 +19,44 @@ public class Mordekaiser_potentialblockpower : PowerModel
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.Static(StaticHoverTip.Block)];
 
-    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
+    public override Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        if (dealer != Owner || target.Side == Owner.Side ) return;
+        if (dealer != Owner || target.Side == Owner.Side ) return Task.CompletedTask;
         var _getnum = result.UnblockedDamage * 0.5m;
-        await PowerCmd.ModifyAmount(this, _getnum, Owner, null);
+        SetAmount(Amount + (int)_getnum,true);
+        //await PowerCmd.ModifyAmount(this, _getnum, Owner, null,true);
         Flash();
+        return Task.CompletedTask;
     }
 
-    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result,
+    public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result,
         ValueProp props, Creature? dealer, CardModel? cardSource)
     {
-        if (result.WasFullyBlocked ) return;
+        if (result.WasFullyBlocked ) return Task.CompletedTask;
         var MordekaiserReceivedGainPb = result.UnblockedDamage;
-        await PowerCmd.ModifyAmount(this, MordekaiserReceivedGainPb, Owner, null);
+        SetAmount(Amount + MordekaiserReceivedGainPb,true);
+        //await PowerCmd.ModifyAmount(this, MordekaiserReceivedGainPb, Owner, null,true);
         Flash();
+        return Task.CompletedTask;
     }
     
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (player != Owner.Player) return;
-        if (Amount <= 10) return;
+        if (player != Owner.Player || Amount <= 10) return Task.CompletedTask;
+        SetAmount(Amount - 10,true);
         Flash();
-        await PowerCmd.ModifyAmount(this, -10, Owner, null);
+        return Task.CompletedTask;
+        //await PowerCmd.ModifyAmount(this, -10, Owner, null,true);
     }
     
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (side != Owner.Side) return;
-        if (Amount <= 10) return;
+        if (side != Owner.Side || Amount <= 10) return Task.CompletedTask;
+        SetAmount(Amount - 10,true);
         Flash();
-        await PowerCmd.ModifyAmount(this, -10, Owner, null);
+        return Task.CompletedTask;
+        //await PowerCmd.ModifyAmount(this, -10, Owner, null,true);
     }
     
 }

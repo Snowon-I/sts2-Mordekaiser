@@ -74,3 +74,114 @@ repeat: none
   orig: 47, 69
   offset: 0, 2
   index: -1
+
+mordekaiser2.png
+size: 1981,1038
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+特效区/区域特效1
+  rotate: false
+  xy: 731, 10
+  size: 292, 319
+  orig: 303, 332
+  offset: 6, 6
+  index: -1
+特效区/地面特效1
+  rotate: true
+  xy: 731, 331
+  size: 705, 297
+  orig: 738, 358
+  offset: 32, 31
+  index: -1
+特效区/地面特效2
+  rotate: false
+  xy: 1547, 467
+  size: 418, 156
+  orig: 425, 160
+  offset: 3, 2
+  index: -1
+特效区/地面特效3
+  rotate: false
+  xy: 1547, 625
+  size: 420, 411
+  orig: 425, 417
+  offset: 4, 4
+  index: -1
+特效区/地面特效4
+  rotate: false
+  xy: 1717, 15
+  size: 219, 59
+  orig: 316, 316
+  offset: 42, 123
+  index: -1
+特效区/泛光特效1
+  rotate: false
+  xy: 1717, 281
+  size: 262, 184
+  orig: 266, 188
+  offset: 2, 2
+  index: -1
+特效区/泛光特效2
+  rotate: false
+  xy: 1717, 76
+  size: 236, 203
+  orig: 244, 208
+  offset: 4, 4
+  index: -1
+特效区/泛光特效3
+  rotate: false
+  xy: 1096, 24
+  size: 213, 175
+  orig: 215, 177
+  offset: 1, 1
+  index: -1
+特效区/烟雾特效1
+  rotate: false
+  xy: 1025, 25
+  size: 69, 304
+  orig: 72, 308
+  offset: 2, 3
+  index: -1
+特效区/特效粒子1
+  rotate: false
+  xy: 2, 23
+  size: 14, 22
+  orig: 16, 24
+  offset: 1, 1
+  index: -1
+特效区/特效粒子2
+  rotate: true
+  xy: 2, 2
+  size: 19, 10
+  orig: 21, 12
+  offset: 1, 1
+  index: -1
+特效区/路径特效
+  rotate: true
+  xy: 2, 47
+  size: 989, 727
+  orig: 999, 751
+  offset: 1, 16
+  index: -1
+特效区/路径特效2
+  rotate: true
+  xy: 1030, 355
+  size: 681, 515
+  orig: 681, 515
+  offset: 0, 0
+  index: -1
+特效区/锤子特效
+  rotate: false
+  xy: 1096, 201
+  size: 414, 152
+  orig: 419, 155
+  offset: 3, 2
+  index: -1
+特效区/锤子特效2
+  rotate: true
+  xy: 1547, 7
+  size: 458, 168
+  orig: 464, 171
+  offset: 4, 1
+  index: -1

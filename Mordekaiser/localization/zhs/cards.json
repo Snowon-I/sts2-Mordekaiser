@@ -6,7 +6,7 @@
   "MORDEKAISER_BASE_CRITICALATTACK.title": "暴击",
   "MORDEKAISER_BASE_CRITICALATTACK.description": "造成{Damage:diff()}点伤害。",
   "MORDEKAISER_BASE_DARKNESSRISE.title":"黑暗起兮",
-  "MORDEKAISER_BASE_DARKNESSRISE.description":"获得{StrengthPower:diff()}点[gold]力量[/gold]\n每使用1张攻击牌后，获得1层[gold]暗能量遮蔽[/gold],回合开始时、回合结束时、每使用一张非攻击牌时，失去1层[gold]暗能量遮蔽[/gold]。",
+  "MORDEKAISER_BASE_DARKNESSRISE.description":"获得{StrengthPower:diff()}点[gold]力量[/gold]\n每使用1张[gold]造成伤害[/gold]后，获得[gold]造成伤害次数[/gold]层[gold]暗能量遮蔽[/gold],回合开始时、回合结束时、每使用一张非攻击牌或攻击牌未造成伤害时，失去1层[gold]暗能量遮蔽[/gold]。",
   
   "MORDEKAISER_ABILITY_DEATHSGRASP.title":"断魂一扼",
   "MORDEKAISER_ABILITY_DEATHSGRASP.description":"对所有敌人造成{Damage:diff()}点伤害，施加{Power:diff()}层[gold]易伤[/gold]和[gold]虚弱[/gold]。",

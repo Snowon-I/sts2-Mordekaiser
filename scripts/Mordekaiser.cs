@@ -33,9 +33,10 @@ public class Mordekaiser
 		RegisterStoryManually();
 		InjectMordekaiserEpochId("MORDEKAISER1_EPOCH");
 		
-		Log.Info("莫德凯撒mod当前版本v0.1.6");
+		Log.Info("莫德凯撒mod当前版本v0.1.7");
+		var moredekaiserAssembly = Assembly.GetExecutingAssembly();
 		_harmony = new Harmony("sts2.snowI.XW_Mordekaiser");
-		_harmony.PatchAll();
+		_harmony.PatchAll(moredekaiserAssembly);
 
 	}
 	

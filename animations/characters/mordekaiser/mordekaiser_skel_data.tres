@@ -1,7 +1,7 @@
 [gd_resource type="SpineSkeletonDataResource" load_steps=3 format=3 uid="uid://bqone2nicrkgt"]
 
-[ext_resource type="SpineAtlasResource" uid="uid://db80m8qxmkwx6" path="res://animations/characters/mordekaiser/mordekaiser.atlas" id="1_61kf1"]
-[ext_resource type="SpineSkeletonFileResource" uid="uid://dyj34ujhknsod" path="res://animations/characters/mordekaiser/mordekaiser.skel" id="2_61kf1"]
+[ext_resource type="SpineAtlasResource" uid="uid://cc7o12nx6ts2u" path="res://animations/characters/mordekaiser/mordekaiser.atlas" id="1_61kf1"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://q7jh6bomtap1" path="res://animations/characters/mordekaiser/mordekaiser.skel" id="2_61kf1"]
 
 [resource]
 atlas_res = ExtResource("1_61kf1")

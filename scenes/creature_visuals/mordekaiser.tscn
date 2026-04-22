@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dtsi14fwl3xqp" path="res://src/Core/Nodes/Combat/MordekaiserCreatureVisuals.cs" id="1_u15op"]
 
 [node name="Mordekaiser" type="Node2D"]
+position = Vector2(26, 39)
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_u15op")
 metadata/_edit_group_ = true
@@ -11,7 +12,7 @@ metadata/_edit_group_ = true
 [node name="Visuals" type="SpineSprite" parent="."]
 skeleton_data_res = ExtResource("1_tqcjt")
 preview_skin = "Default"
-preview_animation = "idle_loop"
+preview_animation = "-- Empty --"
 preview_frame = false
 preview_time = 0.0
 unique_name_in_owner = true

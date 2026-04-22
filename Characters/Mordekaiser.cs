@@ -108,7 +108,7 @@ public sealed class Mordekaiser : CharacterModel
 		var state3 = new AnimState("hurt");
 		var state4 = new AnimState("die");
 		var state5 = new AnimState("relaxed_loop", true);
-		var state6 = new AnimState("Obliterate", true);
+		var state6 = new AnimState("Obliterate");
 		state1.NextState = animState;
 		state2.NextState = animState;
 		state3.NextState = animState;

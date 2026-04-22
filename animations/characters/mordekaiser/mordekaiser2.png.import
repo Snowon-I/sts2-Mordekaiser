@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcoudlu2ix54c"
-path="res://.godot/imported/mordekaiser.png-f5b93f4b50c729788ae8dfb678f27d12.ctex"
+uid="uid://cv2ajhj3tx3pv"
+path="res://.godot/imported/mordekaiser2.png-756dd9ee5f1a9d4cb6657ba6971a4f75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/characters/mordekaiser/mordekaiser.png"
-dest_files=["res://.godot/imported/mordekaiser.png-f5b93f4b50c729788ae8dfb678f27d12.ctex"]
+source_file="res://animations/characters/mordekaiser/mordekaiser2.png"
+dest_files=["res://.godot/imported/mordekaiser2.png-756dd9ee5f1a9d4cb6657ba6971a4f75.ctex"]
 
 [params]
 
